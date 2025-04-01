@@ -8,5 +8,17 @@ indent_style = space
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-[*.*Dockerfile]
+[*.hcl]
+indent_size = 2
+
+[*.sh]
+indent_style = tab
+
+[Caddyfile]
+indent_style = tab
+
+[{compose.yaml,compose.override.yaml}]
+indent_size = 2
+
+[Dockerfile]
 indent_style = tab

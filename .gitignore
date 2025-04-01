@@ -1,5 +1,6 @@
 /.idea/
 /.vscode/
+/docker/.env
 
 ###> symfony/framework-bundle ###
 /.env.local
