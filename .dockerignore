@@ -1,0 +1,14 @@
+*
+!bin/
+!config/
+!docker/frankenphp/
+!docker/LICENSE
+!public/
+public/bundles/
+!src/
+!.env
+!.env.dev
+!composer.json
+!composer.lock
+!LICENSE
+!symfony.lock
