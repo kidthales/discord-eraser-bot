@@ -1,10 +1,11 @@
 # Paths (local)
-ROOT_PATH   := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
-DOCKER_PATH  = $(ROOT_PATH)/docker
+ROOT_PATH  := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
+DOCKER_PATH = $(ROOT_PATH)/docker
 
 # Executables (local)
 AWK         = awk
-DOCKER_COMP = cd $(DOCKER_PATH) && COMPOSE_BAKE=true docker compose
+CD          = cd
+DOCKER_COMP = $(CD) $(DOCKER_PATH) && COMPOSE_BAKE=true docker compose
 GREP        = grep
 SED         = sed
 
