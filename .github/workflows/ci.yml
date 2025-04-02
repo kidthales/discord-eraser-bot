@@ -27,10 +27,10 @@ jobs:
         with:
           pull: true
           load: true
-          workdir: ./docker
+          workdir: docker
           files: |
-            compose.yaml
-            compose.override.yaml
+            docker/compose.yaml
+            docker/compose.override.yaml
           set: |
             *.cache-from=type=gha,scope=${{github.ref}}
             *.cache-from=type=gha,scope=refs/heads/main
