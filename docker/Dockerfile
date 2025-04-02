@@ -56,6 +56,11 @@ RUN set -eux; \
 		xdebug \
 	;
 
+# Squelch "fatal: detected dubious ownership in repository at '/app'" warning when using 'composer require' command in
+# the development container running on a Linux host.
+RUN set -eux; \
+	git config --global --add safe.directory /app
+
 COPY --link docker/frankenphp/conf.d/20-app.dev.ini $PHP_INI_DIR/app.conf.d/
 
 CMD [ "frankenphp", "run", "--config", "/etc/caddy/Caddyfile", "--watch" ]
