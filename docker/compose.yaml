@@ -3,6 +3,7 @@ services:
     image: ${IMAGES_PREFIX:-}discord-eraser-bot-php
     restart: unless-stopped
     environment:
+      DATABASE_URL: ${DATABASE_URL:-sqlite:///%kernel.project_dir%/var/data.db}
       SERVER_NAME: ${SERVER_NAME:-localhost}, php:80
     volumes:
       - caddy_data:/data
