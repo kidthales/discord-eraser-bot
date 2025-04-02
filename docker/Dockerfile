@@ -17,6 +17,7 @@ VOLUME /app/var/
 # hadolint ignore=DL3018
 RUN apk add --no-cache \
 		acl \
+		bash \
 		file \
 		gettext \
 		git \
