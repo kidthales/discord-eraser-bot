@@ -2,7 +2,11 @@
 
 Schedule message deletion tasks in your Discord servers.
 
-> ⚠️ Under Development - [The Road to MVP](https://github.com/kidthales/discord-eraser-bot/milestone/1) ⚠️
+> [!WARNING]
+> Under active development. Please see the [MVP milestone](https://github.com/kidthales/discord-eraser-bot/milestone/1) for current status.
+
+> [!NOTE]
+> [Design Document](https://github.com/kidthales/discord-eraser-bot/wiki/Design)
 
 ## Development with Docker
 
