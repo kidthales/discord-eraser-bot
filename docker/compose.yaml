@@ -4,7 +4,9 @@ services:
     restart: unless-stopped
     environment:
       DATABASE_URL: ${DATABASE_URL:-sqlite:///%kernel.project_dir%/var/data.db}
+      PHP_DATE_TIMEZONE: ${APP_TIMEZONE:-UTC}
       SERVER_NAME: ${SERVER_NAME:-localhost}, php:80
+      TZ: ${APP_TIMEZONE:-UTC}
     volumes:
       - caddy_data:/data
       - caddy_config:/config
