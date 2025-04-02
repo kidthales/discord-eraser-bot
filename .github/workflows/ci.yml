@@ -27,7 +27,7 @@ jobs:
         with:
           pull: true
           load: true
-          workdir: docker
+          workdir: ./docker
           files: |
             compose.yaml
             compose.override.yaml
