@@ -1,3 +1,5 @@
+name: discord-eraser-bot
+
 services:
   php:
     image: ${IMAGES_PREFIX:-}discord-eraser-bot-php
