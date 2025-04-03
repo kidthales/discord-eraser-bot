@@ -10,44 +10,11 @@ Schedule message deletion tasks in your Discord servers.
 
 ## Development with Docker
 
-### Building the Development Image
-
-Starting in the project's root directory, perform the following steps:
-
-1. `cd docker`
-2. `COMPOSE_BAKE=true docker compose build --pull --no-cache`
-
->[!TIP]
-> Run `make build` from the project's root directory.
-
-### Running the Development Container
-
-Starting in the project's root directory, perform the following steps:
-
-1. `cd docker`
-2. `docker compose up --detach`
-
->[!TIP]
-> Run `make up` from the project's root directory.
-
-To stop the development container, run `docker compose down --remove-orphans`, while in the `docker` directory.
-
->[!TIP]
-> Run `make down` from the project's root directory.
-
-#### Running the Unit Tests
-
-Starting in the project's root directory, perform the following steps:
-
-1. `cd docker`
-2. `docker compose exec -e APP_ENV=test php bin/phpunit`
-
->[!TIP]
-> Run `make test` from the project's root directory.
-
-### Building the Production Image
-
-Starting in the project's root directory, perform the following steps:
-
-1. `cd docker`
-2. `IMAGES_PREFIX=my-prefix/ IMAGES_TAG=my-tag docker buildx bake`
+| Operation                | Make Target (in project root directory) | Shell (in `docker` directory)                                              |
+|--------------------------|-----------------------------------------|----------------------------------------------------------------------------|
+| Build Image              | `build`                                 | `COMPOSE_BAKE=true docker compose build --pull --no-cache`                 |
+| Start Services           | `up`                                    | `docker compose up --detach`                                               |
+| Stop Services            | `down`                                  | `docker compose down --remove-orphans`                                     |
+| Create & Migrate Test DB | `test-db`                               | `docker compose exec php php bin/console -e test doctrine:database:create` |
+| Run Unit Tests           | `test`                                  | `docker compose exec -e APP_ENV=test php bin/phpunit`                      |
+| Build Production Image   |                                         | `IMAGES_PREFIX=my-prefix/ IMAGES_TAG=my-tag docker buildx bake`            |
