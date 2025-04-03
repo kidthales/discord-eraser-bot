@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Entity;
 
 use App\Entity\Traits\Identifiable;
@@ -11,10 +13,15 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Table(name: '`user`')]
-class User implements UserInterface
+final class User implements UserInterface
 {
     use Identifiable, Timestampable;
 
+    public const string ROLE_USER = 'ROLE_USER';
+
+    /**
+     * @var int|string|null
+     */
     #[ORM\Column(name: 'discord_id', type: Types::BIGINT, unique: true)]
     private int|string|null $discordId = null;
 
@@ -48,7 +55,7 @@ class User implements UserInterface
     {
         $roles = $this->roles;
         // guarantee every user at least has ROLE_USER
-        $roles[] = 'ROLE_USER';
+        $roles[] = self::ROLE_USER;
 
         return array_unique($roles);
     }
