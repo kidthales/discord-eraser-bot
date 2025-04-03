@@ -13,6 +13,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Table(name: '`user`')]
+#[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_DISCORD_ID', fields: ['discordId'])]
 final class User implements UserInterface
 {
     use Identifiable, Timestampable;
@@ -22,7 +23,7 @@ final class User implements UserInterface
     /**
      * @var int|string|null
      */
-    #[ORM\Column(name: 'discord_id', type: Types::BIGINT, unique: true)]
+    #[ORM\Column(name: 'discord_id', type: Types::BIGINT)]
     private int|string|null $discordId = null;
 
     /**
