@@ -19,7 +19,7 @@ SYMFONY  = $(PHP) bin/console
 
 # Misc
 .DEFAULT_GOAL = help
-.PHONY        : help build up start down logs bash test composer vendor sf cc own
+.PHONY        : help build up start down logs bash test test-db composer vendor sf cc own
 
 ## —— 🔥✉️🔥 Discord Eraser Bot Makefile 🔥✉️🔥 ————————————————————————————————
 help: ## Outputs this help screen
