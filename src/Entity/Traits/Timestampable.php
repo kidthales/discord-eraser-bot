@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Doctrine Behavioral Extensions package.
+ * This file was part of the Doctrine Behavioral Extensions package.
  * (c) Gediminas Morkevicius <gediminas.morkevicius@gmail.com> http://www.gediminasm.org
  * The MIT license, reference http://www.opensource.org/licenses/mit-license.php
  */
@@ -31,6 +31,15 @@ trait Timestampable
     #[ORM\Column(name: 'updated_at', type: Types::DATETIME_IMMUTABLE)]
     private ?DateTimeImmutable $updatedAt = null;
 
+
+    /**
+     * @return DateTimeImmutable|null
+     */
+    public function getCreatedAt(): ?DateTimeImmutable
+    {
+        return $this->createdAt;
+    }
+
     /**
      * @param DateTimeImmutable $createdAt
      * @return void
@@ -43,9 +52,9 @@ trait Timestampable
     /**
      * @return DateTimeImmutable|null
      */
-    public function getCreatedAt(): ?DateTimeImmutable
+    public function getUpdatedAt(): ?DateTimeImmutable
     {
-        return $this->createdAt;
+        return $this->updatedAt;
     }
 
     /**
@@ -55,13 +64,5 @@ trait Timestampable
     public function setUpdatedAt(DateTimeImmutable $updatedAt): void
     {
         $this->updatedAt = $updatedAt;
-    }
-
-    /**
-     * @return DateTimeImmutable|null
-     */
-    public function getUpdatedAt(): ?DateTimeImmutable
-    {
-        return $this->updatedAt;
     }
 }
