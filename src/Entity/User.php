@@ -19,6 +19,7 @@ final class User implements UserInterface
     use Identifiable, Timestampable;
 
     public const string ROLE_USER = 'ROLE_USER';
+    public const string ROLE_SUPER_ADMIN = 'ROLE_SUPER_ADMIN';
 
     /**
      * @var int|string|null
