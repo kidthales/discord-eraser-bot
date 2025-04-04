@@ -10,6 +10,7 @@ use App\Repository\UserRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Table(name: '`user`')]
@@ -25,12 +26,22 @@ final class User implements UserInterface
      * @var int|string|null
      */
     #[ORM\Column(name: 'discord_id', type: Types::BIGINT)]
+    #[Assert\NotNull]
+    // Discord snowflakes are 17-19 digits. https://discord.com/developers/docs/reference#snowflakes
+    #[Assert\Regex(pattern: '/^[1-9]\d{16,18}$/', message: 'This value is not a Discord Snowflake.', normalizer: 'strval')] // TODO: 20 digits max in 2090...
     private int|string|null $discordId = null;
 
     /**
      * @var string[]
      */
     #[ORM\Column(type: Types::JSON)]
+    #[Assert\AtLeastOneOf([
+        new Assert\Count(exactly: 0),
+        new Assert\Sequentially([
+            new Assert\Count(exactly: 1),
+            new Assert\Expression(expression: "'" . self::ROLE_SUPER_ADMIN . "' in value", message: "This collection should contain only '" . self::ROLE_SUPER_ADMIN . "'.")
+        ])
+    ])]
     private array $roles = [];
 
     /**
@@ -59,7 +70,7 @@ final class User implements UserInterface
         // guarantee every user at least has ROLE_USER
         $roles[] = self::ROLE_USER;
 
-        return array_unique($roles);
+        return array_values(array_unique($roles));
     }
 
     /**
