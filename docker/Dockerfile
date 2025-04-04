@@ -12,8 +12,6 @@ FROM frankenphp_upstream AS app_base
 
 WORKDIR /app
 
-VOLUME /app/var/
-
 # hadolint ignore=DL3018
 RUN apk add --no-cache \
 		acl \
@@ -69,6 +67,8 @@ CMD [ "frankenphp", "run", "--config", "/etc/caddy/Caddyfile", "--watch" ]
 
 # Prod app image
 FROM app_base AS app_prod
+
+VOLUME /app/var/
 
 ENV APP_ENV=prod
 

@@ -47,8 +47,9 @@ test: ## Start tests with phpunit, pass the parameter "c=" to add options to php
 	@$(eval c ?=)
 	@$(DOCKER_COMP) exec -e APP_ENV=test php bin/phpunit $(c)
 
-test-db: ## Create test database
+test-db: ## Create test database & run migrations
 	@$(SYMFONY) -e test doctrine:database:create
+	@$(SYMFONY) -e test doctrine:migrations:migrate --no-interaction
 
 ## —— Composer 🧙 ——————————————————————————————————————————————————————————————
 composer: ## Run composer, pass the parameter "c=" to run a given command, example: make composer c='req symfony/orm-pack'
