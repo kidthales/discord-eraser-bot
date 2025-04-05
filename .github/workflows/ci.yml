@@ -45,6 +45,9 @@ jobs:
       - name: Create test database
         run: cd docker && docker compose exec -T php bin/console -e test doctrine:database:create
 
+      - name: Run migrations
+        run: cd docker && docker compose exec -T php bin/console -e test doctrine:migrations:migrate --no-interaction
+
       - name: Run PHPUnit
         run: cd docker && docker compose exec -T -e XDEBUG_MODE=coverage php bin/phpunit --coverage-text --coverage-clover clover.xml --coverage-html coverage
 
