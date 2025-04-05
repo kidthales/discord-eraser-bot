@@ -23,12 +23,17 @@ final class User implements UserInterface
     public const string ROLE_SUPER_ADMIN = 'ROLE_SUPER_ADMIN';
 
     /**
+     * TODO: 20 digits max in 2090...
+     */
+    public const string DISCORD_ID_REGEX = '/^[1-9]\d{16,18}$/';
+
+    /**
      * @var int|string|null
      */
     #[ORM\Column(name: 'discord_id', type: Types::BIGINT)]
     #[Assert\NotNull]
     // Discord snowflakes are 17-19 digits. https://discord.com/developers/docs/reference#snowflakes
-    #[Assert\Regex(pattern: '/^[1-9]\d{16,18}$/', message: 'This value is not a Discord Snowflake.', normalizer: 'strval')] // TODO: 20 digits max in 2090...
+    #[Assert\Regex(pattern: self::DISCORD_ID_REGEX, message: 'This value is not a Discord Snowflake.', normalizer: 'strval')]
     private int|string|null $discordId = null;
 
     /**
