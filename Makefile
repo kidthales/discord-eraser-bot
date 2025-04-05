@@ -19,7 +19,7 @@ SYMFONY  = $(PHP) bin/console
 
 # Misc
 .DEFAULT_GOAL = help
-.PHONY        : help build up start down logs bash test test-db composer vendor sf cc own
+.PHONY        : help build up start down logs bash test test-db cov composer vendor sf cc own
 
 ## —— 🔥✉️🔥 Discord Eraser Bot Makefile 🔥✉️🔥 ————————————————————————————————
 help: ## Outputs this help screen
@@ -50,6 +50,10 @@ test: ## Start tests with phpunit, pass the parameter "c=" to add options to php
 test-db: ## Create test database & run migrations
 	@$(SYMFONY) -e test doctrine:database:create
 	@$(SYMFONY) -e test doctrine:migrations:migrate --no-interaction
+
+cov: ## Start tests with phpunit & coverage text, pass the parameter "c=" to add options to phpunit, example: make test c="--group e2e --stop-on-failure"
+	@$(eval c ?=)
+	@$(DOCKER_COMP) exec -e APP_ENV=test -e XDEBUG_MODE=coverage php bin/phpunit --coverage-text $(c)
 
 ## —— Composer 🧙 ——————————————————————————————————————————————————————————————
 composer: ## Run composer, pass the parameter "c=" to run a given command, example: make composer c='req symfony/orm-pack'

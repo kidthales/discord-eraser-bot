@@ -2,6 +2,8 @@
 
 Schedule message deletion tasks in your Discord servers.
 
+![CI](https://github.com/kidthales/discord-eraser-bot/workflows/CI/badge.svg)
+
 > [!WARNING]
 > Under active development. Please see the [MVP milestone](https://github.com/kidthales/discord-eraser-bot/milestone/1) for current status.
 

@@ -22,6 +22,15 @@ final class UserRepository extends ServiceEntityRepository
     }
 
     /**
+     * @param string $identifier
+     * @return User|null
+     */
+    public function findOneByUserIdentifier(string $identifier): ?User
+    {
+        return $this->findOneByDiscordId($identifier);
+    }
+
+    /**
      * @param int|string $discordId
      * @return User|null
      */
@@ -32,14 +41,5 @@ final class UserRepository extends ServiceEntityRepository
             ->setParameter('val', $discordId)
             ->getQuery()
             ->getOneOrNullResult();
-    }
-
-    /**
-     * @param string $identifier
-     * @return User|null
-     */
-    public function findOneByUserIdentifier(string $identifier): ?User
-    {
-        return $this->findOneByDiscordId($identifier);
     }
 }

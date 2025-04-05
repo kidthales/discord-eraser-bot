@@ -5,11 +5,20 @@ declare(strict_types=1);
 namespace App\Tests\Entity;
 
 use App\Entity\User;
+use DateTimeImmutable;
+use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\Exception\ORMException;
+use Doctrine\ORM\OptimisticLockException;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 final class UserTest extends KernelTestCase
 {
+    /**
+     * @var EntityManager|null
+     */
+    private ?EntityManager $entityManager;
+
     /**
      * @param int|string|null $discordId
      * @param array|null $roles
@@ -161,5 +170,43 @@ final class UserTest extends KernelTestCase
         for ($i = 0; $i < count($expected); ++$i) {
             self::assertSame($expected[$i], $roles[$i]);
         }
+    }
+
+    /**
+     * @return void
+     * @throws ORMException
+     * @throws OptimisticLockException
+     */
+    public function test_traits(): void
+    {
+        $user = self::getSubject(175928847299117063);
+        $this->entityManager->persist($user);
+        $this->entityManager->flush();
+
+        self::assertIsInt($user->getId());
+        self::assertInstanceOf(DateTimeImmutable::class, $user->getCreatedAt());
+        self::assertInstanceOf(DateTimeImmutable::class, $user->getUpdatedAt());
+    }
+
+    /**
+     * @return void
+     */
+    protected function setUp(): void
+    {
+        $this->entityManager = self::bootKernel()->getContainer()
+            ->get('doctrine')
+            ->getManager();
+    }
+
+    /**
+     * @return void
+     */
+    protected function tearDown(): void
+    {
+        parent::tearDown();
+
+        // doing this is recommended to avoid memory leaks
+        $this->entityManager->close();
+        $this->entityManager = null;
     }
 }
