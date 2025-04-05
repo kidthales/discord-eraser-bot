@@ -45,8 +45,30 @@ jobs:
       - name: Create test database
         run: cd docker && docker compose exec -T php bin/console -e test doctrine:database:create
 
+      - name: Run migrations
+        run: cd docker && docker compose exec -T php bin/console -e test doctrine:migrations:migrate --no-interaction
+
       - name: Run PHPUnit
-        run: cd docker && docker compose exec -T php bin/phpunit
+        run: cd docker && docker compose exec -T -e XDEBUG_MODE=coverage php bin/phpunit --coverage-text --coverage-clover clover.xml --coverage-html coverage
+
+      - name: Copy coverage report from container to runner
+        if: github.ref == 'refs/heads/main'
+        run: docker cp discord-eraser-bot-php-1:/app/coverage/ ./coverage && docker cp discord-eraser-bot-php-1:/app/clover.xml .
+
+      - name: Add badge to coverage report
+        uses: timkrase/phpunit-coverage-badge@v1.2.1
+        if: github.ref == 'refs/heads/main'
+        with:
+          coverage_badge_path: coverage/badge.svg
+          push_badge: false
+
+      - name: Publish coverage report
+        uses: peaceiris/actions-gh-pages@v4
+        if: github.ref == 'refs/heads/main'
+        with:
+          publish_branch: coverage-report
+          publish_dir: ./coverage
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
   lint:
     name: Docker Lint
