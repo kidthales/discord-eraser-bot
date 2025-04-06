@@ -1,5 +1,6 @@
 /.idea/
 /.vscode/
+/coverage/
 /docker/.env
 
 ###> symfony/framework-bundle ###

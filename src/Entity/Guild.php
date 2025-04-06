@@ -14,7 +14,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: GuildRepository::class)]
 #[ORM\Table(name: '`guild`')]
-#[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_DISCORD_ID', fields: ['discordId'])]
+#[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_GUILD_DISCORD_ID', fields: ['discordId'])]
 class Guild
 {
     use Identifiable, DiscordIdentifiable, Timestampable;
