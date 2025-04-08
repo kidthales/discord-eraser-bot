@@ -66,7 +66,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         run: |
           docker run --rm -v $(pwd):/data phpdoc/phpdoc
-          cp -r coverage .phpdoc/build
+          cp -r coverage .phpdoc/build/
 
       - name: Publish documentation and coverage report
         uses: peaceiris/actions-gh-pages@v4
