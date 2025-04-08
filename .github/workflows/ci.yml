@@ -62,18 +62,21 @@ jobs:
           coverage_badge_path: coverage/badge.svg
           push_badge: false
 
-      - name: Run phpDocumentor and include coverage report
+      - name: Run phpDocumentor
         #if: github.ref == 'refs/heads/main'
-        run: |
-          docker run --rm -v $(pwd):/data phpdoc/phpdoc
-          cd docker && docker compose run --rm php chown -R $(id -u):$(id -g) . && cd ..
-          ls -al
-          ls -al .phpdoc
-          cp -r coverage .phpdoc/build/
+        run: docker run --rm -v $(pwd):/data phpdoc/phpdoc
+
+      - name: Fix file and directory permissions
+        #if: github.ref == 'refs/heads/main'
+        run: cd docker && docker compose run --rm php chown -R $(id -u):$(id -g) .
+
+      - name: Copy coverage report to documentation
+        #if: github.ref == 'refs/heads/main'
+        run: cp -r coverage .phpdoc/build/
 
       - name: Publish documentation and coverage report
-        uses: peaceiris/actions-gh-pages@v4
         #if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v4
         with:
           publish_branch: docs
           publish_dir: ./.phpdoc/build
