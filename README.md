@@ -1,15 +1,30 @@
-# Discord Eraser Bot
-
-Schedule message deletion tasks in your Discord servers.
+<a name="readme-top"></a>
 
 [![CI](https://github.com/kidthales/discord-eraser-bot/workflows/CI/badge.svg)](https://github.com/kidthales/discord-eraser-bot/actions/workflows/ci.yml)
-[![Coverage](https://kidthales.com/discord-eraser-bot/badge.svg)](https://kidthales.com/discord-eraser-bot/)
+[![Coverage](https://kidthales.com/discord-eraser-bot/coverage/badge.svg)](https://kidthales.com/discord-eraser-bot/coverage/)
+[![License](https://img.shields.io/badge/License-AGPL_3.0_Only-blue)](https://github.com/kidthales/discord-eraser-bot/blob/main/LICENSE)
 
-> [!WARNING]
-> Under active development. Please see the [MVP milestone](https://github.com/kidthales/discord-eraser-bot/milestone/1) for current status.
+<br />
 
-> [!NOTE]
-> [Design Document](https://github.com/kidthales/discord-eraser-bot/wiki/Design)
+<div align="center" style="background-color: #721c24">
+    <p align="center"><strong>Under active development. Not production ready.</strong></p>
+</div>
+
+<div align="center">
+    <h1 align="center">Discord Eraser Bot</h1>
+    <p align="center">
+        Schedule message deletion tasks in your Discord servers.
+        <br />
+        <a href="https://kidthales.com/discord-eraser-bot/"><strong>Explore the docs »</strong></a>
+        <br />
+        <br />
+        <a href="https://github.com/kidthales/discord-eraser-bot/wiki/Design">Design Doc</a>
+        ·
+        <a href="https://github.com/kidthales/discord-eraser-bot/milestone/1">Milestone: MVP</a>
+        ·
+        <a href="https://github.com/kidthales/discord-eraser-bot/issues">Request Feature</a>
+    </p>
+</div>
 
 ## Development with Docker
 
