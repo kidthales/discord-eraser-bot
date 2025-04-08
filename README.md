@@ -6,7 +6,7 @@
 
 <br />
 
-<div align="center" style="background-color: #721c24">
+<div align="center">
     <p align="center"><strong>Under active development. Not production ready.</strong></p>
 </div>
 
