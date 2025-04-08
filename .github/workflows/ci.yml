@@ -52,25 +52,27 @@ jobs:
         run: cd docker && docker compose exec -T -e XDEBUG_MODE=coverage php bin/phpunit --coverage-text --coverage-clover clover.xml --coverage-html coverage
 
       - name: Copy coverage report from container to runner
-        if: github.ref == 'refs/heads/main'
+        #if: github.ref == 'refs/heads/main'
         run: docker cp discord-eraser-bot-php-1:/app/coverage/ ./coverage && docker cp discord-eraser-bot-php-1:/app/clover.xml .
 
       - name: Add badge to coverage report
         uses: timkrase/phpunit-coverage-badge@v1.2.1
-        if: github.ref == 'refs/heads/main'
+        #if: github.ref == 'refs/heads/main'
         with:
           coverage_badge_path: coverage/badge.svg
           push_badge: false
 
       - name: Run phpDocumentor and include coverage report
-        if: github.ref == 'refs/heads/main'
+        #if: github.ref == 'refs/heads/main'
         run: |
+          echo $(pwd)
           docker run --rm -v $(pwd):/data phpdoc/phpdoc
+          ls -al
           cp -r coverage .phpdoc/build/
 
       - name: Publish documentation and coverage report
         uses: peaceiris/actions-gh-pages@v4
-        if: github.ref == 'refs/heads/main'
+        #if: github.ref == 'refs/heads/main'
         with:
           publish_branch: docs
           publish_dir: ./.phpdoc/build
