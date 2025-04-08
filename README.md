@@ -36,3 +36,5 @@
 | Run Unit Tests                         | `test`      | `docker compose exec -e APP_ENV=test php bin/phpunit`                                         |
 | Run Unit Tests with Coverage Reporting | `cov`       | `docker compose exec -e APP_ENV=test -e XDEBUG_MODE=coverage php bin/phpunit --coverage-text` |
 | Build Production Image                 |             | `IMAGES_PREFIX=my-prefix/ IMAGES_TAG=my-tag docker buildx bake`                               |
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>

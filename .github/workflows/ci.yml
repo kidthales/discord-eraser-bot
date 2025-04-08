@@ -65,8 +65,8 @@ jobs:
       - name: Run phpDocumentor and include coverage report
         #if: github.ref == 'refs/heads/main'
         run: |
-          echo $(pwd)
           docker run --rm -v $(pwd):/data phpdoc/phpdoc
+          cd docker && docker compose run --rm php chown -R $(id -u):$(id -g) .
           ls -al
           ls -al .phpdoc
           cp -r coverage .phpdoc/build/
