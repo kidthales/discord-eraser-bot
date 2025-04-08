@@ -66,7 +66,7 @@ jobs:
         #if: github.ref == 'refs/heads/main'
         run: |
           docker run --rm -v $(pwd):/data phpdoc/phpdoc
-          cd docker && docker compose run --rm php chown -R $(id -u):$(id -g) .
+          cd docker && docker compose run --rm php chown -R $(id -u):$(id -g) . && cd ..
           ls -al
           ls -al .phpdoc
           cp -r coverage .phpdoc/build/
