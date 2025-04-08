@@ -68,6 +68,7 @@ jobs:
           echo $(pwd)
           docker run --rm -v $(pwd):/data phpdoc/phpdoc
           ls -al
+          ls -al .phpdoc
           cp -r coverage .phpdoc/build/
 
       - name: Publish documentation and coverage report
