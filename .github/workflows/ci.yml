@@ -48,7 +48,7 @@ jobs:
       - name: Run migrations
         run: cd docker && docker compose exec -T php bin/console -e test doctrine:migrations:migrate --no-interaction
 
-      - name: Run PHPUnit
+      - name: Run PHPUnit with coverage reporting
         run: cd docker && docker compose exec -T -e XDEBUG_MODE=coverage php bin/phpunit --coverage-text --coverage-clover clover.xml --coverage-html coverage
 
       - name: Copy coverage report from container to runner
@@ -62,12 +62,18 @@ jobs:
           coverage_badge_path: coverage/badge.svg
           push_badge: false
 
-      - name: Publish coverage report
+      - name: Run phpDocumentor and include coverage report
+        if: github.ref == 'refs/heads/main'
+        run: |
+          docker run --rm -v $(pwd):/data phpdoc/phpdoc
+          cp -r coverage .phpdoc/build
+
+      - name: Publish documentation and coverage report
         uses: peaceiris/actions-gh-pages@v4
         if: github.ref == 'refs/heads/main'
         with:
-          publish_branch: coverage-report
-          publish_dir: ./coverage
+          publish_branch: docs
+          publish_dir: ./.phpdoc/build
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
   lint:
