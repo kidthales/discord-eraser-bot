@@ -67,6 +67,7 @@ final class User implements UserInterface
 
     /**
      * @return void
+     * @codeCoverageIgnore
      */
     public function eraseCredentials(): void
     {

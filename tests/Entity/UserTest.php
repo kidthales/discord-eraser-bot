@@ -73,7 +73,7 @@ final class UserTest extends KernelTestCase
         $errorCode = 'f27e6d6c-261a-4056-b391-6673a623531c';
 
         $errorSuperOnly = [
-            'message' =>$errorMessagePrefix . "[2] This collection should contain only 'ROLE_SUPER_ADMIN'.",
+            'message' => $errorMessagePrefix . "[2] This collection should contain only 'ROLE_SUPER_ADMIN'.",
             'code' => $errorCode
         ];
 
@@ -102,7 +102,6 @@ final class UserTest extends KernelTestCase
      */
     public function test_validation(User $user, ?array $expectedError): void
     {
-        self::bootKernel();
         /** @var ValidatorInterface $validator */
         $validator = self::getContainer()->get(ValidatorInterface::class);
 

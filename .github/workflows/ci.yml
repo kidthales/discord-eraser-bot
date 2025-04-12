@@ -42,6 +42,9 @@ jobs:
       - name: Check HTTP reachability
         run: curl -v --fail-with-body http://localhost
 
+      #- name: Check HTTPS reachability
+      #  run: curl -vk --fail-with-body https://localhost
+
       - name: Create test database
         run: cd docker && docker compose exec -T php bin/console -e test doctrine:database:create
 
@@ -50,6 +53,9 @@ jobs:
 
       - name: Run PHPUnit with coverage reporting
         run: cd docker && docker compose exec -T -e XDEBUG_MODE=coverage php bin/phpunit --coverage-text --coverage-clover clover.xml --coverage-html coverage
+
+      - name: Doctrine Schema Validator
+        run: cd docker && docker compose exec -T php bin/console -e test doctrine:schema:validate
 
       - name: Copy coverage report from container to runner
         if: github.ref == 'refs/heads/main'
