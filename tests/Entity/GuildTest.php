@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Tests\Entity;
 
 use App\Entity\Guild;
-use App\Entity\User;
 use App\Tests\EntityManageable;
 use DateTimeImmutable;
 use Doctrine\ORM\Exception\ORMException;

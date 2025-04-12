@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Dto\Discord\ApplicationAuthorizedWebhookEventBody;
 use App\Dto\Discord\WebhookEventPayload;
 use App\Entity\Guild;
 use App\Entity\User;
@@ -69,6 +68,7 @@ final class DiscordController extends AbstractController
                                 if (count($errors) === 0) {
                                     try {
                                         $guildRepository->add($guild, true);
+                                        // @codeCoverageIgnoreStart
                                     } catch (Throwable $e) {
                                         $logger->critical(
                                             'Encountered an unexpected error while upserting guild {discordId}',
@@ -78,6 +78,7 @@ final class DiscordController extends AbstractController
                                             ]
                                         );
                                     }
+                                    // @codeCoverageIgnoreEnd
                                 } else {
                                     $logger->critical(
                                         'Encountered a validator error while creating guild {discordId}',
