@@ -8,8 +8,7 @@ Schedule message deletion tasks in your Discord servers.
 
 > [!WARNING]
 > Under active development. Not production ready.
-
-> [!NOTE]
+>
 > [Design Doc](https://github.com/kidthales/discord-eraser-bot/wiki/Design) · [Milestone: MVP](https://github.com/kidthales/discord-eraser-bot/milestone/1)
 
 ## Requirements
