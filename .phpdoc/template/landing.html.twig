@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <section>
+        <hgroup>
+            <h2>Schedule Message Deletion Tasks in Your Discord Servers</h2>
+            <mark>Under active development. Not production ready.</mark>
+        </hgroup>
+
+        <section>
+            <h3>Documentation</h3>
+
+            {% set node = project.namespace %}
+
+            {{
+            include(
+                'components/table-of-contents.html.twig',
+                {
+                    'node': project.namespace,
+                    'namespaces': usesNamespaces or not usesPackages ? node.children : [],
+                    'packages': usesPackages ? project.package.children : []
+                }
+            )
+            }}
+            {{ include('components/constants.html.twig', {'node': project.namespace}) }}
+            {{ include('components/functions.html.twig', {'node': project.namespace}) }}
+        </section>
+    </section>
+{% endblock %}

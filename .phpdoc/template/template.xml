@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template>
+    <name>Discord Eraser Bot</name>
+    <author>kidthales</author>
+    <email>kidthales@agogpixel.com</email>
+    <version>0.0.0</version>
+    <extends>default</extends>
+    <transformations>
+        <transformation writer="twig" source="landing.html.twig" artifact="index.html"/>
+    </transformations>
+</template>
