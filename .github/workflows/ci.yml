@@ -48,11 +48,11 @@ jobs:
       - name: Run migrations
         run: cd docker && docker compose exec -T php bin/console -e test doctrine:migrations:migrate --no-interaction
 
-      - name: Doctrine Schema Validator
-        run: cd docker && docker compose exec -T php bin/console -e test doctrine:schema:validate
-
       - name: Run PHPUnit with coverage reporting
         run: cd docker && docker compose exec -T -e XDEBUG_MODE=coverage php bin/phpunit --coverage-text --coverage-clover clover.xml --coverage-html coverage
+
+      - name: Doctrine Schema Validator
+        run: cd docker && docker compose exec -T php bin/console -e test doctrine:schema:validate
 
       - name: Copy coverage report from container to runner
         if: github.ref == 'refs/heads/main'
