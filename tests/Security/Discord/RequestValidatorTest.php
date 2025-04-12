@@ -15,7 +15,7 @@ final class RequestValidatorTest extends KernelTestCase
     /**
      * @return RequestValidator
      */
-    static private function getSubject(): RequestValidator
+    private static function getSubject(): RequestValidator
     {
         return self::getContainer()->get(RequestValidator::class);
     }

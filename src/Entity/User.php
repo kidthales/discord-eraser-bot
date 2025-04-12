@@ -62,7 +62,7 @@ final class User implements UserInterface
      */
     public function getUserIdentifier(): string
     {
-        return (string) $this->discordId;
+        return (string)$this->discordId;
     }
 
     /**

@@ -25,13 +25,11 @@ final class UserDemoteCommand extends UserCommand
      */
     protected function configure(): void
     {
-        $this
-            ->addArgument(
-                self::ARGUMENT_NAME_DISCORD_ID,
-                InputArgument::REQUIRED,
-                self::ARGUMENT_DESCRIPTION_DISCORD_ID
-            )
-        ;
+        $this->addArgument(
+            self::ARGUMENT_NAME_DISCORD_ID,
+            InputArgument::REQUIRED,
+            self::ARGUMENT_DESCRIPTION_DISCORD_ID
+        );
     }
 
     /**

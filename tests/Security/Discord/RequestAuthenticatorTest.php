@@ -28,7 +28,7 @@ final class RequestAuthenticatorTest extends KernelTestCase
     /**
      * @return RequestAuthenticator
      */
-    static private function getSubject(): RequestAuthenticator
+    private static function getSubject(): RequestAuthenticator
     {
         return self::getContainer()->get(RequestAuthenticator::class);
     }
