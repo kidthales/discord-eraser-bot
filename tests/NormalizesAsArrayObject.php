@@ -27,8 +27,8 @@ class NormalizesAsArrayObject extends NormalizesAsEmptyArrayObject
      */
     public function normalize(
         NormalizerInterface $normalizer,
-        ?string $format = null,
-        array $context = []
+        ?string             $format = null,
+        array               $context = []
     ): array|string|int|float|bool|ArrayObject|null
     {
         return new ArrayObject([

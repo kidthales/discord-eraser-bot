@@ -6,7 +6,6 @@ namespace App\Tests\Command;
 
 use App\Tests\CommandTestable;
 use App\Tests\Entity\GuildTest;
-use App\Tests\Entity\UserTest;
 use App\Tests\EntityManageable;
 use Doctrine\ORM\Exception\ORMException;
 use Doctrine\ORM\OptimisticLockException;
@@ -20,7 +19,7 @@ class GuildListCommandTest extends KernelTestCase
     /**
      * @return CommandTester
      */
-    static public function getSubject(): CommandTester
+    private static function getSubject(): CommandTester
     {
         return self::getCommandTester('app:guild:list');
     }

@@ -7,6 +7,7 @@ namespace App\Tests;
 use ArrayObject;
 use Symfony\Component\Serializer\Normalizer\NormalizableInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+
 class NormalizesAsEmptyArrayObject implements NormalizableInterface
 {
     /**

@@ -11,7 +11,7 @@ trait CommandTestable
      * @param string $commandName
      * @return CommandTester
      */
-    static protected function getCommandTester(string $commandName): CommandTester
+    protected static function getCommandTester(string $commandName): CommandTester
     {
         return new CommandTester(new Application(self::$kernel)->find($commandName));
     }

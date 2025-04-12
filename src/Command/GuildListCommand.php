@@ -39,7 +39,7 @@ final class GuildListCommand extends Command
     {
         $this->io->title('Guild: List');
 
-        $this->io->table(['ID', 'Discord ID', 'Installed', 'Created', 'Updated'], array_map(fn (Guild $guild) => [
+        $this->io->table(['ID', 'Discord ID', 'Installed', 'Created', 'Updated'], array_map(fn(Guild $guild) => [
             $guild->getId(),
             $guild->getDiscordId(),
             $guild->getInstalled(),

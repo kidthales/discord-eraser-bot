@@ -19,7 +19,7 @@ class UserListCommandTest extends KernelTestCase
     /**
      * @return CommandTester
      */
-    static public function getSubject(): CommandTester
+    private static function getSubject(): CommandTester
     {
         return self::getCommandTester('app:user:list');
     }

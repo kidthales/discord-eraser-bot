@@ -14,14 +14,6 @@ use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 final class DefinitionListConverterTest extends KernelTestCase
 {
     /**
-     * @return DefinitionListConverter
-     */
-    static private function getSubject(): DefinitionListConverter
-    {
-        return new DefinitionListConverter(self::getContainer()->get(NormalizerInterface::class));
-    }
-
-    /**
      * @return array
      */
     public static function provider_convert(): array
@@ -65,6 +57,14 @@ final class DefinitionListConverterTest extends KernelTestCase
                 ]
             ]
         ];
+    }
+
+    /**
+     * @return DefinitionListConverter
+     */
+    private static function getSubject(): DefinitionListConverter
+    {
+        return new DefinitionListConverter(self::getContainer()->get(NormalizerInterface::class));
     }
 
     /**

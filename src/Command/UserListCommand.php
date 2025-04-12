@@ -23,7 +23,7 @@ final class UserListCommand extends UserCommand
     {
         $this->io->title('User: List');
 
-        $this->io->table(['ID', 'Discord ID', 'Roles', 'Created', 'Updated'], array_map(fn (User $user) => [
+        $this->io->table(['ID', 'Discord ID', 'Roles', 'Created', 'Updated'], array_map(fn(User $user) => [
             $user->getId(),
             $user->getDiscordId(),
             implode(' ', $user->getRoles()),
