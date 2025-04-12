@@ -66,7 +66,10 @@ final class RequestAuthenticatorTest extends KernelTestCase
         $result = $subject->authenticate($request);
 
         self::assertInstanceOf(SelfValidatingPassport::class, $result);
-        self::assertSame('discord_agent', $result->getBadge(UserBadge::class)->getUserIdentifier());
+        self::assertSame(
+            RequestAuthenticator::DISCORD_AGENT_USER_IDENTIFIER,
+            $result->getBadge(UserBadge::class)->getUserIdentifier()
+        );
     }
 
     /**
@@ -87,7 +90,10 @@ final class RequestAuthenticatorTest extends KernelTestCase
         $result = $subject->authenticate($request);
 
         self::assertInstanceOf(SelfValidatingPassport::class, $result);
-        self::assertSame('discord_agent', $result->getBadge(UserBadge::class)->getUserIdentifier());
+        self::assertSame(
+            RequestAuthenticator::DISCORD_AGENT_USER_IDENTIFIER,
+            $result->getBadge(UserBadge::class)->getUserIdentifier()
+        );
     }
 
     /**
@@ -102,13 +108,19 @@ final class RequestAuthenticatorTest extends KernelTestCase
         self::getContainer()->set(RequestValidator::class, $validator);
 
         $subject = self::getSubject();
-        $request = Request::create(uri: '/', content: '{"type":' . WebhookType::Event->value . ',"event":{"type":"' . WebhookEventBodyType::ApplicationAuthorized->value . '"}}');
+        $request = Request::create(
+            uri: '/',
+            content: '{"type":' . WebhookType::Event->value . ',"event":{"type":"' . WebhookEventBodyType::ApplicationAuthorized->value . '"}}'
+        );
         $request->attributes->set('_route', DiscordController::WEBHOOK_EVENT_ROUTE_NAME);
 
         $result = $subject->authenticate($request);
 
         self::assertInstanceOf(SelfValidatingPassport::class, $result);
-        self::assertSame('discord_agent', $result->getBadge(UserBadge::class)->getUserIdentifier());
+        self::assertSame(
+            RequestAuthenticator::DISCORD_AGENT_USER_IDENTIFIER,
+            $result->getBadge(UserBadge::class)->getUserIdentifier()
+        );
     }
 
     /**
@@ -132,7 +144,10 @@ final class RequestAuthenticatorTest extends KernelTestCase
         $result = $subject->authenticate($request);
 
         self::assertInstanceOf(SelfValidatingPassport::class, $result);
-        self::assertSame('discord_agent', $result->getBadge(UserBadge::class)->getUserIdentifier());
+        self::assertSame(
+            RequestAuthenticator::DISCORD_AGENT_USER_IDENTIFIER,
+            $result->getBadge(UserBadge::class)->getUserIdentifier()
+        );
     }
 
     /**
@@ -156,7 +171,10 @@ final class RequestAuthenticatorTest extends KernelTestCase
         $result = $subject->authenticate($request);
 
         self::assertInstanceOf(SelfValidatingPassport::class, $result);
-        self::assertSame('175928847299117063', $result->getBadge(UserBadge::class)->getUserIdentifier());
+        self::assertSame(
+            '175928847299117063',
+            $result->getBadge(UserBadge::class)->getUserIdentifier()
+        );
     }
 
     /**
@@ -171,13 +189,19 @@ final class RequestAuthenticatorTest extends KernelTestCase
         self::getContainer()->set(RequestValidator::class, $validator);
 
         $subject = self::getSubject();
-        $request = Request::create(uri: '/', content: '{"type":' . WebhookType::Event->value . ',"event":{"type":"' . WebhookEventBodyType::EntitlementCreate->value . '"}}');
+        $request = Request::create(
+            uri: '/',
+            content: '{"type":' . WebhookType::Event->value . ',"event":{"type":"' . WebhookEventBodyType::EntitlementCreate->value . '"}}'
+        );
         $request->attributes->set('_route', DiscordController::WEBHOOK_EVENT_ROUTE_NAME);
 
         $result = $subject->authenticate($request);
 
         self::assertInstanceOf(SelfValidatingPassport::class, $result);
-        self::assertSame('discord_agent', $result->getBadge(UserBadge::class)->getUserIdentifier());
+        self::assertSame(
+            RequestAuthenticator::DISCORD_AGENT_USER_IDENTIFIER,
+            $result->getBadge(UserBadge::class)->getUserIdentifier()
+        );
     }
 
     /**
@@ -192,13 +216,19 @@ final class RequestAuthenticatorTest extends KernelTestCase
         self::getContainer()->set(RequestValidator::class, $validator);
 
         $subject = self::getSubject();
-        $request = Request::create(uri: '/', content: '{"type":' . WebhookType::Event->value . ',"event":{"type":"' . WebhookEventBodyType::QuestUserEnrollment->value . '"}}');
+        $request = Request::create(
+            uri: '/',
+            content: '{"type":' . WebhookType::Event->value . ',"event":{"type":"' . WebhookEventBodyType::QuestUserEnrollment->value . '"}}'
+        );
         $request->attributes->set('_route', DiscordController::WEBHOOK_EVENT_ROUTE_NAME);
 
         $result = $subject->authenticate($request);
 
         self::assertInstanceOf(SelfValidatingPassport::class, $result);
-        self::assertSame('discord_agent', $result->getBadge(UserBadge::class)->getUserIdentifier());
+        self::assertSame(
+            RequestAuthenticator::DISCORD_AGENT_USER_IDENTIFIER,
+            $result->getBadge(UserBadge::class)->getUserIdentifier()
+        );
     }
 
     /**
@@ -213,13 +243,19 @@ final class RequestAuthenticatorTest extends KernelTestCase
         self::getContainer()->set(RequestValidator::class, $validator);
 
         $subject = self::getSubject();
-        $request = Request::create(uri: '/', content: '{"type":' . WebhookType::Event->value . ',"event":{"type":"failit"}}');
+        $request = Request::create(
+            uri: '/',
+            content: '{"type":' . WebhookType::Event->value . ',"event":{"type":"failit"}}'
+        );
         $request->attributes->set('_route', DiscordController::WEBHOOK_EVENT_ROUTE_NAME);
 
         $result = $subject->authenticate($request);
 
         self::assertInstanceOf(SelfValidatingPassport::class, $result);
-        self::assertSame('discord_agent', $result->getBadge(UserBadge::class)->getUserIdentifier());
+        self::assertSame(
+            RequestAuthenticator::DISCORD_AGENT_USER_IDENTIFIER,
+            $result->getBadge(UserBadge::class)->getUserIdentifier()
+        );
     }
 
     /**
@@ -240,7 +276,10 @@ final class RequestAuthenticatorTest extends KernelTestCase
         $result = $subject->authenticate($request);
 
         self::assertInstanceOf(SelfValidatingPassport::class, $result);
-        self::assertSame('discord_agent', $result->getBadge(UserBadge::class)->getUserIdentifier());
+        self::assertSame(
+            RequestAuthenticator::DISCORD_AGENT_USER_IDENTIFIER,
+            $result->getBadge(UserBadge::class)->getUserIdentifier()
+        );
     }
 
     /**

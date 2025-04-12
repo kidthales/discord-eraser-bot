@@ -27,6 +27,8 @@ use Throwable;
 
 final class RequestAuthenticator extends AbstractAuthenticator
 {
+    public const string DISCORD_AGENT_USER_IDENTIFIER = 'discord_agent';
+
     /**
      * @param RequestValidator $requestValidator
      * @param LoggerInterface $logger
@@ -150,13 +152,13 @@ final class RequestAuthenticator extends AbstractAuthenticator
                 }
             }
 
-            $this->logger->info('Falling back to user discord_agent');
+            $this->logger->info('Falling back to user ' . self::DISCORD_AGENT_USER_IDENTIFIER);
         } else if ($type !== WebhookType::PING->value) {
             $this->logger->error('Unknown webhook type ' . $type);
-            $this->logger->info('Falling back to user discord_agent');
+            $this->logger->info('Falling back to user ' . self::DISCORD_AGENT_USER_IDENTIFIER);
         }
 
-        return 'discord_agent';
+        return self::DISCORD_AGENT_USER_IDENTIFIER;
     }
 
     /**

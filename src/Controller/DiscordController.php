@@ -36,7 +36,12 @@ final class DiscordController extends AbstractController
      * @param Security $security
      * @return JsonResponse
      */
-    #[Route(path: self::WEBHOOK_EVENT_ROUTE_PATH, name: self::WEBHOOK_EVENT_ROUTE_NAME, methods: ['POST'], stateless: true)]
+    #[Route(
+        path: self::WEBHOOK_EVENT_ROUTE_PATH,
+        name: self::WEBHOOK_EVENT_ROUTE_NAME,
+        methods: ['POST'],
+        stateless: true
+    )]
     public function webhookEvent(
         #[MapRequestPayload] WebhookEventPayload $payload,
         GuildRepository                          $guildRepository,
