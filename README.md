@@ -6,6 +6,9 @@
 
 Schedule message deletion tasks in your Discord servers.
 
+> [!IMPORTANT]
+> For usage guides & other information, please refer to the [documentation](https://kidthales.com/discord-eraser-bot/).
+
 > [!WARNING]
 > Under active development. Not production ready.
 >
