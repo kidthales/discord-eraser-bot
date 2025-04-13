@@ -7,7 +7,9 @@
 Schedule message deletion tasks in your Discord servers.
 
 > [!IMPORTANT]
-> For usage guides & other information, please refer to the [documentation](https://kidthales.com/discord-eraser-bot/).
+> This README is a development guide.
+>
+> For high-level usage guides & other details about what the bot does, please refer to this [documentation](https://kidthales.com/discord-eraser-bot/).
 
 > [!WARNING]
 > Under active development. Not production ready.
@@ -30,10 +32,30 @@ Schedule message deletion tasks in your Discord servers.
 | Show Live Logs                         | `logs`                                 | `docker compose logs --tail=0 --follow`                                                                                                                                    |
 | Prepare Test Database                  | `test-db`                              | `docker compose exec php php bin/console -e test doctrine:database:create && docker compose exec php php bin/console -e test doctrine:migrations:migrate --no-interaction` |
 | Run Unit Tests                         | `test` _(also prepares test database)_ | `docker compose exec -e APP_ENV=test php bin/phpunit`                                                                                                                      |
-| Run Unit Tests with Coverage Reporting | `cov` _(also prepares test database)_  | `docker compose exec -e APP_ENV=test -e XDEBUG_MODE=coverage php bin/phpunit --coverage-text`                                                                              |
+| Run Unit Tests with Coverage Reporting | `cov` _(also prepares test database)_  | `docker compose exec -e APP_ENV=test -e XDEBUG_MODE=coverage php bin/phpunit --coverage-text --coverage-html coverage`                                                     |
 | Build Docs                             | `docs`                                 | `docker run --rm -v $(pwd):/data phpdoc/phpdoc`                                                                                                                            |
 | Build Production Image                 |                                        | `IMAGES_PREFIX=my-prefix/ IMAGES_TAG=my-tag docker buildx bake`                                                                                                            |
 
 > [!TIP]
-> The Makefile provides many more development shortcuts!
+> The Makefile provides many more development shortcuts.
+>
 > Run `make` or `make help` in the project's root directory to show the Makefile help screen.
+
+## Environment Variables
+
+| Name                            | Level       | Description |
+|---------------------------------|-------------|-------------|
+| `APP_ENV`                       | `container` | TODO        |
+| `APP_SECRET`                    | `symfony`   | TODO        |
+| `CADDY_EXTRA_CONFIG`            | `container` | TODO        |
+| `CADDY_SERVER_EXTRA_DIRECTIVES` | `container` | TODO        |
+| `CADDY_SERVER_LOG_OPTIONS`      | `container` | TODO        |
+| `DATABASE_URL`                  | `container` | TODO        |
+| `DISCORD_APP_PUBLIC_KEY`        | `symfony`   | TODO        |
+| `DISCORD_OAUTH2_CLIENT_ID`      | `symfony`   | TODO        |
+| `DISCORD_OAUTH2_CLIENT_SECRET`  | `symfony`   | TODO        |
+| `FRANKENPHP_WORKER_CONFIG`      | `container` | TODO        |
+| `PHP_DATE_TIMEZONE`             | `container` | TODO        |
+| `SERVER_NAME`                   | `container` | TODO        |
+| `TZ`                            | `container` | TODO        |
+| `XDEBUG_MODE`                   | `container` | TODO        |
