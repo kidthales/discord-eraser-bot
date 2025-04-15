@@ -47,13 +47,16 @@ test: test-db ## Start tests with phpunit, pass the parameter "c=" to add option
 	@$(eval c ?=)
 	@$(DOCKER_COMP) exec -e APP_ENV=test php bin/phpunit $(c)
 
-cov: test-db ## Start tests with phpunit & coverage text, pass the parameter "c=" to add options to phpunit, example: make test c="--group e2e --stop-on-failure"
+cov: test-db ## Start tests with phpunit & generates coverage text & html, pass the parameter "c=" to add options to phpunit, example: make test c="--group e2e --stop-on-failure"
 	@$(eval c ?=)
-	@$(DOCKER_COMP) exec -e APP_ENV=test -e XDEBUG_MODE=coverage php bin/phpunit --coverage-text $(c)
+	@$(DOCKER_COMP) exec -e APP_ENV=test -e XDEBUG_MODE=coverage php bin/phpunit --coverage-text --coverage-html coverage $(c)
 
 test-db: ## Create test database & run migrations
 	@$(SYMFONY) -e test doctrine:database:create
 	@$(SYMFONY) -e test doctrine:migrations:migrate --no-interaction
+
+docs: ## Run phpDocumentor to generate this project's documentation
+	docker run --rm -v $(ROOT_PATH):/data phpdoc/phpdoc
 
 ## —— Composer 🧙 ——————————————————————————————————————————————————————————————
 composer: ## Run composer, pass the parameter "c=" to run a given command, example: make composer c='req symfony/orm-pack'
