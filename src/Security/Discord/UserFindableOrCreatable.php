@@ -16,19 +16,25 @@ trait UserFindableOrCreatable
      */
     private function findOrCreateUser(string $discordId): User
     {
-        $user = $this->userRepository->findOneByDiscordId($discordId);
+        return $this->userRepository->findOneByDiscordId($discordId) ?? $this->createUser($discordId);
+    }
 
-        if ($user === null) {
-            $user = new User();
-            $user->setDiscordId($discordId);
+    /**
+     * @param string $discordId
+     * @return User
+     * @throws ValidatorException
+     */
+    private function createUser(string $discordId): User
+    {
+        $user = new User();
+        $user->setDiscordId($discordId);
 
-            $errors = $this->validator->validate($user);
-            if (count($errors) > 0) {
-                throw new ValidatorException((string)$errors);
-            }
-
-            $this->userRepository->add($user, true);
+        $errors = $this->validator->validate($user);
+        if (count($errors) > 0) {
+            throw new ValidatorException((string)$errors);
         }
+
+        $this->userRepository->add($user, true);
 
         return $user;
     }

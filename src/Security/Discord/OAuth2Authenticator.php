@@ -5,11 +5,13 @@ declare(strict_types=1);
 namespace App\Security\Discord;
 
 use App\Controller\DiscordController;
+use App\Entity\User;
 use App\Repository\UserRepository;
 use App\Security\AuthenticationEntryPoint;
 use KnpU\OAuth2ClientBundle\Client\ClientRegistry;
 use KnpU\OAuth2ClientBundle\Security\Authenticator\OAuth2Authenticator as BaseOAuth2Authenticator;
 use Psr\Log\LoggerInterface;
+use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Component\ErrorHandler\Exception\FlattenException;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -37,13 +39,15 @@ final class OAuth2Authenticator extends BaseOAuth2Authenticator
      * @param UserRepository $userRepository
      * @param ValidatorInterface $validator
      * @param RouterInterface $router
+     * @param Security $security
      */
     public function __construct(
-        private readonly ClientRegistry         $registry,
-        private readonly LoggerInterface        $logger,
-        private readonly UserRepository         $userRepository,
-        private readonly ValidatorInterface     $validator,
-        private readonly RouterInterface        $router
+        private readonly ClientRegistry     $registry,
+        private readonly LoggerInterface    $logger,
+        private readonly UserRepository     $userRepository,
+        private readonly ValidatorInterface $validator,
+        private readonly RouterInterface    $router,
+        private readonly Security           $security
     )
     {
     }
@@ -88,10 +92,16 @@ final class OAuth2Authenticator extends BaseOAuth2Authenticator
                     return null;
                 }
 
+                $user = $this->userRepository->findOneByDiscordId($discordId);
+
+                if ($user !== null && $this->security->isGranted(User::ROLE_SUPER_ADMIN)) {
+                    return $user;
+                }
+
                 // TODO: Discord guild access checks...
 
                 try {
-                    return $this->findOrCreateUser($discordId);
+                    return $this->createUser($discordId);
                 } catch (Throwable $e) {
                     $this->logger->critical(
                         $e instanceof ValidatorException
