@@ -163,7 +163,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/DiscordController.php"><a href="files/src-controller-discordcontroller.html"><abbr title="src/Controller/DiscordController.php">DiscordController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">24</span>
+    <span class="phpdocumentor-element-found-in__line">26</span>
 
     </aside>
 
@@ -209,6 +209,30 @@
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a class="" href="classes/App-Controller-DiscordController.html#constant_OAUTH2_CHECK_ROUTE_NAME">OAUTH2_CHECK_ROUTE_NAME</a>
+    <span>
+        &nbsp;= &#039;discord_oauth2_check&#039;                            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a class="" href="classes/App-Controller-DiscordController.html#constant_OAUTH2_CHECK_ROUTE_PATH">OAUTH2_CHECK_ROUTE_PATH</a>
+    <span>
+        &nbsp;= &#039;discord/oauth2-check&#039;                            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a class="" href="classes/App-Controller-DiscordController.html#constant_OAUTH2_ROUTE_NAME">OAUTH2_ROUTE_NAME</a>
+    <span>
+        &nbsp;= &#039;discord_oauth2&#039;                            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a class="" href="classes/App-Controller-DiscordController.html#constant_OAUTH2_ROUTE_PATH">OAUTH2_ROUTE_PATH</a>
+    <span>
+        &nbsp;= &#039;/discord/oauth2&#039;                            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a class="" href="classes/App-Controller-DiscordController.html#constant_WEBHOOK_EVENT_ROUTE_NAME">WEBHOOK_EVENT_ROUTE_NAME</a>
     <span>
         &nbsp;= &#039;discord_webhook_event&#039;                            </span>
@@ -231,6 +255,18 @@
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/App-Controller-DiscordController.html#method_oauth2">oauth2()</a>
+    <span>
+                                &nbsp;: <abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr>    </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/App-Controller-DiscordController.html#method_oauth2Check">oauth2Check()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/App-Controller-DiscordController.html#method_webhookEvent">webhookEvent()</a>
     <span>
                                 &nbsp;: <abbr title="\Symfony\Component\HttpFoundation\JsonResponse">JsonResponse</abbr>    </span>
@@ -248,6 +284,130 @@
 
         </h3>
                     <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_OAUTH2_CHECK_ROUTE_NAME">
+        OAUTH2_CHECK_ROUTE_NAME
+        <a href="classes/App-Controller-DiscordController.html#constant_OAUTH2_CHECK_ROUTE_NAME" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/DiscordController.php"><a href="files/src-controller-discordcontroller.html"><abbr title="src/Controller/DiscordController.php">DiscordController.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">36</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">OAUTH2_CHECK_ROUTE_NAME</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;discord_oauth2_check&#039;</span>
+</code>
+
+
+    
+    
+    
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_OAUTH2_CHECK_ROUTE_PATH">
+        OAUTH2_CHECK_ROUTE_PATH
+        <a href="classes/App-Controller-DiscordController.html#constant_OAUTH2_CHECK_ROUTE_PATH" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/DiscordController.php"><a href="files/src-controller-discordcontroller.html"><abbr title="src/Controller/DiscordController.php">DiscordController.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">35</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">OAUTH2_CHECK_ROUTE_PATH</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;discord/oauth2-check&#039;</span>
+</code>
+
+
+    
+    
+    
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_OAUTH2_ROUTE_NAME">
+        OAUTH2_ROUTE_NAME
+        <a href="classes/App-Controller-DiscordController.html#constant_OAUTH2_ROUTE_NAME" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/DiscordController.php"><a href="files/src-controller-discordcontroller.html"><abbr title="src/Controller/DiscordController.php">DiscordController.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">33</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">OAUTH2_ROUTE_NAME</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;discord_oauth2&#039;</span>
+</code>
+
+
+    
+    
+    
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_OAUTH2_ROUTE_PATH">
+        OAUTH2_ROUTE_PATH
+        <a href="classes/App-Controller-DiscordController.html#constant_OAUTH2_ROUTE_PATH" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/DiscordController.php"><a href="files/src-controller-discordcontroller.html"><abbr title="src/Controller/DiscordController.php">DiscordController.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">32</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">OAUTH2_ROUTE_PATH</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;/discord/oauth2&#039;</span>
+</code>
+
+
+    
+    
+    
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_WEBHOOK_EVENT_ROUTE_NAME">
         WEBHOOK_EVENT_ROUTE_NAME
         <a href="classes/App-Controller-DiscordController.html#constant_WEBHOOK_EVENT_ROUTE_NAME" class="headerlink"><i class="fas fa-link"></i></a>
@@ -257,7 +417,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/DiscordController.php"><a href="files/src-controller-discordcontroller.html"><abbr title="src/Controller/DiscordController.php">DiscordController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">28</span>
+    <span class="phpdocumentor-element-found-in__line">30</span>
 
     </aside>
 
@@ -288,7 +448,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/DiscordController.php"><a href="files/src-controller-discordcontroller.html"><abbr title="src/Controller/DiscordController.php">DiscordController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">27</span>
+    <span class="phpdocumentor-element-found-in__line">29</span>
 
     </aside>
 
@@ -325,6 +485,142 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_oauth2">
+        oauth2()
+        <a href="classes/App-Controller-DiscordController.html#method_oauth2" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/DiscordController.php"><a href="files/src-controller-discordcontroller.html"><abbr title="src/Controller/DiscordController.php">DiscordController.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">132</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">oauth2</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\KnpU\OAuth2ClientBundle\Client\ClientRegistry">ClientRegistry</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$registry</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$registry</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\KnpU\OAuth2ClientBundle\Client\ClientRegistry">ClientRegistry</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+    
+    <section class="phpdocumentor-attributes">
+        <h5 class="phpdocumentor-elements__header" id="attributes">
+            Attributes <a href="classes/App-Controller-DiscordController.html#method_oauth2#attributes" class="headerlink"><i class="fas fa-link"></i></a>
+
+        </h5>
+                    <dl class="phpdocumentor-argument-list">
+    <dt class="phpdocumentor-argument-list__entry">
+        #[<abbr title="\Symfony\Component\Routing\Attribute\Route">Route</abbr>]
+    </dt>
+        <dd class="phpdocumentor-argument-list__entry">
+        $path: self::OAUTH2_ROUTE_PATH
+    </dd>
+        <dd class="phpdocumentor-argument-list__entry">
+        $name: self::OAUTH2_ROUTE_NAME
+    </dd>
+        <dd class="phpdocumentor-argument-list__entry">
+        $methods: [&#039;GET&#039;]
+    </dd>
+    </dl>
+            </section>
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_oauth2Check">
+        oauth2Check()
+        <a href="classes/App-Controller-DiscordController.html#method_oauth2Check" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/DiscordController.php"><a href="files/src-controller-discordcontroller.html"><abbr title="src/Controller/DiscordController.php">DiscordController.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">143</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">oauth2Check</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/App-Controller-DiscordController.html#method_oauth2Check#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">codeCoverageIgnore</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                             
+                                    </dd>
+                                            </dl>
+
+    
+    <section class="phpdocumentor-attributes">
+        <h5 class="phpdocumentor-elements__header" id="attributes">
+            Attributes <a href="classes/App-Controller-DiscordController.html#method_oauth2Check#attributes" class="headerlink"><i class="fas fa-link"></i></a>
+
+        </h5>
+                    <dl class="phpdocumentor-argument-list">
+    <dt class="phpdocumentor-argument-list__entry">
+        #[<abbr title="\Symfony\Component\Routing\Attribute\Route">Route</abbr>]
+    </dt>
+        <dd class="phpdocumentor-argument-list__entry">
+        $path: self::OAUTH2_CHECK_ROUTE_PATH
+    </dd>
+        <dd class="phpdocumentor-argument-list__entry">
+        $name: self::OAUTH2_CHECK_ROUTE_NAME
+    </dd>
+        <dd class="phpdocumentor-argument-list__entry">
+        $methods: [&#039;GET&#039;]
+    </dd>
+    </dl>
+            </section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_webhookEvent">
         webhookEvent()
         <a href="classes/App-Controller-DiscordController.html#method_webhookEvent" class="headerlink"><i class="fas fa-link"></i></a>
@@ -333,7 +629,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/DiscordController.php"><a href="files/src-controller-discordcontroller.html"><abbr title="src/Controller/DiscordController.php">DiscordController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">46</span>
 
     </aside>
 
@@ -530,6 +826,10 @@
                             <li class="phpdocumentor-on-this-page-section__title">Constants</li>
                 <li>
                     <ul class="phpdocumentor-list -clean">
+                                                    <li class=""><a href="classes/App-Controller-DiscordController.html#constant_OAUTH2_CHECK_ROUTE_NAME">OAUTH2_CHECK_ROUTE_NAME</a></li>
+                                                    <li class=""><a href="classes/App-Controller-DiscordController.html#constant_OAUTH2_CHECK_ROUTE_PATH">OAUTH2_CHECK_ROUTE_PATH</a></li>
+                                                    <li class=""><a href="classes/App-Controller-DiscordController.html#constant_OAUTH2_ROUTE_NAME">OAUTH2_ROUTE_NAME</a></li>
+                                                    <li class=""><a href="classes/App-Controller-DiscordController.html#constant_OAUTH2_ROUTE_PATH">OAUTH2_ROUTE_PATH</a></li>
                                                     <li class=""><a href="classes/App-Controller-DiscordController.html#constant_WEBHOOK_EVENT_ROUTE_NAME">WEBHOOK_EVENT_ROUTE_NAME</a></li>
                                                     <li class=""><a href="classes/App-Controller-DiscordController.html#constant_WEBHOOK_EVENT_ROUTE_PATH">WEBHOOK_EVENT_ROUTE_PATH</a></li>
                                             </ul>
@@ -539,6 +839,8 @@
                         <li class="phpdocumentor-on-this-page-section__title">Methods</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
+                                            <li class=""><a href="classes/App-Controller-DiscordController.html#method_oauth2">oauth2()</a></li>
+                                            <li class=""><a href="classes/App-Controller-DiscordController.html#method_oauth2Check">oauth2Check()</a></li>
                                             <li class=""><a href="classes/App-Controller-DiscordController.html#method_webhookEvent">webhookEvent()</a></li>
                                     </ul>
             </li>
