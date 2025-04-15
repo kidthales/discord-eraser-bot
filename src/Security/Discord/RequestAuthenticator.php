@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Security\Discord;
 
 use App\Controller\DiscordController;
-use App\Entity\User;
 use App\Enum\Discord\WebhookEventBodyType;
 use App\Enum\Discord\WebhookType;
 use App\Repository\UserRepository;
@@ -27,6 +26,8 @@ use Throwable;
 
 final class RequestAuthenticator extends AbstractAuthenticator
 {
+    use UserFindableOrCreatable;
+
     public const string DISCORD_AGENT_USER_IDENTIFIER = 'discord_agent';
 
     /**
@@ -159,29 +160,5 @@ final class RequestAuthenticator extends AbstractAuthenticator
         }
 
         return self::DISCORD_AGENT_USER_IDENTIFIER;
-    }
-
-    /**
-     * @param string $discordId
-     * @return User
-     * @throws ValidatorException
-     */
-    private function findOrCreateUser(string $discordId): User
-    {
-        $user = $this->userRepository->findOneByDiscordId($discordId);
-
-        if ($user === null) {
-            $user = new User();
-            $user->setDiscordId($discordId);
-
-            $errors = $this->validator->validate($user);
-            if (count($errors) > 0) {
-                throw new ValidatorException((string)$errors);
-            }
-
-            $this->userRepository->add($user, true);
-        }
-
-        return $user;
     }
 }

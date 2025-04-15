@@ -19,10 +19,14 @@ use App\Tests\Entity\UserTest;
 use App\Tests\EntityManageable;
 use Doctrine\ORM\Exception\ORMException;
 use Doctrine\ORM\OptimisticLockException;
+use KnpU\OAuth2ClientBundle\Client\ClientRegistry;
 use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
@@ -469,5 +473,22 @@ final class DiscordControllerTest extends KernelTestCase
         self::assertSame($result->getStatusCode(), Response::HTTP_NO_CONTENT);
 
         self::assertInstanceOf(EntityGuild::class, $guildRepository->findOneByDiscordId('175928847299117063'));
+    }
+
+    /**
+     * @return void
+     */
+    public function test_oauth2(): void
+    {
+        $subject = self::getSubject();
+        $request = Request::create('/');
+        $request->setSession(self::getContainer()->get('session.factory')->createSession());
+        /** @var RequestStack $requestStack */
+        $requestStack = self::getContainer()->get(RequestStack::class);
+        $requestStack->push($request);
+
+        $result = $subject->oauth2(self::getContainer()->get(ClientRegistry::class));
+
+        self::assertInstanceOf(RedirectResponse::class, $result);
     }
 }

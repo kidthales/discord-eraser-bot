@@ -15,13 +15,15 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Table(name: '`user`')]
-#[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_USER_DISCORD_ID', fields: ['discordId'])]
+#[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_USER_DISCORD_ID', fields: [self::IDENTIFIER_PROPERTY_NAME])]
 final class User implements UserInterface
 {
     use Identifiable, DiscordIdentifiable, Timestampable;
 
     public const string ROLE_USER = 'ROLE_USER';
     public const string ROLE_SUPER_ADMIN = 'ROLE_SUPER_ADMIN';
+
+    public const string IDENTIFIER_PROPERTY_NAME = 'discordId';
 
     /**
      * @var string[]

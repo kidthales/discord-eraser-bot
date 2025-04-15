@@ -10,6 +10,8 @@ use App\Entity\User;
 use App\Enum\Discord\WebhookEventBodyType;
 use App\Enum\Discord\WebhookType;
 use App\Repository\GuildRepository;
+use App\Security\Discord\OAuth2Authenticator;
+use KnpU\OAuth2ClientBundle\Client\ClientRegistry;
 use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Bundle\SecurityBundle\Security;
@@ -26,6 +28,12 @@ final class DiscordController extends AbstractController
 {
     public const string WEBHOOK_EVENT_ROUTE_PATH = '/discord/webhook-event';
     public const string WEBHOOK_EVENT_ROUTE_NAME = 'discord_webhook_event';
+
+    public const string OAUTH2_ROUTE_PATH = '/discord/oauth2';
+    public const string OAUTH2_ROUTE_NAME = 'discord_oauth2';
+
+    public const string OAUTH2_CHECK_ROUTE_PATH = 'discord/oauth2-check';
+    public const string OAUTH2_CHECK_ROUTE_NAME = 'discord_oauth2_check';
 
     /**
      * @param WebhookEventPayload $payload
@@ -115,5 +123,25 @@ final class DiscordController extends AbstractController
         }
 
         return $this->json(data: null, status: Response::HTTP_NO_CONTENT);
+    }
+
+    /**
+     * @param ClientRegistry $registry
+     * @return Response
+     */
+    #[Route(path: self::OAUTH2_ROUTE_PATH, name: self::OAUTH2_ROUTE_NAME, methods: ['GET'])]
+    public function oauth2(ClientRegistry $registry): Response
+    {
+        // TODO
+        return $registry->getClient(OAuth2Authenticator::REGISTRY_CLIENT_KEY)->redirect(['identify']);
+    }
+
+    /**
+     * @return void
+     * @codeCoverageIgnore
+     */
+    #[Route(path: self::OAUTH2_CHECK_ROUTE_PATH, name: self::OAUTH2_CHECK_ROUTE_NAME, methods: ['GET'])]
+    public function oauth2Check(): void
+    {
     }
 }
