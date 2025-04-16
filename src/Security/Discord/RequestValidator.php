@@ -22,7 +22,7 @@ class RequestValidator
      */
     public function __construct(
         #[AutowireInline(class: EdDSA::class, arguments: ['ed25519'])] private readonly EdDSA $ec,
-        #[Autowire(param: Parameters::DISCORD_APP_PUBLIC_KEY)] private readonly string        $publicKey
+        #[Autowire(param: Parameters::DISCORD_PUBLIC_KEY)] private readonly string            $publicKey
     )
     {
     }
