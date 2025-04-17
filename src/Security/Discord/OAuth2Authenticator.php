@@ -6,6 +6,9 @@ namespace App\Security\Discord;
 
 use App\Controller\DiscordController;
 use App\Entity\User;
+use App\Enum\Discord\BitwisePermissionFlag;
+use App\HttpClient\DiscordApi;
+use App\Repository\GuildRepository;
 use App\Repository\UserRepository;
 use App\Security\AuthenticationEntryPoint;
 use KnpU\OAuth2ClientBundle\Client\ClientRegistry;
@@ -40,6 +43,8 @@ final class OAuth2Authenticator extends BaseOAuth2Authenticator
      * @param ValidatorInterface $validator
      * @param RouterInterface $router
      * @param Security $security
+     * @param DiscordApi $discordApi
+     * @param GuildRepository $guildRepository
      */
     public function __construct(
         private readonly ClientRegistry     $registry,
@@ -47,7 +52,9 @@ final class OAuth2Authenticator extends BaseOAuth2Authenticator
         private readonly UserRepository     $userRepository,
         private readonly ValidatorInterface $validator,
         private readonly RouterInterface    $router,
-        private readonly Security           $security
+        private readonly Security           $security,
+        private readonly DiscordApi         $discordApi,
+        private readonly GuildRepository    $guildRepository
     )
     {
     }
@@ -86,27 +93,28 @@ final class OAuth2Authenticator extends BaseOAuth2Authenticator
                 $discordId = $discordUser->getId();
 
                 if (!$discordId) {
-                    $this->logger->error('Encountered an error getting id from user resource', [
-                        'token' => $accessToken->getToken()
-                    ]);
+                    $this->logger->error('Encountered an error getting id from user resource');
                     return null;
                 }
 
                 $user = $this->userRepository->findOneByDiscordId($discordId);
+                $isSuperAdmin = $user !== null && $this->security->isGranted(User::ROLE_SUPER_ADMIN);
 
-                if ($user !== null && $this->security->isGranted(User::ROLE_SUPER_ADMIN)) {
-                    return $user;
+                $authorizedGuilds = $this->resolveAuthorizedGuilds($accessToken->getToken());
+
+                if (empty($authorizedGuilds) && !$isSuperAdmin) {
+                    return null;
                 }
 
-                // TODO: Discord guild access checks...
+                $request->getSession()->set(User::AUTHORIZED_GUILDS_SESSION_KEY, $authorizedGuilds);
 
                 try {
-                    return $this->createUser($discordId);
+                    return $user ?? $this->createUser($discordId);
                 } catch (Throwable $e) {
                     $this->logger->critical(
                         $e instanceof ValidatorException
                             ? 'Encountered a validator error while creating user {discordId}'
-                            : 'Encountered an unexpected error while finding or creating user {discordId}',
+                            : 'Encountered an unexpected error while creating user {discordId}',
                         [
                             'discordId' => $discordId,
                             'exception' => FlattenException::createFromThrowable($e)
@@ -147,5 +155,33 @@ final class OAuth2Authenticator extends BaseOAuth2Authenticator
     {
         $message = strtr($exception->getMessageKey(), $exception->getMessageData());
         return new Response($message, Response::HTTP_FORBIDDEN);
+    }
+
+    /**
+     * @param string $token
+     * @return array<string, string>
+     */
+    private function resolveAuthorizedGuilds(string $token): array
+    {
+        /** @var array<string, string> $candidateAuthorizedGuilds */
+        $candidateAuthorizedGuilds = [];
+        foreach ($this->discordApi->withBearerToken($token)->getCurrentUserGuilds() as $partialGuild) {
+            if (
+                BitwisePermissionFlag::isGranted(BitwisePermissionFlag::ADMINISTRATOR, $partialGuild->permissions) ||
+                BitwisePermissionFlag::isGranted(BitwisePermissionFlag::MANAGE_GUILD, $partialGuild->permissions)
+            ) {
+                $candidateAuthorizedGuilds[$partialGuild->id] = $partialGuild->permissions;
+            }
+        }
+
+        /** @var array<string, string> $authorizedGuilds */
+        $authorizedGuilds = [];
+        $availableGuilds = $this->guildRepository->findInstalledByDiscordIds(array_keys($candidateAuthorizedGuilds));
+        foreach ($availableGuilds as $availableGuild) {
+            $discordId = $availableGuild->getDiscordId();
+            $authorizedGuilds[$discordId] = $candidateAuthorizedGuilds[$discordId];
+        }
+
+        return $authorizedGuilds;
     }
 }

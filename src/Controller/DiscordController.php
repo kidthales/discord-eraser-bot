@@ -133,7 +133,7 @@ final class DiscordController extends AbstractController
     public function oauth2(ClientRegistry $registry): Response
     {
         // TODO
-        return $registry->getClient(OAuth2Authenticator::REGISTRY_CLIENT_KEY)->redirect(['identify']);
+        return $registry->getClient(OAuth2Authenticator::REGISTRY_CLIENT_KEY)->redirect(['identify', 'guilds']);
     }
 
     /**
