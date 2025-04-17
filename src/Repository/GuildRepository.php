@@ -7,6 +7,7 @@ namespace App\Repository;
 use App\Entity\Guild;
 use App\Repository\Traits\Alterable;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\DBAL\ArrayParameterType;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -35,5 +36,19 @@ class GuildRepository extends ServiceEntityRepository
             ->setParameter('val', $discordId)
             ->getQuery()
             ->getOneOrNullResult();
+    }
+
+    /**
+     * @param array<int|string> $discordIds
+     * @return Guild[]
+     */
+    public function findInstalledByDiscordIds(array $discordIds): array
+    {
+        return $this->createQueryBuilder('g')
+            ->andWhere('g.installed = 1')
+            ->andWhere('g.discordId IN (:val)')
+            ->setParameter('val', $discordIds, ArrayParameterType::STRING)
+            ->getQuery()
+            ->getResult();
     }
 }

@@ -25,6 +25,8 @@ final class User implements UserInterface
 
     public const string IDENTIFIER_PROPERTY_NAME = 'discordId';
 
+    public const string AUTHORIZED_GUILDS_SESSION_KEY = 'authorized_guilds';
+
     /**
      * @var string[]
      */
