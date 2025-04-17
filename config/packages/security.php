@@ -47,4 +47,13 @@ return static function (SecurityConfig $security): void {
         ->logout()
         ->path('/logout')
         ->target('app_logout'); // TODO
+
+    $security
+        ->roleHierarchy(User::ROLE_SUPER_ADMIN, User::ROLE_USER);
+
+    // TODO: enable once oauth2 credentials are wired up...
+    /*$security
+        ->accessControl()
+        ->path('^/_')
+        ->roles(User::ROLE_USER);*/
 };
