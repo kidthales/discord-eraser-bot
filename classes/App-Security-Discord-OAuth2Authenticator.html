@@ -97,6 +97,10 @@
                 
             </li>
                     <li>
+                <a href="namespaces/app-httpclient.html" class="">HttpClient</a>
+                
+            </li>
+                    <li>
                 <a href="namespaces/app-repository.html" class="">Repository</a>
                 
             </li>
@@ -167,7 +171,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Security/Discord/OAuth2Authenticator.php"><a href="files/src-security-discord-oauth2authenticator.html"><abbr title="src/Security/Discord/OAuth2Authenticator.php">OAuth2Authenticator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">30</span>
+    <span class="phpdocumentor-element-found-in__line">33</span>
 
     </aside>
 
@@ -213,6 +217,18 @@
 
 </h4>
 <dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a class="" href="classes/App-Security-Discord-OAuth2Authenticator.html#property_discordApi">$discordApi</a>
+    <span>
+                        &nbsp;: <a href="classes/App-HttpClient-DiscordApi.html"><abbr title="\App\HttpClient\DiscordApi">DiscordApi</abbr></a>            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a class="" href="classes/App-Security-Discord-OAuth2Authenticator.html#property_guildRepository">$guildRepository</a>
+    <span>
+                        &nbsp;: <a href="classes/App-Repository-GuildRepository.html"><abbr title="\App\Repository\GuildRepository">GuildRepository</abbr></a>            </span>
+</dt>
+
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a class="" href="classes/App-Security-Discord-OAuth2Authenticator.html#property_logger">$logger</a>
     <span>
@@ -299,6 +315,12 @@
                                 &nbsp;: <a href="classes/App-Entity-User.html"><abbr title="\App\Entity\User">User</abbr></a>    </span>
 </dt>
 
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a class="" href="classes/App-Security-Discord-OAuth2Authenticator.html#method_resolveAuthorizedGuilds">resolveAuthorizedGuilds()</a>
+    <span>
+                                &nbsp;: array&lt;string, string&gt;    </span>
+</dt>
+
     </dl>
 
 
@@ -320,7 +342,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Security/Discord/OAuth2Authenticator.php"><a href="files/src-security-discord-oauth2authenticator.html"><abbr title="src/Security/Discord/OAuth2Authenticator.php">OAuth2Authenticator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">34</span>
+    <span class="phpdocumentor-element-found-in__line">37</span>
 
     </aside>
 
@@ -357,6 +379,78 @@
             -private
                                                 -read-only        "
 >
+    <h4 class="phpdocumentor-element__name" id="property_discordApi">
+        $discordApi
+        <a href="classes/App-Security-Discord-OAuth2Authenticator.html#property_discordApi" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                        <small class="phpdocumentor-element__modifier">read-only</small>        </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Security/Discord/OAuth2Authenticator.php"><a href="files/src-security-discord-oauth2authenticator.html"><abbr title="src/Security/Discord/OAuth2Authenticator.php">OAuth2Authenticator.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">56</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/App-HttpClient-DiscordApi.html"><abbr title="\App\HttpClient\DiscordApi">DiscordApi</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$discordApi</span>
+    </code>
+
+    
+    
+    
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                -read-only        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_guildRepository">
+        $guildRepository
+        <a href="classes/App-Security-Discord-OAuth2Authenticator.html#property_guildRepository" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                        <small class="phpdocumentor-element__modifier">read-only</small>        </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Security/Discord/OAuth2Authenticator.php"><a href="files/src-security-discord-oauth2authenticator.html"><abbr title="src/Security/Discord/OAuth2Authenticator.php">OAuth2Authenticator.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">57</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/App-Repository-GuildRepository.html"><abbr title="\App\Repository\GuildRepository">GuildRepository</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$guildRepository</span>
+    </code>
+
+    
+    
+    
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                -read-only        "
+>
     <h4 class="phpdocumentor-element__name" id="property_logger">
         $logger
         <a href="classes/App-Security-Discord-OAuth2Authenticator.html#property_logger" class="headerlink"><i class="fas fa-link"></i></a>
@@ -367,7 +461,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Security/Discord/OAuth2Authenticator.php"><a href="files/src-security-discord-oauth2authenticator.html"><abbr title="src/Security/Discord/OAuth2Authenticator.php">OAuth2Authenticator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">46</span>
+    <span class="phpdocumentor-element-found-in__line">51</span>
 
     </aside>
 
@@ -403,7 +497,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Security/Discord/OAuth2Authenticator.php"><a href="files/src-security-discord-oauth2authenticator.html"><abbr title="src/Security/Discord/OAuth2Authenticator.php">OAuth2Authenticator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">45</span>
+    <span class="phpdocumentor-element-found-in__line">50</span>
 
     </aside>
 
@@ -439,7 +533,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Security/Discord/OAuth2Authenticator.php"><a href="files/src-security-discord-oauth2authenticator.html"><abbr title="src/Security/Discord/OAuth2Authenticator.php">OAuth2Authenticator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">49</span>
+    <span class="phpdocumentor-element-found-in__line">54</span>
 
     </aside>
 
@@ -475,7 +569,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Security/Discord/OAuth2Authenticator.php"><a href="files/src-security-discord-oauth2authenticator.html"><abbr title="src/Security/Discord/OAuth2Authenticator.php">OAuth2Authenticator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">50</span>
+    <span class="phpdocumentor-element-found-in__line">55</span>
 
     </aside>
 
@@ -511,7 +605,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Security/Discord/OAuth2Authenticator.php"><a href="files/src-security-discord-oauth2authenticator.html"><abbr title="src/Security/Discord/OAuth2Authenticator.php">OAuth2Authenticator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">47</span>
+    <span class="phpdocumentor-element-found-in__line">52</span>
 
     </aside>
 
@@ -547,7 +641,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Security/Discord/OAuth2Authenticator.php"><a href="files/src-security-discord-oauth2authenticator.html"><abbr title="src/Security/Discord/OAuth2Authenticator.php">OAuth2Authenticator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">48</span>
+    <span class="phpdocumentor-element-found-in__line">53</span>
 
     </aside>
 
@@ -588,14 +682,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Security/Discord/OAuth2Authenticator.php"><a href="files/src-security-discord-oauth2authenticator.html"><abbr title="src/Security/Discord/OAuth2Authenticator.php">OAuth2Authenticator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">44</span>
+    <span class="phpdocumentor-element-found-in__line">49</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\KnpU\OAuth2ClientBundle\Client\ClientRegistry">ClientRegistry</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$registry</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Log\LoggerInterface">LoggerInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$logger</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Repository-UserRepository.html"><abbr title="\App\Repository\UserRepository">UserRepository</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$userRepository</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\Validator\Validator\ValidatorInterface">ValidatorInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$validator</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\Routing\RouterInterface">RouterInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$router</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Bundle\SecurityBundle\Security">Security</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$security</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\KnpU\OAuth2ClientBundle\Client\ClientRegistry">ClientRegistry</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$registry</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Log\LoggerInterface">LoggerInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$logger</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Repository-UserRepository.html"><abbr title="\App\Repository\UserRepository">UserRepository</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$userRepository</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\Validator\Validator\ValidatorInterface">ValidatorInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$validator</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\Routing\RouterInterface">RouterInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$router</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Bundle\SecurityBundle\Security">Security</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$security</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-HttpClient-DiscordApi.html"><abbr title="\App\HttpClient\DiscordApi">DiscordApi</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$discordApi</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Repository-GuildRepository.html"><abbr title="\App\Repository\GuildRepository">GuildRepository</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$guildRepository</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -645,6 +739,20 @@
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$discordApi</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-HttpClient-DiscordApi.html"><abbr title="\App\HttpClient\DiscordApi">DiscordApi</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$guildRepository</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Repository-GuildRepository.html"><abbr title="\App\Repository\GuildRepository">GuildRepository</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
             </dl>
 
     
@@ -667,7 +775,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Security/Discord/OAuth2Authenticator.php"><a href="files/src-security-discord-oauth2authenticator.html"><abbr title="src/Security/Discord/OAuth2Authenticator.php">OAuth2Authenticator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">69</span>
+    <span class="phpdocumentor-element-found-in__line">76</span>
 
     </aside>
 
@@ -715,7 +823,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Security/Discord/OAuth2Authenticator.php"><a href="files/src-security-discord-oauth2authenticator.html"><abbr title="src/Security/Discord/OAuth2Authenticator.php">OAuth2Authenticator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">146</span>
+    <span class="phpdocumentor-element-found-in__line">154</span>
 
     </aside>
 
@@ -770,7 +878,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Security/Discord/OAuth2Authenticator.php"><a href="files/src-security-discord-oauth2authenticator.html"><abbr title="src/Security/Discord/OAuth2Authenticator.php">OAuth2Authenticator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">128</span>
+    <span class="phpdocumentor-element-found-in__line">136</span>
 
     </aside>
 
@@ -832,7 +940,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Security/Discord/OAuth2Authenticator.php"><a href="files/src-security-discord-oauth2authenticator.html"><abbr title="src/Security/Discord/OAuth2Authenticator.php">OAuth2Authenticator.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">59</span>
+    <span class="phpdocumentor-element-found-in__line">66</span>
 
     </aside>
 
@@ -992,6 +1100,54 @@
             </section>
 
 </article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_resolveAuthorizedGuilds">
+        resolveAuthorizedGuilds()
+        <a href="classes/App-Security-Discord-OAuth2Authenticator.html#method_resolveAuthorizedGuilds" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Security/Discord/OAuth2Authenticator.php"><a href="files/src-security-discord-oauth2authenticator.html"><abbr title="src/Security/Discord/OAuth2Authenticator.php">OAuth2Authenticator.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">164</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">resolveAuthorizedGuilds</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$token</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string, string&gt;</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$token</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">array&lt;string, string&gt;</span>
+            </section>
+
+</article>
             </section>
 
         <div class="phpdocumentor-modal" id="source-view">
@@ -1112,6 +1268,8 @@
                             <li class="phpdocumentor-on-this-page-section__title">Properties</li>
                 <li>
                     <ul class="phpdocumentor-list -clean">
+                                                    <li class=""><a href="classes/App-Security-Discord-OAuth2Authenticator.html#property_discordApi">$discordApi</a></li>
+                                                    <li class=""><a href="classes/App-Security-Discord-OAuth2Authenticator.html#property_guildRepository">$guildRepository</a></li>
                                                     <li class=""><a href="classes/App-Security-Discord-OAuth2Authenticator.html#property_logger">$logger</a></li>
                                                     <li class=""><a href="classes/App-Security-Discord-OAuth2Authenticator.html#property_registry">$registry</a></li>
                                                     <li class=""><a href="classes/App-Security-Discord-OAuth2Authenticator.html#property_router">$router</a></li>
@@ -1131,6 +1289,7 @@
                                             <li class=""><a href="classes/App-Security-Discord-OAuth2Authenticator.html#method_supports">supports()</a></li>
                                             <li class=""><a href="classes/App-Security-Discord-UserFindableOrCreatable.html#method_createUser">createUser()</a></li>
                                             <li class=""><a href="classes/App-Security-Discord-UserFindableOrCreatable.html#method_findOrCreateUser">findOrCreateUser()</a></li>
+                                            <li class=""><a href="classes/App-Security-Discord-OAuth2Authenticator.html#method_resolveAuthorizedGuilds">resolveAuthorizedGuilds()</a></li>
                                     </ul>
             </li>
                     </ul>

@@ -231,10 +231,20 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-DependencyInjection-Parameters.html#constant_DEFAULT_STRING_PARAMETER"
         },                {
-            "fqsen": "\\App\\DependencyInjection\\Parameters\u003A\u003ADISCORD_APP_PUBLIC_KEY",
-            "name": "DISCORD_APP_PUBLIC_KEY",
+            "fqsen": "\\App\\DependencyInjection\\Parameters\u003A\u003ADISCORD_API_CLIENT_ACCEPT",
+            "name": "DISCORD_API_CLIENT_ACCEPT",
             "summary": "",
-            "url": "classes/App-DependencyInjection-Parameters.html#constant_DISCORD_APP_PUBLIC_KEY"
+            "url": "classes/App-DependencyInjection-Parameters.html#constant_DISCORD_API_CLIENT_ACCEPT"
+        },                {
+            "fqsen": "\\App\\DependencyInjection\\Parameters\u003A\u003ADISCORD_API_CLIENT_BASE_URI",
+            "name": "DISCORD_API_CLIENT_BASE_URI",
+            "summary": "",
+            "url": "classes/App-DependencyInjection-Parameters.html#constant_DISCORD_API_CLIENT_BASE_URI"
+        },                {
+            "fqsen": "\\App\\DependencyInjection\\Parameters\u003A\u003ADISCORD_BOT_TOKEN",
+            "name": "DISCORD_BOT_TOKEN",
+            "summary": "",
+            "url": "classes/App-DependencyInjection-Parameters.html#constant_DISCORD_BOT_TOKEN"
         },                {
             "fqsen": "\\App\\DependencyInjection\\Parameters\u003A\u003ADISCORD_OAUTH2_CLIENT_ID",
             "name": "DISCORD_OAUTH2_CLIENT_ID",
@@ -245,6 +255,11 @@ Search.appendIndex(
             "name": "DISCORD_OAUTH2_CLIENT_SECRET",
             "summary": "",
             "url": "classes/App-DependencyInjection-Parameters.html#constant_DISCORD_OAUTH2_CLIENT_SECRET"
+        },                {
+            "fqsen": "\\App\\DependencyInjection\\Parameters\u003A\u003ADISCORD_PUBLIC_KEY",
+            "name": "DISCORD_PUBLIC_KEY",
+            "summary": "",
+            "url": "classes/App-DependencyInjection-Parameters.html#constant_DISCORD_PUBLIC_KEY"
         },                {
             "fqsen": "\\App\\Dto\\Discord\\ApplicationAuthorizedWebhookEventBody",
             "name": "ApplicationAuthorizedWebhookEventBody",
@@ -585,6 +600,61 @@ Search.appendIndex(
             "name": "stickers",
             "summary": "",
             "url": "classes/App-Dto-Discord-Guild.html#property_stickers"
+        },                {
+            "fqsen": "\\App\\Dto\\Discord\\PartialGuild",
+            "name": "PartialGuild",
+            "summary": "",
+            "url": "classes/App-Dto-Discord-PartialGuild.html"
+        },                {
+            "fqsen": "\\App\\Dto\\Discord\\PartialGuild\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Dto-Discord-PartialGuild.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Dto\\Discord\\PartialGuild\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "",
+            "url": "classes/App-Dto-Discord-PartialGuild.html#property_id"
+        },                {
+            "fqsen": "\\App\\Dto\\Discord\\PartialGuild\u003A\u003A\u0024name",
+            "name": "name",
+            "summary": "",
+            "url": "classes/App-Dto-Discord-PartialGuild.html#property_name"
+        },                {
+            "fqsen": "\\App\\Dto\\Discord\\PartialGuild\u003A\u003A\u0024icon",
+            "name": "icon",
+            "summary": "",
+            "url": "classes/App-Dto-Discord-PartialGuild.html#property_icon"
+        },                {
+            "fqsen": "\\App\\Dto\\Discord\\PartialGuild\u003A\u003A\u0024features",
+            "name": "features",
+            "summary": "",
+            "url": "classes/App-Dto-Discord-PartialGuild.html#property_features"
+        },                {
+            "fqsen": "\\App\\Dto\\Discord\\PartialGuild\u003A\u003A\u0024banner",
+            "name": "banner",
+            "summary": "",
+            "url": "classes/App-Dto-Discord-PartialGuild.html#property_banner"
+        },                {
+            "fqsen": "\\App\\Dto\\Discord\\PartialGuild\u003A\u003A\u0024owner",
+            "name": "owner",
+            "summary": "",
+            "url": "classes/App-Dto-Discord-PartialGuild.html#property_owner"
+        },                {
+            "fqsen": "\\App\\Dto\\Discord\\PartialGuild\u003A\u003A\u0024permissions",
+            "name": "permissions",
+            "summary": "",
+            "url": "classes/App-Dto-Discord-PartialGuild.html#property_permissions"
+        },                {
+            "fqsen": "\\App\\Dto\\Discord\\PartialGuild\u003A\u003A\u0024approximate_member_count",
+            "name": "approximate_member_count",
+            "summary": "",
+            "url": "classes/App-Dto-Discord-PartialGuild.html#property_approximate_member_count"
+        },                {
+            "fqsen": "\\App\\Dto\\Discord\\PartialGuild\u003A\u003A\u0024approximate_presence_count",
+            "name": "approximate_presence_count",
+            "summary": "",
+            "url": "classes/App-Dto-Discord-PartialGuild.html#property_approximate_presence_count"
         },                {
             "fqsen": "\\App\\Dto\\Discord\\Role",
             "name": "Role",
@@ -1121,10 +1191,45 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Entity-User.html#constant_IDENTIFIER_PROPERTY_NAME"
         },                {
+            "fqsen": "\\App\\Entity\\User\u003A\u003AAUTHORIZED_GUILDS_SESSION_KEY",
+            "name": "AUTHORIZED_GUILDS_SESSION_KEY",
+            "summary": "",
+            "url": "classes/App-Entity-User.html#constant_AUTHORIZED_GUILDS_SESSION_KEY"
+        },                {
             "fqsen": "\\App\\Entity\\User\u003A\u003A\u0024roles",
             "name": "roles",
             "summary": "",
             "url": "classes/App-Entity-User.html#property_roles"
+        },                {
+            "fqsen": "\\App\\Enum\\Discord\\BitwisePermissionFlag",
+            "name": "BitwisePermissionFlag",
+            "summary": "",
+            "url": "classes/App-Enum-Discord-BitwisePermissionFlag.html"
+        },                {
+            "fqsen": "\\App\\Enum\\Discord\\BitwisePermissionFlag\u003A\u003AisGranted\u0028\u0029",
+            "name": "isGranted",
+            "summary": "",
+            "url": "classes/App-Enum-Discord-BitwisePermissionFlag.html#method_isGranted"
+        },                {
+            "fqsen": "\\App\\Enum\\Discord\\BitwisePermissionFlag\u003A\u003AADMINISTRATOR",
+            "name": "ADMINISTRATOR",
+            "summary": "Allows\u0020all\u0020permissions\u0020and\u0020bypasses\u0020channel\u0020permission\u0020overwrites.",
+            "url": "classes/App-Enum-Discord-BitwisePermissionFlag.html#enumcase_ADMINISTRATOR"
+        },                {
+            "fqsen": "\\App\\Enum\\Discord\\BitwisePermissionFlag\u003A\u003AMANAGE_GUILD",
+            "name": "MANAGE_GUILD",
+            "summary": "Allows\u0020management\u0020and\u0020editing\u0020of\u0020the\u0020guild.",
+            "url": "classes/App-Enum-Discord-BitwisePermissionFlag.html#enumcase_MANAGE_GUILD"
+        },                {
+            "fqsen": "\\App\\Enum\\Discord\\BitwisePermissionFlag\u003A\u003AMANAGE_MESSAGES",
+            "name": "MANAGE_MESSAGES",
+            "summary": "Allows\u0020for\u0020deletion\u0020of\u0020other\u0020users\u0020messages.\u0020\u0028T,V,S\u0029",
+            "url": "classes/App-Enum-Discord-BitwisePermissionFlag.html#enumcase_MANAGE_MESSAGES"
+        },                {
+            "fqsen": "\\App\\Enum\\Discord\\BitwisePermissionFlag\u003A\u003AMANAGE_THREADS",
+            "name": "MANAGE_THREADS",
+            "summary": "Allows\u0020for\u0020deleting\u0020and\u0020archiving\u0020threads,\u0020and\u0020viewing\u0020all\u0020private\u0020threads.\u0020\u0028T\u0029",
+            "url": "classes/App-Enum-Discord-BitwisePermissionFlag.html#enumcase_MANAGE_THREADS"
         },                {
             "fqsen": "\\App\\Enum\\Discord\\DefaultMessageNotificationLevel",
             "name": "DefaultMessageNotificationLevel",
@@ -1356,6 +1461,46 @@ Search.appendIndex(
             "summary": "Webhook\u0020event\u0020\u0028details\u0020for\u0020event\u0020in\u0020event\u0020body\u0020object\u0029.",
             "url": "classes/App-Enum-Discord-WebhookType.html#enumcase_Event"
         },                {
+            "fqsen": "\\App\\HttpClient\\DiscordApi",
+            "name": "DiscordApi",
+            "summary": "",
+            "url": "classes/App-HttpClient-DiscordApi.html"
+        },                {
+            "fqsen": "\\App\\HttpClient\\DiscordApi\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-HttpClient-DiscordApi.html#method___construct"
+        },                {
+            "fqsen": "\\App\\HttpClient\\DiscordApi\u003A\u003AwithBearerToken\u0028\u0029",
+            "name": "withBearerToken",
+            "summary": "",
+            "url": "classes/App-HttpClient-DiscordApi.html#method_withBearerToken"
+        },                {
+            "fqsen": "\\App\\HttpClient\\DiscordApi\u003A\u003AgetCurrentUserGuilds\u0028\u0029",
+            "name": "getCurrentUserGuilds",
+            "summary": "",
+            "url": "classes/App-HttpClient-DiscordApi.html#method_getCurrentUserGuilds"
+        },                {
+            "fqsen": "\\App\\HttpClient\\DiscordApi\u003A\u003A\u0024discordApiClient",
+            "name": "discordApiClient",
+            "summary": "",
+            "url": "classes/App-HttpClient-DiscordApi.html#property_discordApiClient"
+        },                {
+            "fqsen": "\\App\\HttpClient\\DiscordApi\u003A\u003A\u0024serializer",
+            "name": "serializer",
+            "summary": "",
+            "url": "classes/App-HttpClient-DiscordApi.html#property_serializer"
+        },                {
+            "fqsen": "\\App\\HttpClient\\DiscordApi\u003A\u003A\u0024accept",
+            "name": "accept",
+            "summary": "",
+            "url": "classes/App-HttpClient-DiscordApi.html#property_accept"
+        },                {
+            "fqsen": "\\App\\HttpClient\\DiscordApi\u003A\u003A\u0024baseUri",
+            "name": "baseUri",
+            "summary": "",
+            "url": "classes/App-HttpClient-DiscordApi.html#property_baseUri"
+        },                {
             "fqsen": "\\App\\Kernel",
             "name": "Kernel",
             "summary": "",
@@ -1375,6 +1520,11 @@ Search.appendIndex(
             "name": "findOneByDiscordId",
             "summary": "",
             "url": "classes/App-Repository-GuildRepository.html#method_findOneByDiscordId"
+        },                {
+            "fqsen": "\\App\\Repository\\GuildRepository\u003A\u003AfindInstalledByDiscordIds\u0028\u0029",
+            "name": "findInstalledByDiscordIds",
+            "summary": "",
+            "url": "classes/App-Repository-GuildRepository.html#method_findInstalledByDiscordIds"
         },                {
             "fqsen": "\\App\\Repository\\Traits\\Alterable",
             "name": "Alterable",
@@ -1471,6 +1621,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Security-Discord-OAuth2Authenticator.html#method_onAuthenticationFailure"
         },                {
+            "fqsen": "\\App\\Security\\Discord\\OAuth2Authenticator\u003A\u003AresolveAuthorizedGuilds\u0028\u0029",
+            "name": "resolveAuthorizedGuilds",
+            "summary": "",
+            "url": "classes/App-Security-Discord-OAuth2Authenticator.html#method_resolveAuthorizedGuilds"
+        },                {
             "fqsen": "\\App\\Security\\Discord\\OAuth2Authenticator\u003A\u003AREGISTRY_CLIENT_KEY",
             "name": "REGISTRY_CLIENT_KEY",
             "summary": "",
@@ -1505,6 +1660,16 @@ Search.appendIndex(
             "name": "security",
             "summary": "",
             "url": "classes/App-Security-Discord-OAuth2Authenticator.html#property_security"
+        },                {
+            "fqsen": "\\App\\Security\\Discord\\OAuth2Authenticator\u003A\u003A\u0024discordApi",
+            "name": "discordApi",
+            "summary": "",
+            "url": "classes/App-Security-Discord-OAuth2Authenticator.html#property_discordApi"
+        },                {
+            "fqsen": "\\App\\Security\\Discord\\OAuth2Authenticator\u003A\u003A\u0024guildRepository",
+            "name": "guildRepository",
+            "summary": "",
+            "url": "classes/App-Security-Discord-OAuth2Authenticator.html#property_guildRepository"
         },                {
             "fqsen": "\\App\\Security\\Discord\\RequestAuthenticator",
             "name": "RequestAuthenticator",
@@ -1700,6 +1865,11 @@ Search.appendIndex(
             "name": "Enum",
             "summary": "",
             "url": "namespaces/app-enum.html"
+        },                {
+            "fqsen": "\\App\\HttpClient",
+            "name": "HttpClient",
+            "summary": "",
+            "url": "namespaces/app-httpclient.html"
         },                {
             "fqsen": "\\App",
             "name": "App",
