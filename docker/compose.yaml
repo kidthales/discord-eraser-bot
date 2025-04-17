@@ -10,9 +10,8 @@ services:
       DISCORD_OAUTH2_CLIENT_ID: ${DISCORD_OAUTH2_CLIENT_ID:-}
       DISCORD_OAUTH2_CLIENT_SECRET: ${DISCORD_OAUTH2_CLIENT_SECRET:-}
       DISCORD_PUBLIC_KEY: ${DISCORD_PUBLIC_KEY:-}
-      PHP_DATE_TIMEZONE: ${APP_TIMEZONE:-UTC}
       SERVER_NAME: ${SERVER_NAME:-localhost}, php:80
-      TZ: ${APP_TIMEZONE:-UTC}
+      TZ: ${TZ:-UTC}
     volumes:
       - caddy_data:/data
       - caddy_config:/config
