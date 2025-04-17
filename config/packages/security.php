@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Controller\HomeController;
 use App\Entity\User;
 use App\Security\AuthenticationEntryPoint;
 use App\Security\Discord\OAuth2Authenticator;
@@ -46,7 +47,7 @@ return static function (SecurityConfig $security): void {
         ->customAuthenticators([OAuth2Authenticator::class])
         ->logout()
         ->path('/logout')
-        ->target('app_logout'); // TODO
+        ->target(HomeController::ROUTE_NAME);
 
     $security
         ->roleHierarchy(User::ROLE_SUPER_ADMIN, User::ROLE_USER);

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Security\Discord;
 
+use App\Controller\Admin\DashboardController;
 use App\Controller\DiscordController;
 use App\Entity\User;
 use App\Enum\Discord\BitwisePermissionFlag;
@@ -137,7 +138,10 @@ final class OAuth2Authenticator extends BaseOAuth2Authenticator
     {
         $session = $request->getSession();
 
-        $route = $session->get(AuthenticationEntryPoint::ROUTE_NAME_SESSION_KEY, 'app_dashboard'); // TODO: use class const...
+        $route = $session->get(
+            AuthenticationEntryPoint::ROUTE_NAME_SESSION_KEY,
+            DashboardController::ROUTE_NAME
+        );
         $routeParams = $session->get(AuthenticationEntryPoint::ROUTE_PARAMS_SESSION_KEY, []);
 
         $session->remove(AuthenticationEntryPoint::ROUTE_NAME_SESSION_KEY);

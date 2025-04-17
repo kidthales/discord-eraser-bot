@@ -8,9 +8,12 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 use Symfony\Component\HttpFoundation\Response;
 
-#[AdminDashboard(routePath: '/_', routeName: 'admin')]
+#[AdminDashboard(routePath: self::ROUTE_PATH, routeName: self::ROUTE_NAME)]
 class DashboardController extends AbstractDashboardController
 {
+    public const string ROUTE_PATH = '/_';
+    public const string ROUTE_NAME = 'admin';
+
     public function index(): Response
     {
         return parent::index();

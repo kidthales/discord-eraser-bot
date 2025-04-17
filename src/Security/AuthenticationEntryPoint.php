@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Security;
 
+use App\Controller\Admin\DashboardController;
 use App\Controller\DiscordController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -33,7 +34,10 @@ final readonly class AuthenticationEntryPoint implements AuthenticationEntryPoin
     {
         $session = $request->getSession();
 
-        $session->set(self::ROUTE_NAME_SESSION_KEY, $request->attributes->get('_route', 'app_dashboard')); // TODO: use class const...
+        $session->set(
+            self::ROUTE_NAME_SESSION_KEY,
+            $request->attributes->get('_route', DashboardController::ROUTE_NAME)
+        );
         $session->set(self::ROUTE_PARAMS_SESSION_KEY, $request->attributes->get('_route_params', []));
 
         return new RedirectResponse($this->urlGenerator->generate(DiscordController::OAUTH2_ROUTE_NAME));
