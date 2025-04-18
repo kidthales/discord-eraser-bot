@@ -4,6 +4,7 @@
 /.vscode/
 /coverage/
 /docker/.env
+/docker/.env.ngrok
 
 ###> symfony/framework-bundle ###
 /.env.local

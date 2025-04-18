@@ -5,7 +5,9 @@ DOCKER_PATH = $(ROOT_PATH)/docker
 # Executables (local)
 AWK         = awk
 CD          = cd
+DOCKER      = docker
 DOCKER_COMP = $(CD) $(DOCKER_PATH) && COMPOSE_BAKE=true docker compose
+DOCKER_RUN  = $(DOCKER) run --rm
 GREP        = grep
 SED         = sed
 
@@ -19,7 +21,7 @@ SYMFONY  = $(PHP) bin/console
 
 # Misc
 .DEFAULT_GOAL = help
-.PHONY        : help build up start down logs bash test cov test-db composer vendor sf cc own
+.PHONY        : help build up start down logs bash test cov test-db ngrok docs composer vendor sf cc own
 
 ## —— 🔥✉️🔥 Discord Eraser Bot Makefile 🔥✉️🔥 ————————————————————————————————
 help: ## Outputs this help screen
@@ -55,8 +57,11 @@ test-db: ## Create test database & run migrations
 	@$(SYMFONY) -e test doctrine:database:create
 	@$(SYMFONY) -e test doctrine:migrations:migrate --no-interaction
 
+ngrok: ## Start the ngrok agent and forward traffic from a public edge endpoint to our app on localhost, assumes NGROK_AUTHTOKEN is set in docker/.env.ngrok
+	@$(DOCKER_RUN) -it --net=host --env-file $(DOCKER_PATH)/.env.ngrok ngrok/ngrok http https://localhost:443 --host-header=localhost
+
 docs: ## Run phpDocumentor to generate this project's documentation
-	docker run --rm -v $(ROOT_PATH):/data phpdoc/phpdoc
+	@$(DOCKER_RUN) -v $(ROOT_PATH):/data phpdoc/phpdoc
 
 ## —— Composer 🧙 ——————————————————————————————————————————————————————————————
 composer: ## Run composer, pass the parameter "c=" to run a given command, example: make composer c='req symfony/orm-pack'

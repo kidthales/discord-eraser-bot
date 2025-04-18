@@ -21,6 +21,8 @@ Schedule message deletion tasks in your Discord servers.
 - [Docker Compose](https://docs.docker.com/compose/install/)
 - _(optional)_ [GNU Make](https://www.gnu.org/software/make/)
     - Stack Overflow [answer](https://stackoverflow.com/a/32127632) about Windows support
+- Free [ngrok](https://ngrok.com/) account.
+    - Needed to forward traffic from a public edge endpoint to our app on localhost; i.e., inbound Discord webhooks & interactions.
 
 ## Development with Docker
 
@@ -33,7 +35,8 @@ Schedule message deletion tasks in your Discord servers.
 | Prepare Test Database                  | `test-db`                              | `docker compose exec php php bin/console -e test doctrine:database:create && docker compose exec php php bin/console -e test doctrine:migrations:migrate --no-interaction` |
 | Run Unit Tests                         | `test` _(also prepares test database)_ | `docker compose exec -e APP_ENV=test php bin/phpunit`                                                                                                                      |
 | Run Unit Tests with Coverage Reporting | `cov` _(also prepares test database)_  | `docker compose exec -e APP_ENV=test -e XDEBUG_MODE=coverage php bin/phpunit --coverage-text --coverage-html coverage`                                                     |
-| Build Docs                             | `docs`                                 | `docker run --rm -v $(pwd):/data phpdoc/phpdoc`                                                                                                                            |
+| Start ngrok Agent                      | `ngrok`                                | `docker run --rm -it --net=host --env-file .env.ngrok ngrok/ngrok http https://localhost:443 --host-header=localhost`                                                      |
+| Build Docs                             | `docs`                                 | `docker run --rm -v $(pwd)/..:/data phpdoc/phpdoc`                                                                                                                         |
 | Build Production Image                 |                                        | `IMAGES_PREFIX=my-prefix/ IMAGES_TAG=my-tag docker buildx bake`                                                                                                            |
 
 > [!TIP]
