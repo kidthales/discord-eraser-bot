@@ -52,9 +52,8 @@ return static function (SecurityConfig $security): void {
     $security
         ->roleHierarchy(User::ROLE_SUPER_ADMIN, User::ROLE_USER);
 
-    // TODO: enable once oauth2 credentials are wired up...
-    /*$security
+    $security
         ->accessControl()
         ->path('^/_')
-        ->roles(User::ROLE_USER);*/
+        ->roles(User::ROLE_USER);
 };

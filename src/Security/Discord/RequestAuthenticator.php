@@ -123,6 +123,7 @@ final class RequestAuthenticator extends AbstractAuthenticator
 
                 switch ($event['type']) {
                     case WebhookEventBodyType::ApplicationAuthorized->value:
+                        // TODO: integration_type check...
                         if (isset($event['data']['user']['id'])) {
                             $discordId = $event['data']['user']['id'];
 

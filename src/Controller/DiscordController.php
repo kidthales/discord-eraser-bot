@@ -60,6 +60,7 @@ final class DiscordController extends AbstractController
         if ($payload->type === WebhookType::Event) {
             switch ($payload->event->type) {
                 case WebhookEventBodyType::ApplicationAuthorized:
+                    // TODO: better integration_type check...
                     if ($security->isGranted(User::ROLE_USER)) {
                         if ($payload->event->data->integration_type === 0) {
                             if (isset($payload->event->data->guild->id)) {
