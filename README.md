@@ -21,8 +21,34 @@ Schedule message deletion tasks in your Discord servers.
 - [Docker Compose](https://docs.docker.com/compose/install/)
 - _(optional)_ [GNU Make](https://www.gnu.org/software/make/)
     - Stack Overflow [answer](https://stackoverflow.com/a/32127632) about Windows support
-- Free [ngrok](https://ngrok.com/) account.
-    - Needed to forward traffic from a public edge endpoint to our app on localhost; i.e., inbound Discord webhooks & interactions.
+- _(optional)_ Free [ngrok](https://ngrok.com/) account
+    - A reverse-proxy is needed to forward traffic from a public edge endpoint to our app on localhost; i.e., inbound Discord webhooks & interactions
+
+## Quick Start
+
+These steps assume you are familiar with [setting up a Discord app](https://discord.com/developers/docs/quick-start/getting-started) and will be developing with [GNU Make](https://www.gnu.org/software/make/) & [ngrok](https://ngrok.com/).
+
+1. Copy the contents of the `.env.dev` file to a new git ignored file named `.env.dev.local`; update each environment variable in this new file:
+   - `DISCORD_BOT_TOKEN`: Found on the `https://discord.com/developers/applications/<app-id>/bot` page
+   - `DISCORD_OAUTH2_CLIENT_ID`: Found on the `https://discord.com/developers/applications/<app-id>/oauth2` page
+   - `DISCORD_OAUTH2_CLIENT_SECRET`: Found on the `https://discord.com/developers/applications/<app-id>/oauth2` page
+   - `DISCORD_PUBLIC_KEY`: Found on the `https://discord.com/developers/applications/<app-id>/information` page
+2. _(optional)_ Create a new git ignored file `docker/.env` and assign the `TZ` environment variable your preferred timezone (default will be `UTC`)
+3. Build & run the app, with logs: `make start logs`
+4. Visit https://localhost & accept the browser TLS warning to view the app's license & acknowledgements
+5. Create a new git ignored file `docker/.env.ngrok` and assign the `NGROK_AUTHTOKEN` environment variable your token from the ngrok dashboard
+6. In a separate terminal, run the ngrok agent: `make ngrok`
+   - Make note of the `https://<unique-identifier>.ngrok-free.app` address shown on the `Forwarding` line,for use in the next step
+7. Go to `https://discord.com/developers/applications/<app-id>/webhooks` and set the endpoint url with `https://<unique-identifier>.ngrok-free.app/discord/webhook-event`; enable the "Application Authorized" event
+8. Go to `https://discord.com/developers/applications/<app-id>/oauth2` and add the redirect url `https://localhost/discord/oauth2-check`
+9. Go to `https://discord.com/developers/applications/<app-id>/installation` and ensure only the "Guild Install" Installation Context is selected with Install Link set to "None"
+10. Install the app to a Discord guild of your choice: `https://discord.com/oauth2/authorize?client_id=<app-id>&permissions=17179877376&integration_type=0&scope=bot`
+     - Confirm authorization of "Manage Messages" & "Manage Threads" bot permissions
+11. Login to the [web dashboard](https://localhost/_) using the same Discord user account used for the guild install of the app
+
+When finished, ensure you stop the ngrok agent (`ctrl-c` in the ngrok terminal). Use `make down` to stop the app.
+
+For future development cycles, as long as the sqlite db is available and the app remains installed in the guild, you will be able to run the app, login, & perform actions. You only need to run the ngrok agent when you need to receive Discord webhooks & interactions; the associated `https://<unique-identifier>.ngrok-free.app/` endpoints for webhooks & interactions will need to updated in the Discord app dashboard after each new ngrok agent run.
 
 ## Development with Docker
 
@@ -55,7 +81,7 @@ Schedule message deletion tasks in your Discord servers.
 | `CADDY_SERVER_EXTRA_DIRECTIVES` | `container` | [`Caddyfile` directives](https://caddyserver.com/docs/caddyfile/concepts#directives)                                                                                                                                                        |
 | `CADDY_SERVER_LOG_OPTIONS`      | `container` | [`Caddyfile` server log options block](https://caddyserver.com/docs/caddyfile/directives/log), one per line                                                                                                                                 |
 | `DATABASE_URL`                  | `container` | [Symfony database configuration](https://symfony.com/doc/current/doctrine.html#configuring-the-database), also used in container entrypoint                                                                                                 |
-| `DISCORD_BOT_TOKEN`             | `symfony`   | TODO                                                                                                                                                                                                                                        |
+| `DISCORD_BOT_TOKEN`             | `symfony`   | Found on the `https://discord.com/developers/applications/<app-id>/bot` page                                                                                                                                                                |
 | `DISCORD_OAUTH2_CLIENT_ID`      | `symfony`   | Found on the `https://discord.com/developers/applications/<app-id>/oauth2` page                                                                                                                                                             |
 | `DISCORD_OAUTH2_CLIENT_SECRET`  | `symfony`   | Found on the `https://discord.com/developers/applications/<app-id>/oauth2` page                                                                                                                                                             |
 | `DISCORD_PUBLIC_KEY`            | `symfony`   | Found on the `https://discord.com/developers/applications/<app-id>/information` page                                                                                                                                                        |
@@ -64,3 +90,96 @@ Schedule message deletion tasks in your Discord servers.
 | `SERVER_NAME`                   | `container` | The server name or address; defaults to `localhost`                                                                                                                                                                                         |
 | `TZ`                            | `container` | Timezone used by the [tzdata package](https://pkgs.alpinelinux.org/package/edge/main/x86/tzdata) and the [`date.timezone` php.ini directive](https://www.php.net/manual/en/datetime.configuration.php#ini.date.timezone); defaults to `UTC` |
 | `XDEBUG_MODE`                   | `container` | Enable [Xdebug](https://xdebug.org/) when set to `debug`                                                                                                                                                                                    |
+
+## License
+
+```text
+Discord Eraser Bot
+Copyright (C) 2025  Tristan Bonsor
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License, version 3,
+as published by the Free Software Foundation.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+```
+
+## Acknowledgements
+
+```text
+MIT License
+
+Symfony
+Copyright (c) Fabien Potencier
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is furnished
+to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+```
+
+```text
+MIT License
+
+Symfony Docker
+Copyright (c) 2025 Kévin Dunglas
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+```text
+MIT License
+
+Doctrine Behavioral Extensions
+Copyright (c) Gediminas Morkevicius &lt;gediminas.morkevicius@gmail.com&gt; http://www.gediminasm.org
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
