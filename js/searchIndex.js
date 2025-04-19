@@ -166,10 +166,45 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Console-UserCommand.html#property_validator"
         },                {
+            "fqsen": "\\App\\Controller\\Admin\\DashboardController",
+            "name": "DashboardController",
+            "summary": "",
+            "url": "classes/App-Controller-Admin-DashboardController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\Admin\\DashboardController\u003A\u003Aindex\u0028\u0029",
+            "name": "index",
+            "summary": "",
+            "url": "classes/App-Controller-Admin-DashboardController.html#method_index"
+        },                {
+            "fqsen": "\\App\\Controller\\Admin\\DashboardController\u003A\u003AconfigureDashboard\u0028\u0029",
+            "name": "configureDashboard",
+            "summary": "",
+            "url": "classes/App-Controller-Admin-DashboardController.html#method_configureDashboard"
+        },                {
+            "fqsen": "\\App\\Controller\\Admin\\DashboardController\u003A\u003AconfigureMenuItems\u0028\u0029",
+            "name": "configureMenuItems",
+            "summary": "",
+            "url": "classes/App-Controller-Admin-DashboardController.html#method_configureMenuItems"
+        },                {
+            "fqsen": "\\App\\Controller\\Admin\\DashboardController\u003A\u003AROUTE_PATH",
+            "name": "ROUTE_PATH",
+            "summary": "",
+            "url": "classes/App-Controller-Admin-DashboardController.html#constant_ROUTE_PATH"
+        },                {
+            "fqsen": "\\App\\Controller\\Admin\\DashboardController\u003A\u003AROUTE_NAME",
+            "name": "ROUTE_NAME",
+            "summary": "",
+            "url": "classes/App-Controller-Admin-DashboardController.html#constant_ROUTE_NAME"
+        },                {
             "fqsen": "\\App\\Controller\\DiscordController",
             "name": "DiscordController",
             "summary": "",
             "url": "classes/App-Controller-DiscordController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\DiscordController\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Controller-DiscordController.html#method___construct"
         },                {
             "fqsen": "\\App\\Controller\\DiscordController\u003A\u003AwebhookEvent\u0028\u0029",
             "name": "webhookEvent",
@@ -185,6 +220,11 @@ Search.appendIndex(
             "name": "oauth2Check",
             "summary": "",
             "url": "classes/App-Controller-DiscordController.html#method_oauth2Check"
+        },                {
+            "fqsen": "\\App\\Controller\\DiscordController\u003A\u003AinstallGuild\u0028\u0029",
+            "name": "installGuild",
+            "summary": "",
+            "url": "classes/App-Controller-DiscordController.html#method_installGuild"
         },                {
             "fqsen": "\\App\\Controller\\DiscordController\u003A\u003AWEBHOOK_EVENT_ROUTE_PATH",
             "name": "WEBHOOK_EVENT_ROUTE_PATH",
@@ -215,6 +255,41 @@ Search.appendIndex(
             "name": "OAUTH2_CHECK_ROUTE_NAME",
             "summary": "",
             "url": "classes/App-Controller-DiscordController.html#constant_OAUTH2_CHECK_ROUTE_NAME"
+        },                {
+            "fqsen": "\\App\\Controller\\DiscordController\u003A\u003A\u0024guildRepository",
+            "name": "guildRepository",
+            "summary": "",
+            "url": "classes/App-Controller-DiscordController.html#property_guildRepository"
+        },                {
+            "fqsen": "\\App\\Controller\\DiscordController\u003A\u003A\u0024validator",
+            "name": "validator",
+            "summary": "",
+            "url": "classes/App-Controller-DiscordController.html#property_validator"
+        },                {
+            "fqsen": "\\App\\Controller\\DiscordController\u003A\u003A\u0024logger",
+            "name": "logger",
+            "summary": "",
+            "url": "classes/App-Controller-DiscordController.html#property_logger"
+        },                {
+            "fqsen": "\\App\\Controller\\HomeController",
+            "name": "HomeController",
+            "summary": "",
+            "url": "classes/App-Controller-HomeController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\HomeController\u003A\u003A__invoke\u0028\u0029",
+            "name": "__invoke",
+            "summary": "",
+            "url": "classes/App-Controller-HomeController.html#method___invoke"
+        },                {
+            "fqsen": "\\App\\Controller\\HomeController\u003A\u003AROUTE_PATH",
+            "name": "ROUTE_PATH",
+            "summary": "",
+            "url": "classes/App-Controller-HomeController.html#constant_ROUTE_PATH"
+        },                {
+            "fqsen": "\\App\\Controller\\HomeController\u003A\u003AROUTE_NAME",
+            "name": "ROUTE_NAME",
+            "summary": "",
+            "url": "classes/App-Controller-HomeController.html#constant_ROUTE_NAME"
         },                {
             "fqsen": "\\App\\DependencyInjection\\Parameters",
             "name": "Parameters",
@@ -1291,6 +1366,36 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Enum-Discord-GuildNsfwLevel.html#enumcase_AGE_RESTRICTED"
         },                {
+            "fqsen": "\\App\\Enum\\Discord\\InteractionType",
+            "name": "InteractionType",
+            "summary": "",
+            "url": "classes/App-Enum-Discord-InteractionType.html"
+        },                {
+            "fqsen": "\\App\\Enum\\Discord\\InteractionType\u003A\u003APING",
+            "name": "PING",
+            "summary": "",
+            "url": "classes/App-Enum-Discord-InteractionType.html#enumcase_PING"
+        },                {
+            "fqsen": "\\App\\Enum\\Discord\\InteractionType\u003A\u003AAPPLICATION_COMMAND",
+            "name": "APPLICATION_COMMAND",
+            "summary": "",
+            "url": "classes/App-Enum-Discord-InteractionType.html#enumcase_APPLICATION_COMMAND"
+        },                {
+            "fqsen": "\\App\\Enum\\Discord\\InteractionType\u003A\u003AMESSAGE_COMPONENT",
+            "name": "MESSAGE_COMPONENT",
+            "summary": "",
+            "url": "classes/App-Enum-Discord-InteractionType.html#enumcase_MESSAGE_COMPONENT"
+        },                {
+            "fqsen": "\\App\\Enum\\Discord\\InteractionType\u003A\u003AAPPLICATION_COMMAND_AUTOCOMPLETE",
+            "name": "APPLICATION_COMMAND_AUTOCOMPLETE",
+            "summary": "",
+            "url": "classes/App-Enum-Discord-InteractionType.html#enumcase_APPLICATION_COMMAND_AUTOCOMPLETE"
+        },                {
+            "fqsen": "\\App\\Enum\\Discord\\InteractionType\u003A\u003AMODAL_SUBMIT",
+            "name": "MODAL_SUBMIT",
+            "summary": "",
+            "url": "classes/App-Enum-Discord-InteractionType.html#enumcase_MODAL_SUBMIT"
+        },                {
             "fqsen": "\\App\\Enum\\Discord\\MfaLevel",
             "name": "MfaLevel",
             "summary": "",
@@ -1591,145 +1696,170 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Security-AuthenticationEntryPoint.html#property_urlGenerator"
         },                {
-            "fqsen": "\\App\\Security\\Discord\\OAuth2Authenticator",
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\OAuth2Authenticator",
             "name": "OAuth2Authenticator",
             "summary": "",
-            "url": "classes/App-Security-Discord-OAuth2Authenticator.html"
+            "url": "classes/App-Security-Discord-Authenticator-OAuth2Authenticator.html"
         },                {
-            "fqsen": "\\App\\Security\\Discord\\OAuth2Authenticator\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\OAuth2Authenticator\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
-            "url": "classes/App-Security-Discord-OAuth2Authenticator.html#method___construct"
+            "url": "classes/App-Security-Discord-Authenticator-OAuth2Authenticator.html#method___construct"
         },                {
-            "fqsen": "\\App\\Security\\Discord\\OAuth2Authenticator\u003A\u003Asupports\u0028\u0029",
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\OAuth2Authenticator\u003A\u003Asupports\u0028\u0029",
             "name": "supports",
             "summary": "",
-            "url": "classes/App-Security-Discord-OAuth2Authenticator.html#method_supports"
+            "url": "classes/App-Security-Discord-Authenticator-OAuth2Authenticator.html#method_supports"
         },                {
-            "fqsen": "\\App\\Security\\Discord\\OAuth2Authenticator\u003A\u003Aauthenticate\u0028\u0029",
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\OAuth2Authenticator\u003A\u003Aauthenticate\u0028\u0029",
             "name": "authenticate",
             "summary": "",
-            "url": "classes/App-Security-Discord-OAuth2Authenticator.html#method_authenticate"
+            "url": "classes/App-Security-Discord-Authenticator-OAuth2Authenticator.html#method_authenticate"
         },                {
-            "fqsen": "\\App\\Security\\Discord\\OAuth2Authenticator\u003A\u003AonAuthenticationSuccess\u0028\u0029",
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\OAuth2Authenticator\u003A\u003AonAuthenticationSuccess\u0028\u0029",
             "name": "onAuthenticationSuccess",
             "summary": "",
-            "url": "classes/App-Security-Discord-OAuth2Authenticator.html#method_onAuthenticationSuccess"
+            "url": "classes/App-Security-Discord-Authenticator-OAuth2Authenticator.html#method_onAuthenticationSuccess"
         },                {
-            "fqsen": "\\App\\Security\\Discord\\OAuth2Authenticator\u003A\u003AonAuthenticationFailure\u0028\u0029",
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\OAuth2Authenticator\u003A\u003AonAuthenticationFailure\u0028\u0029",
             "name": "onAuthenticationFailure",
             "summary": "",
-            "url": "classes/App-Security-Discord-OAuth2Authenticator.html#method_onAuthenticationFailure"
+            "url": "classes/App-Security-Discord-Authenticator-OAuth2Authenticator.html#method_onAuthenticationFailure"
         },                {
-            "fqsen": "\\App\\Security\\Discord\\OAuth2Authenticator\u003A\u003AresolveAuthorizedGuilds\u0028\u0029",
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\OAuth2Authenticator\u003A\u003AresolveAuthorizedGuilds\u0028\u0029",
             "name": "resolveAuthorizedGuilds",
             "summary": "",
-            "url": "classes/App-Security-Discord-OAuth2Authenticator.html#method_resolveAuthorizedGuilds"
+            "url": "classes/App-Security-Discord-Authenticator-OAuth2Authenticator.html#method_resolveAuthorizedGuilds"
         },                {
-            "fqsen": "\\App\\Security\\Discord\\OAuth2Authenticator\u003A\u003AREGISTRY_CLIENT_KEY",
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\OAuth2Authenticator\u003A\u003AREGISTRY_CLIENT_KEY",
             "name": "REGISTRY_CLIENT_KEY",
             "summary": "",
-            "url": "classes/App-Security-Discord-OAuth2Authenticator.html#constant_REGISTRY_CLIENT_KEY"
+            "url": "classes/App-Security-Discord-Authenticator-OAuth2Authenticator.html#constant_REGISTRY_CLIENT_KEY"
         },                {
-            "fqsen": "\\App\\Security\\Discord\\OAuth2Authenticator\u003A\u003A\u0024registry",
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\OAuth2Authenticator\u003A\u003A\u0024registry",
             "name": "registry",
             "summary": "",
-            "url": "classes/App-Security-Discord-OAuth2Authenticator.html#property_registry"
+            "url": "classes/App-Security-Discord-Authenticator-OAuth2Authenticator.html#property_registry"
         },                {
-            "fqsen": "\\App\\Security\\Discord\\OAuth2Authenticator\u003A\u003A\u0024logger",
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\OAuth2Authenticator\u003A\u003A\u0024logger",
             "name": "logger",
             "summary": "",
-            "url": "classes/App-Security-Discord-OAuth2Authenticator.html#property_logger"
+            "url": "classes/App-Security-Discord-Authenticator-OAuth2Authenticator.html#property_logger"
         },                {
-            "fqsen": "\\App\\Security\\Discord\\OAuth2Authenticator\u003A\u003A\u0024userRepository",
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\OAuth2Authenticator\u003A\u003A\u0024userRepository",
             "name": "userRepository",
             "summary": "",
-            "url": "classes/App-Security-Discord-OAuth2Authenticator.html#property_userRepository"
+            "url": "classes/App-Security-Discord-Authenticator-OAuth2Authenticator.html#property_userRepository"
         },                {
-            "fqsen": "\\App\\Security\\Discord\\OAuth2Authenticator\u003A\u003A\u0024validator",
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\OAuth2Authenticator\u003A\u003A\u0024validator",
             "name": "validator",
             "summary": "",
-            "url": "classes/App-Security-Discord-OAuth2Authenticator.html#property_validator"
+            "url": "classes/App-Security-Discord-Authenticator-OAuth2Authenticator.html#property_validator"
         },                {
-            "fqsen": "\\App\\Security\\Discord\\OAuth2Authenticator\u003A\u003A\u0024router",
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\OAuth2Authenticator\u003A\u003A\u0024router",
             "name": "router",
             "summary": "",
-            "url": "classes/App-Security-Discord-OAuth2Authenticator.html#property_router"
+            "url": "classes/App-Security-Discord-Authenticator-OAuth2Authenticator.html#property_router"
         },                {
-            "fqsen": "\\App\\Security\\Discord\\OAuth2Authenticator\u003A\u003A\u0024security",
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\OAuth2Authenticator\u003A\u003A\u0024security",
             "name": "security",
             "summary": "",
-            "url": "classes/App-Security-Discord-OAuth2Authenticator.html#property_security"
+            "url": "classes/App-Security-Discord-Authenticator-OAuth2Authenticator.html#property_security"
         },                {
-            "fqsen": "\\App\\Security\\Discord\\OAuth2Authenticator\u003A\u003A\u0024discordApi",
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\OAuth2Authenticator\u003A\u003A\u0024discordApi",
             "name": "discordApi",
             "summary": "",
-            "url": "classes/App-Security-Discord-OAuth2Authenticator.html#property_discordApi"
+            "url": "classes/App-Security-Discord-Authenticator-OAuth2Authenticator.html#property_discordApi"
         },                {
-            "fqsen": "\\App\\Security\\Discord\\OAuth2Authenticator\u003A\u003A\u0024guildRepository",
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\OAuth2Authenticator\u003A\u003A\u0024guildRepository",
             "name": "guildRepository",
             "summary": "",
-            "url": "classes/App-Security-Discord-OAuth2Authenticator.html#property_guildRepository"
+            "url": "classes/App-Security-Discord-Authenticator-OAuth2Authenticator.html#property_guildRepository"
         },                {
-            "fqsen": "\\App\\Security\\Discord\\RequestAuthenticator",
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\RequestAuthenticator",
             "name": "RequestAuthenticator",
             "summary": "",
-            "url": "classes/App-Security-Discord-RequestAuthenticator.html"
+            "url": "classes/App-Security-Discord-Authenticator-RequestAuthenticator.html"
         },                {
-            "fqsen": "\\App\\Security\\Discord\\RequestAuthenticator\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\RequestAuthenticator\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
-            "url": "classes/App-Security-Discord-RequestAuthenticator.html#method___construct"
+            "url": "classes/App-Security-Discord-Authenticator-RequestAuthenticator.html#method___construct"
         },                {
-            "fqsen": "\\App\\Security\\Discord\\RequestAuthenticator\u003A\u003Asupports\u0028\u0029",
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\RequestAuthenticator\u003A\u003Asupports\u0028\u0029",
             "name": "supports",
             "summary": "",
-            "url": "classes/App-Security-Discord-RequestAuthenticator.html#method_supports"
+            "url": "classes/App-Security-Discord-Authenticator-RequestAuthenticator.html#method_supports"
         },                {
-            "fqsen": "\\App\\Security\\Discord\\RequestAuthenticator\u003A\u003Aauthenticate\u0028\u0029",
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\RequestAuthenticator\u003A\u003Aauthenticate\u0028\u0029",
             "name": "authenticate",
             "summary": "",
-            "url": "classes/App-Security-Discord-RequestAuthenticator.html#method_authenticate"
+            "url": "classes/App-Security-Discord-Authenticator-RequestAuthenticator.html#method_authenticate"
         },                {
-            "fqsen": "\\App\\Security\\Discord\\RequestAuthenticator\u003A\u003AonAuthenticationSuccess\u0028\u0029",
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\RequestAuthenticator\u003A\u003AonAuthenticationSuccess\u0028\u0029",
             "name": "onAuthenticationSuccess",
             "summary": "",
-            "url": "classes/App-Security-Discord-RequestAuthenticator.html#method_onAuthenticationSuccess"
+            "url": "classes/App-Security-Discord-Authenticator-RequestAuthenticator.html#method_onAuthenticationSuccess"
         },                {
-            "fqsen": "\\App\\Security\\Discord\\RequestAuthenticator\u003A\u003AonAuthenticationFailure\u0028\u0029",
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\RequestAuthenticator\u003A\u003AonAuthenticationFailure\u0028\u0029",
             "name": "onAuthenticationFailure",
             "summary": "",
-            "url": "classes/App-Security-Discord-RequestAuthenticator.html#method_onAuthenticationFailure"
+            "url": "classes/App-Security-Discord-Authenticator-RequestAuthenticator.html#method_onAuthenticationFailure"
         },                {
-            "fqsen": "\\App\\Security\\Discord\\RequestAuthenticator\u003A\u003AresolveUserIdentifier\u0028\u0029",
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\RequestAuthenticator\u003A\u003AresolveUserIdentifier\u0028\u0029",
             "name": "resolveUserIdentifier",
             "summary": "",
-            "url": "classes/App-Security-Discord-RequestAuthenticator.html#method_resolveUserIdentifier"
+            "url": "classes/App-Security-Discord-Authenticator-RequestAuthenticator.html#method_resolveUserIdentifier"
         },                {
-            "fqsen": "\\App\\Security\\Discord\\RequestAuthenticator\u003A\u003ADISCORD_AGENT_USER_IDENTIFIER",
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\RequestAuthenticator\u003A\u003AresolveUserIdentifierFromWebhookEvent\u0028\u0029",
+            "name": "resolveUserIdentifierFromWebhookEvent",
+            "summary": "",
+            "url": "classes/App-Security-Discord-Authenticator-RequestAuthenticator.html#method_resolveUserIdentifierFromWebhookEvent"
+        },                {
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\RequestAuthenticator\u003A\u003ADISCORD_AGENT_USER_IDENTIFIER",
             "name": "DISCORD_AGENT_USER_IDENTIFIER",
             "summary": "",
-            "url": "classes/App-Security-Discord-RequestAuthenticator.html#constant_DISCORD_AGENT_USER_IDENTIFIER"
+            "url": "classes/App-Security-Discord-Authenticator-RequestAuthenticator.html#constant_DISCORD_AGENT_USER_IDENTIFIER"
         },                {
-            "fqsen": "\\App\\Security\\Discord\\RequestAuthenticator\u003A\u003A\u0024requestValidator",
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\RequestAuthenticator\u003A\u003A\u0024requestValidator",
             "name": "requestValidator",
             "summary": "",
-            "url": "classes/App-Security-Discord-RequestAuthenticator.html#property_requestValidator"
+            "url": "classes/App-Security-Discord-Authenticator-RequestAuthenticator.html#property_requestValidator"
         },                {
-            "fqsen": "\\App\\Security\\Discord\\RequestAuthenticator\u003A\u003A\u0024logger",
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\RequestAuthenticator\u003A\u003A\u0024logger",
             "name": "logger",
             "summary": "",
-            "url": "classes/App-Security-Discord-RequestAuthenticator.html#property_logger"
+            "url": "classes/App-Security-Discord-Authenticator-RequestAuthenticator.html#property_logger"
         },                {
-            "fqsen": "\\App\\Security\\Discord\\RequestAuthenticator\u003A\u003A\u0024userRepository",
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\RequestAuthenticator\u003A\u003A\u0024userRepository",
             "name": "userRepository",
             "summary": "",
-            "url": "classes/App-Security-Discord-RequestAuthenticator.html#property_userRepository"
+            "url": "classes/App-Security-Discord-Authenticator-RequestAuthenticator.html#property_userRepository"
         },                {
-            "fqsen": "\\App\\Security\\Discord\\RequestAuthenticator\u003A\u003A\u0024validator",
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\RequestAuthenticator\u003A\u003A\u0024validator",
             "name": "validator",
             "summary": "",
-            "url": "classes/App-Security-Discord-RequestAuthenticator.html#property_validator"
+            "url": "classes/App-Security-Discord-Authenticator-RequestAuthenticator.html#property_validator"
+        },                {
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\UserFindableOrCreatable",
+            "name": "UserFindableOrCreatable",
+            "summary": "",
+            "url": "classes/App-Security-Discord-Authenticator-UserFindableOrCreatable.html"
+        },                {
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\UserFindableOrCreatable\u003A\u003AfindOrCreateUser\u0028\u0029",
+            "name": "findOrCreateUser",
+            "summary": "",
+            "url": "classes/App-Security-Discord-Authenticator-UserFindableOrCreatable.html#method_findOrCreateUser"
+        },                {
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\UserFindableOrCreatable\u003A\u003AfindUser\u0028\u0029",
+            "name": "findUser",
+            "summary": "",
+            "url": "classes/App-Security-Discord-Authenticator-UserFindableOrCreatable.html#method_findUser"
+        },                {
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\UserFindableOrCreatable\u003A\u003AcreateUser\u0028\u0029",
+            "name": "createUser",
+            "summary": "",
+            "url": "classes/App-Security-Discord-Authenticator-UserFindableOrCreatable.html#method_createUser"
         },                {
             "fqsen": "\\App\\Security\\Discord\\RequestValidator",
             "name": "RequestValidator",
@@ -1765,21 +1895,6 @@ Search.appendIndex(
             "name": "publicKey",
             "summary": "",
             "url": "classes/App-Security-Discord-RequestValidator.html#property_publicKey"
-        },                {
-            "fqsen": "\\App\\Security\\Discord\\UserFindableOrCreatable",
-            "name": "UserFindableOrCreatable",
-            "summary": "",
-            "url": "classes/App-Security-Discord-UserFindableOrCreatable.html"
-        },                {
-            "fqsen": "\\App\\Security\\Discord\\UserFindableOrCreatable\u003A\u003AfindOrCreateUser\u0028\u0029",
-            "name": "findOrCreateUser",
-            "summary": "",
-            "url": "classes/App-Security-Discord-UserFindableOrCreatable.html#method_findOrCreateUser"
-        },                {
-            "fqsen": "\\App\\Security\\Discord\\UserFindableOrCreatable\u003A\u003AcreateUser\u0028\u0029",
-            "name": "createUser",
-            "summary": "",
-            "url": "classes/App-Security-Discord-UserFindableOrCreatable.html#method_createUser"
         },                {
             "fqsen": "\\App\\Security\\Providers",
             "name": "Providers",
@@ -1825,6 +1940,11 @@ Search.appendIndex(
             "name": "Style",
             "summary": "",
             "url": "namespaces/app-console-style.html"
+        },                {
+            "fqsen": "\\App\\Controller\\Admin",
+            "name": "Admin",
+            "summary": "",
+            "url": "namespaces/app-controller-admin.html"
         },                {
             "fqsen": "\\App\\Controller",
             "name": "Controller",
@@ -1890,6 +2010,11 @@ Search.appendIndex(
             "name": "Security",
             "summary": "",
             "url": "namespaces/app-security.html"
+        },                {
+            "fqsen": "\\App\\Security\\Discord\\Authenticator",
+            "name": "Authenticator",
+            "summary": "",
+            "url": "namespaces/app-security-discord-authenticator.html"
         },                {
             "fqsen": "\\App\\Security\\Discord",
             "name": "Discord",
