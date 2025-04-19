@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Tests\Security;
 
+use App\Controller\Admin\DashboardController;
 use App\Controller\DiscordController;
 use App\Security\AuthenticationEntryPoint;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
@@ -36,7 +37,10 @@ final class AuthenticationEntryPointTest extends KernelTestCase
         self::assertInstanceOf(RedirectResponse::class, $result);
         self::assertStringEndsWith(DiscordController::OAUTH2_ROUTE_PATH, $result->getTargetUrl());
 
-        self::assertSame($request->getSession()->get(AuthenticationEntryPoint::ROUTE_NAME_SESSION_KEY), 'app_dashboard'); // TODO
+        self::assertSame(
+            DashboardController::ROUTE_NAME,
+            $request->getSession()->get(AuthenticationEntryPoint::ROUTE_NAME_SESSION_KEY)
+        );
         self::assertIsArray($request->getSession()->get(AuthenticationEntryPoint::ROUTE_PARAMS_SESSION_KEY));
         self::assertEmpty($request->getSession()->get(AuthenticationEntryPoint::ROUTE_PARAMS_SESSION_KEY));
     }

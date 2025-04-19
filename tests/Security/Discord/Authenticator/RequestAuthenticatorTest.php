@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\Tests\Security\Discord;
+namespace App\Tests\Security\Discord\Authenticator;
 
 use App\Controller\DiscordController;
 use App\Enum\Discord\WebhookEventBodyType;
 use App\Enum\Discord\WebhookType;
-use App\Security\Discord\RequestAuthenticator;
+use App\Security\Discord\Authenticator\RequestAuthenticator;
 use App\Security\Discord\RequestValidator;
 use App\Tests\EntityManageable;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
@@ -153,7 +153,7 @@ final class RequestAuthenticatorTest extends KernelTestCase
     /**
      * @return void
      */
-    public function test_authenticate_success_event_type_APPLICATION_AUTHORIZED_create_user(): void
+    public function test_authenticate_success_event_type_APPLICATION_AUTHORIZED_integration_type_0_create_user(): void
     {
         $validator = self::createMock(RequestValidator::class);
         $validator->expects(self::once())
@@ -164,7 +164,7 @@ final class RequestAuthenticatorTest extends KernelTestCase
         $subject = self::getSubject();
         $request = Request::create(
             uri: '/',
-            content: '{"type":' . WebhookType::Event->value . ',"event":{"type":"' . WebhookEventBodyType::ApplicationAuthorized->value . '","data":{"user":{"id":"175928847299117063"}}}}'
+            content: '{"type":' . WebhookType::Event->value . ',"event":{"type":"' . WebhookEventBodyType::ApplicationAuthorized->value . '","data":{"integration_type":0,"user":{"id":"175928847299117063"}}}}'
         );
         $request->attributes->set('_route', DiscordController::WEBHOOK_EVENT_ROUTE_NAME);
 

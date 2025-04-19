@@ -14,7 +14,7 @@ use App\Entity\Guild as EntityGuild;
 use App\Enum\Discord\WebhookEventBodyType;
 use App\Enum\Discord\WebhookType;
 use App\Repository\GuildRepository;
-use App\Security\Discord\RequestAuthenticator;
+use App\Security\Discord\Authenticator\RequestAuthenticator;
 use App\Tests\Entity\UserTest;
 use App\Tests\EntityManageable;
 use Doctrine\ORM\Exception\ORMException;
@@ -58,13 +58,9 @@ final class DiscordControllerTest extends KernelTestCase
                 type: WebhookType::PING,
                 event: null
             ),
-            self::getContainer()->get(GuildRepository::class),
-            self::getContainer()->get(ValidatorInterface::class),
-            self::getContainer()->get(LoggerInterface::class),
             self::getContainer()->get(Security::class)
         );
 
-        self::assertInstanceOf(JsonResponse::class, $result);
         self::assertSame($result->getContent(), 'null');
         self::assertSame($result->getStatusCode(), Response::HTTP_NO_CONTENT);
     }
@@ -97,13 +93,9 @@ final class DiscordControllerTest extends KernelTestCase
                 type: WebhookType::Event,
                 event: $event
             ),
-            self::getContainer()->get(GuildRepository::class),
-            self::getContainer()->get(ValidatorInterface::class),
-            self::getContainer()->get(LoggerInterface::class),
             self::getContainer()->get(Security::class)
         );
 
-        self::assertInstanceOf(JsonResponse::class, $result);
         self::assertSame($result->getContent(), 'null');
         self::assertSame($result->getStatusCode(), Response::HTTP_NO_CONTENT);
     }
@@ -136,13 +128,9 @@ final class DiscordControllerTest extends KernelTestCase
                 type: WebhookType::Event,
                 event: $event
             ),
-            self::getContainer()->get(GuildRepository::class),
-            self::getContainer()->get(ValidatorInterface::class),
-            self::getContainer()->get(LoggerInterface::class),
             self::getContainer()->get(Security::class)
         );
 
-        self::assertInstanceOf(JsonResponse::class, $result);
         self::assertSame($result->getContent(), 'null');
         self::assertSame($result->getStatusCode(), Response::HTTP_NO_CONTENT);
     }
@@ -183,13 +171,9 @@ final class DiscordControllerTest extends KernelTestCase
                 type: WebhookType::Event,
                 event: $event
             ),
-            self::getContainer()->get(GuildRepository::class),
-            self::getContainer()->get(ValidatorInterface::class),
-            self::getContainer()->get(LoggerInterface::class),
             self::getContainer()->get(Security::class)
         );
 
-        self::assertInstanceOf(JsonResponse::class, $result);
         self::assertSame($result->getContent(), 'null');
         self::assertSame($result->getStatusCode(), Response::HTTP_NO_CONTENT);
     }
@@ -237,13 +221,9 @@ final class DiscordControllerTest extends KernelTestCase
                 type: WebhookType::Event,
                 event: $event
             ),
-            self::getContainer()->get(GuildRepository::class),
-            self::getContainer()->get(ValidatorInterface::class),
-            self::getContainer()->get(LoggerInterface::class),
             self::getContainer()->get(Security::class)
         );
 
-        self::assertInstanceOf(JsonResponse::class, $result);
         self::assertSame($result->getContent(), 'null');
         self::assertSame($result->getStatusCode(), Response::HTTP_NO_CONTENT);
     }
@@ -291,13 +271,9 @@ final class DiscordControllerTest extends KernelTestCase
                 type: WebhookType::Event,
                 event: $event
             ),
-            self::getContainer()->get(GuildRepository::class),
-            self::getContainer()->get(ValidatorInterface::class),
-            self::getContainer()->get(LoggerInterface::class),
             self::getContainer()->get(Security::class)
         );
 
-        self::assertInstanceOf(JsonResponse::class, $result);
         self::assertSame($result->getContent(), 'null');
         self::assertSame($result->getStatusCode(), Response::HTTP_NO_CONTENT);
     }
@@ -375,13 +351,9 @@ final class DiscordControllerTest extends KernelTestCase
                 type: WebhookType::Event,
                 event: $event
             ),
-            self::getContainer()->get(GuildRepository::class),
-            self::getContainer()->get(ValidatorInterface::class),
-            self::getContainer()->get(LoggerInterface::class),
             self::getContainer()->get(Security::class)
         );
 
-        self::assertInstanceOf(JsonResponse::class, $result);
         self::assertSame($result->getContent(), 'null');
         self::assertSame($result->getStatusCode(), Response::HTTP_NO_CONTENT);
     }
@@ -462,13 +434,9 @@ final class DiscordControllerTest extends KernelTestCase
                 type: WebhookType::Event,
                 event: $event
             ),
-            $guildRepository,
-            self::getContainer()->get(ValidatorInterface::class),
-            self::getContainer()->get(LoggerInterface::class),
             self::getContainer()->get(Security::class)
         );
 
-        self::assertInstanceOf(JsonResponse::class, $result);
         self::assertSame($result->getContent(), 'null');
         self::assertSame($result->getStatusCode(), Response::HTTP_NO_CONTENT);
 

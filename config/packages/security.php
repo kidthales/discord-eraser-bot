@@ -2,10 +2,11 @@
 
 declare(strict_types=1);
 
+use App\Controller\HomeController;
 use App\Entity\User;
 use App\Security\AuthenticationEntryPoint;
-use App\Security\Discord\OAuth2Authenticator;
-use App\Security\Discord\RequestAuthenticator;
+use App\Security\Discord\Authenticator\OAuth2Authenticator;
+use App\Security\Discord\Authenticator\RequestAuthenticator;
 use App\Security\Providers;
 use Symfony\Config\SecurityConfig;
 
@@ -46,5 +47,13 @@ return static function (SecurityConfig $security): void {
         ->customAuthenticators([OAuth2Authenticator::class])
         ->logout()
         ->path('/logout')
-        ->target('app_logout'); // TODO
+        ->target(HomeController::ROUTE_NAME);
+
+    $security
+        ->roleHierarchy(User::ROLE_SUPER_ADMIN, User::ROLE_USER);
+
+    $security
+        ->accessControl()
+        ->path('^/_')
+        ->roles(User::ROLE_USER);
 };

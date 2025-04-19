@@ -2,8 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Security\Discord;
+namespace App\Security\Discord\Authenticator;
 
+use App\Controller\Admin\DashboardController;
 use App\Controller\DiscordController;
 use App\Entity\User;
 use App\Enum\Discord\BitwisePermissionFlag;
@@ -97,7 +98,7 @@ final class OAuth2Authenticator extends BaseOAuth2Authenticator
                     return null;
                 }
 
-                $user = $this->userRepository->findOneByDiscordId($discordId);
+                $user = $this->findUser($discordId);
                 $isSuperAdmin = $user !== null && $this->security->isGranted(User::ROLE_SUPER_ADMIN);
 
                 $authorizedGuilds = $this->resolveAuthorizedGuilds($accessToken->getToken());
@@ -137,7 +138,10 @@ final class OAuth2Authenticator extends BaseOAuth2Authenticator
     {
         $session = $request->getSession();
 
-        $route = $session->get(AuthenticationEntryPoint::ROUTE_NAME_SESSION_KEY, 'app_dashboard'); // TODO: use class const...
+        $route = $session->get(
+            AuthenticationEntryPoint::ROUTE_NAME_SESSION_KEY,
+            DashboardController::ROUTE_NAME
+        );
         $routeParams = $session->get(AuthenticationEntryPoint::ROUTE_PARAMS_SESSION_KEY, []);
 
         $session->remove(AuthenticationEntryPoint::ROUTE_NAME_SESSION_KEY);

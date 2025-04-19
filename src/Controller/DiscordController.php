@@ -10,7 +10,7 @@ use App\Entity\User;
 use App\Enum\Discord\WebhookEventBodyType;
 use App\Enum\Discord\WebhookType;
 use App\Repository\GuildRepository;
-use App\Security\Discord\OAuth2Authenticator;
+use App\Security\Discord\Authenticator\OAuth2Authenticator;
 use KnpU\OAuth2ClientBundle\Client\ClientRegistry;
 use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -36,10 +36,20 @@ final class DiscordController extends AbstractController
     public const string OAUTH2_CHECK_ROUTE_NAME = 'discord_oauth2_check';
 
     /**
-     * @param WebhookEventPayload $payload
      * @param GuildRepository $guildRepository
      * @param ValidatorInterface $validator
      * @param LoggerInterface $logger
+     */
+    public function __construct(
+        private readonly GuildRepository    $guildRepository,
+        private readonly ValidatorInterface $validator,
+        private readonly LoggerInterface    $logger
+    )
+    {
+    }
+
+    /**
+     * @param WebhookEventPayload $payload
      * @param Security $security
      * @return JsonResponse
      */
@@ -49,75 +59,54 @@ final class DiscordController extends AbstractController
         methods: ['POST'],
         stateless: true
     )]
-    public function webhookEvent(
-        #[MapRequestPayload] WebhookEventPayload $payload,
-        GuildRepository                          $guildRepository,
-        ValidatorInterface                       $validator,
-        LoggerInterface                          $logger,
-        Security                                 $security
-    ): JsonResponse
+    public function webhookEvent(#[MapRequestPayload] WebhookEventPayload $payload, Security $security): JsonResponse
     {
         if ($payload->type === WebhookType::Event) {
             switch ($payload->event->type) {
                 case WebhookEventBodyType::ApplicationAuthorized:
-                    if ($security->isGranted(User::ROLE_USER)) {
+                    if (isset($payload->event->data->integration_type)) {
                         if ($payload->event->data->integration_type === 0) {
-                            if (isset($payload->event->data->guild->id)) {
-                                $guild = $guildRepository->findOneByDiscordId($payload->event->data->guild->id);
-
-                                if ($guild === null) {
-                                    $guild = new Guild();
-                                    $guild->setDiscordId($payload->event->data->guild->id);
-                                }
-
-                                $guild->setInstalled(true);
-
-                                $errors = $validator->validate($guild);
-                                if (count($errors) === 0) {
-                                    try {
-                                        $guildRepository->add($guild, true);
-                                        // @codeCoverageIgnoreStart
-                                    } catch (Throwable $e) {
-                                        $logger->critical(
-                                            'Encountered an unexpected error while upserting guild {discordId}',
-                                            [
-                                                'discordId' => $payload->event->data->guild->id,
-                                                'exception' => FlattenException::createFromThrowable($e)
-                                            ]
-                                        );
-                                    }
-                                    // @codeCoverageIgnoreEnd
-                                } else {
-                                    $logger->critical(
-                                        'Encountered a validator error while creating guild {discordId}',
-                                        [
-                                            'discordId' => $payload->event->data->guild->id,
-                                            'errors' => (array)$errors,
-                                        ]
+                            if ($security->isGranted(User::ROLE_USER)) {
+                                if (!isset($payload->event->data->guild->id)) {
+                                    $this->logger->critical(
+                                        'Unset guild id in APPLICATION_AUTHORIZED webhook event data for guild installation context'
                                     );
+                                } else {
+                                    $this->installGuild($payload->event->data->guild->id);
                                 }
                             } else {
-                                $logger->error(
-                                    'Unset guild id in ' . $payload->event->type->value . ' webhook event data'
-                                );
+                                $this->logger->warning('Access denied for user "{userIdentifier}" while handling Discord APPLICATION_AUTHORIZED webhook event for guild installation context. Did user creation fail?', [
+                                    'discordId' => $payload->event->data->user->id,
+                                    'userIdentifier' => $security->getToken()->getUserIdentifier()
+                                ]);
                             }
                         } else {
-                            $logger->error(
-                                'Unsupported integration type {integrationType} in ' . $payload->event->type->value . ' webhook event data',
+                            // User installation context.
+                            $this->logger->info(
+                                'Discord APPLICATION_AUTHORIZED webhook event data with unsupported integration_type received',
                                 [
-                                    'integrationType' => $payload->event->data->integration_type
+                                    'integration_type' => $payload->event->data->integration_type,
+                                    'discordId' => $payload->event->data->user->id,
+                                    'userIdentifier' => $security->getToken()->getUserIdentifier()
                                 ]
                             );
                         }
                     } else {
-                        $logger->warning('Access denied for user {userIdentifier}. Did user creation fail?', [
-                            'userIdentifier' => $security->getToken()->getUserIdentifier()
-                        ]);
+                        // Unset integration_type. Usually indicates Discord OAuth2 user authorization for the app (i.e., web dashboard login attempt).
+                        $this->logger->info(
+                            'Discord APPLICATION_AUTHORIZED webhook event data with unset integration_type received',
+                            [
+                                'discordId' => $payload->event->data->user->id,
+                                'userIdentifier' => $security->getToken()->getUserIdentifier()
+                            ]
+                        );
                     }
                     break;
                 case WebhookEventBodyType::EntitlementCreate:
                 case WebhookEventBodyType::QuestUserEnrollment:
-                    $logger->error('Unsupported webhook event type ' . $payload->event->type->value);
+                    $this->logger->info('Unsupported webhook event with type "{type}" received', [
+                        'type' => $payload->event->type->value
+                    ]);
                     break;
             }
         }
@@ -143,5 +132,44 @@ final class DiscordController extends AbstractController
     #[Route(path: self::OAUTH2_CHECK_ROUTE_PATH, name: self::OAUTH2_CHECK_ROUTE_NAME, methods: ['GET'])]
     public function oauth2Check(): void
     {
+    }
+
+    /**
+     * @param string $discordId
+     * @return void
+     */
+    private function installGuild(string $discordId): void
+    {
+        $guild = $this->guildRepository->findOneByDiscordId($discordId);
+
+        if ($guild === null) {
+            $guild = new Guild();
+            $guild->setDiscordId($discordId);
+        }
+
+        $guild->setInstalled(true);
+
+        $errors = $this->validator->validate($guild);
+        if (count($errors) === 0) {
+            try {
+                $this->guildRepository->add($guild, true);
+            } catch (Throwable $e) {
+                $this->logger->critical(
+                    'Encountered an unexpected error while upserting guild "{discordId}"',
+                    [
+                        'discordId' => $discordId,
+                        'exception' => FlattenException::createFromThrowable($e)
+                    ]
+                );
+            }
+        } else {
+            $this->logger->critical(
+                'Encountered a validator error while install guild "{discordId}"',
+                [
+                    'discordId' => $discordId,
+                    'errors' => (array)$errors,
+                ]
+            );
+        }
     }
 }
