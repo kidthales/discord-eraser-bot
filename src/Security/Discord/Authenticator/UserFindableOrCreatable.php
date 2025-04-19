@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Security\Discord;
+namespace App\Security\Discord\Authenticator;
 
 use App\Entity\User;
 use Symfony\Component\Validator\Exception\ValidatorException;
@@ -16,7 +16,16 @@ trait UserFindableOrCreatable
      */
     private function findOrCreateUser(string $discordId): User
     {
-        return $this->userRepository->findOneByDiscordId($discordId) ?? $this->createUser($discordId);
+        return $this->findUser($discordId) ?? $this->createUser($discordId);
+    }
+
+    /**
+     * @param string $discordId
+     * @return User|null
+     */
+    private function findUser(string $discordId): ?User
+    {
+        return $this->userRepository->findOneByDiscordId($discordId);
     }
 
     /**

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use App\Controller\DiscordController;
 use App\DependencyInjection\Parameters;
-use App\Security\Discord\OAuth2Authenticator;
+use App\Security\Discord\Authenticator\OAuth2Authenticator;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use function Symfony\Component\DependencyInjection\Loader\Configurator\param;
 

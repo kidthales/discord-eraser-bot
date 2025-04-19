@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Security\Discord;
+namespace App\Security\Discord\Authenticator;
 
 use App\Controller\Admin\DashboardController;
 use App\Controller\DiscordController;
@@ -98,7 +98,7 @@ final class OAuth2Authenticator extends BaseOAuth2Authenticator
                     return null;
                 }
 
-                $user = $this->userRepository->findOneByDiscordId($discordId);
+                $user = $this->findUser($discordId);
                 $isSuperAdmin = $user !== null && $this->security->isGranted(User::ROLE_SUPER_ADMIN);
 
                 $authorizedGuilds = $this->resolveAuthorizedGuilds($accessToken->getToken());

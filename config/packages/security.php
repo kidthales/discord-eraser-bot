@@ -5,8 +5,8 @@ declare(strict_types=1);
 use App\Controller\HomeController;
 use App\Entity\User;
 use App\Security\AuthenticationEntryPoint;
-use App\Security\Discord\OAuth2Authenticator;
-use App\Security\Discord\RequestAuthenticator;
+use App\Security\Discord\Authenticator\OAuth2Authenticator;
+use App\Security\Discord\Authenticator\RequestAuthenticator;
 use App\Security\Providers;
 use Symfony\Config\SecurityConfig;
 

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Tests\Security\Discord;
+namespace App\Tests\Security\Discord\Authenticator;
 
 use App\Controller\DiscordController;
 use App\Security\AuthenticationEntryPoint;
-use App\Security\Discord\OAuth2Authenticator;
+use App\Security\Discord\Authenticator\OAuth2Authenticator;
 use App\Tests\EntityManageable;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\HttpFoundation\RedirectResponse;
