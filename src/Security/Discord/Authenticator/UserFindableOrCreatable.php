@@ -5,10 +5,43 @@ declare(strict_types=1);
 namespace App\Security\Discord\Authenticator;
 
 use App\Entity\User;
+use App\Repository\UserRepository;
 use Symfony\Component\Validator\Exception\ValidatorException;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
+use Symfony\Contracts\Service\Attribute\Required;
 
 trait UserFindableOrCreatable
 {
+    /**
+     * @var UserRepository
+     */
+    private readonly UserRepository $userRepository;
+
+    /**
+     * @var ValidatorInterface
+     */
+    private readonly ValidatorInterface $validator;
+
+    /**
+     * @param UserRepository $userRepository
+     * @return void
+     */
+    #[Required]
+    public function setUserRepository(UserRepository $userRepository): void
+    {
+        $this->userRepository = $userRepository;
+    }
+
+    /**
+     * @param ValidatorInterface $validator
+     * @return void
+     */
+    #[Required]
+    public function setValidator(ValidatorInterface $validator): void
+    {
+        $this->validator = $validator;
+    }
+
     /**
      * @param string $discordId
      * @return User

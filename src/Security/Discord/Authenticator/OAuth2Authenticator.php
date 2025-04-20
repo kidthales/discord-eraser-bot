@@ -10,7 +10,6 @@ use App\Entity\User;
 use App\Enum\Discord\BitwisePermissionFlag;
 use App\HttpClient\DiscordApi;
 use App\Repository\GuildRepository;
-use App\Repository\UserRepository;
 use App\Security\AuthenticationEntryPoint;
 use KnpU\OAuth2ClientBundle\Client\ClientRegistry;
 use KnpU\OAuth2ClientBundle\Security\Authenticator\OAuth2Authenticator as BaseOAuth2Authenticator;
@@ -27,7 +26,6 @@ use Symfony\Component\Security\Http\Authenticator\Passport\Badge\UserBadge;
 use Symfony\Component\Security\Http\Authenticator\Passport\Passport;
 use Symfony\Component\Security\Http\Authenticator\Passport\SelfValidatingPassport;
 use Symfony\Component\Validator\Exception\ValidatorException;
-use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Throwable;
 use Wohali\OAuth2\Client\Provider\DiscordResourceOwner;
 
@@ -40,22 +38,18 @@ final class OAuth2Authenticator extends BaseOAuth2Authenticator
     /**
      * @param ClientRegistry $registry
      * @param LoggerInterface $logger
-     * @param UserRepository $userRepository
-     * @param ValidatorInterface $validator
      * @param RouterInterface $router
      * @param Security $security
      * @param DiscordApi $discordApi
      * @param GuildRepository $guildRepository
      */
     public function __construct(
-        private readonly ClientRegistry     $registry,
-        private readonly LoggerInterface    $logger,
-        private readonly UserRepository     $userRepository,
-        private readonly ValidatorInterface $validator,
-        private readonly RouterInterface    $router,
-        private readonly Security           $security,
-        private readonly DiscordApi         $discordApi,
-        private readonly GuildRepository    $guildRepository
+        private readonly ClientRegistry  $registry,
+        private readonly LoggerInterface $logger,
+        private readonly RouterInterface $router,
+        private readonly Security        $security,
+        private readonly DiscordApi      $discordApi,
+        private readonly GuildRepository $guildRepository
     )
     {
     }

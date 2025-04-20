@@ -8,7 +8,6 @@ use App\Controller\DiscordController;
 use App\Enum\Discord\InteractionType;
 use App\Enum\Discord\WebhookEventBodyType;
 use App\Enum\Discord\WebhookType;
-use App\Repository\UserRepository;
 use App\Security\Discord\RequestValidator;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\ErrorHandler\Exception\FlattenException;
@@ -23,7 +22,6 @@ use Symfony\Component\Security\Http\Authenticator\Passport\Badge\UserBadge;
 use Symfony\Component\Security\Http\Authenticator\Passport\Passport;
 use Symfony\Component\Security\Http\Authenticator\Passport\SelfValidatingPassport;
 use Symfony\Component\Validator\Exception\ValidatorException;
-use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Throwable;
 
 final class RequestAuthenticator extends AbstractAuthenticator
@@ -35,14 +33,10 @@ final class RequestAuthenticator extends AbstractAuthenticator
     /**
      * @param RequestValidator $requestValidator
      * @param LoggerInterface $logger
-     * @param UserRepository $userRepository
-     * @param ValidatorInterface $validator
      */
     public function __construct(
-        private readonly RequestValidator   $requestValidator,
-        private readonly LoggerInterface    $logger,
-        private readonly UserRepository     $userRepository,
-        private readonly ValidatorInterface $validator
+        private readonly RequestValidator $requestValidator,
+        private readonly LoggerInterface  $logger
     )
     {
     }
