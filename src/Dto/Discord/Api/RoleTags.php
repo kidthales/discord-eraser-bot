@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Dto\Discord;
+namespace App\Dto\Discord\Api;
 
 use Symfony\Component\Serializer\Normalizer\DenormalizableInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;

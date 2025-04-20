@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Tests\Dto\Discord;
+namespace App\Tests\Dto\Discord\Api;
 
-use App\Dto\Discord\AvatarDecorationData;
+use App\Dto\Discord\Api\AvatarDecorationData;
 use App\Tests\SubjectSerializable;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 

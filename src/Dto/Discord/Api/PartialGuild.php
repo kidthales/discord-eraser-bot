@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Dto\Discord;
+namespace App\Dto\Discord\Api;
 
 /**
  * @see https://discord.com/developers/docs/resources/user#get-current-user-guilds-example-partial-guild

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Tests\Dto\Discord;
+namespace App\Tests\Dto\Discord\Api;
 
-use App\Dto\Discord\Guild;
+use App\Dto\Discord\Api\Guild;
 use App\Enum\Discord\DefaultMessageNotificationLevel;
 use App\Enum\Discord\ExplicitContentFilterLevel;
 use App\Enum\Discord\GuildNsfwLevel;

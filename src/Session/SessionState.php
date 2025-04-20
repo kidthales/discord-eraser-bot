@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Session;
 
 use App\Controller\Admin\DashboardController;
-use App\Dto\Discord\PartialGuild;
+use App\Dto\Discord\Api\PartialGuild;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;

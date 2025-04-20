@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Dto\Discord;
+namespace App\Dto\Discord\Api;
 
 /**
  * @see https://discord.com/developers/docs/topics/permissions#role-object-role-structure

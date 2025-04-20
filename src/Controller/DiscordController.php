@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Dto\Discord\WebhookEventPayload;
+use App\Dto\Discord\Api\WebhookEventPayload;
 use App\Entity\Guild;
 use App\Entity\User;
 use App\Enum\Discord\WebhookEventBodyType;

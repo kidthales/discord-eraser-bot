@@ -3,7 +3,7 @@
 namespace App\HttpClient;
 
 use App\DependencyInjection\Parameters;
-use App\Dto\Discord\PartialGuild;
+use App\Dto\Discord\Api\PartialGuild;
 use RuntimeException;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\HttpClient\HttpClient;

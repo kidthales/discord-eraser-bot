@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Tests\Dto\Discord;
+namespace App\Tests\Dto\Discord\Api;
 
-use App\Dto\Discord\Sticker;
+use App\Dto\Discord\Api\Sticker;
 use App\Enum\Discord\StickerFormatType;
 use App\Enum\Discord\StickerType;
 use App\Tests\SubjectSerializable;

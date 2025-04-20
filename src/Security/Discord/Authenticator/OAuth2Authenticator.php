@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Security\Discord\Authenticator;
 
 use App\Controller\DiscordController;
-use App\Dto\Discord\PartialGuild;
+use App\Dto\Discord\Api\PartialGuild;
 use App\Entity\User;
 use App\Enum\Discord\BitwisePermissionFlag;
 use App\HttpClient\DiscordApi;
