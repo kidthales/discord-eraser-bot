@@ -11,6 +11,7 @@ use App\Tests\EntityManageable;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\Authentication\Token\NullToken;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
@@ -50,9 +51,11 @@ final class OAuth2AuthenticatorTest extends KernelTestCase
     {
         $subject = self::getSubject();
         $request = Request::create('/');
+        // TODO: move to trait...
         $request->setSession(self::getContainer()->get('session.factory')->createSession());
-        // TODO: Remove this line once app_dashboard route is implemented...
-        $request->getSession()->set(AuthenticationEntryPoint::ROUTE_NAME_SESSION_KEY, DiscordController::OAUTH2_CHECK_ROUTE_NAME);
+        /** @var RequestStack $requestStack */
+        $requestStack = self::getContainer()->get(RequestStack::class);
+        $requestStack->push($request);
 
         $result = $subject->onAuthenticationSuccess($request, new NullToken(), 'test');
 
