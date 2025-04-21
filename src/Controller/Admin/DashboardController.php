@@ -56,20 +56,10 @@ final class DashboardController extends AbstractDashboardController
      */
     public function configureUserMenu(UserInterface $user): UserMenu
     {
-        $userMenu = parent::configureUserMenu($user);
+        $userInfo = $this->sessionState->getUserInfo();
 
-        $username = $this->sessionState->getUsername();
-
-        if ($username !== null) {
-            $userMenu->setName($username);
-        }
-
-        $avatarUrl = $this->sessionState->getAvatarUrl();
-
-        if ($avatarUrl !== null) {
-            $userMenu->setAvatarUrl($avatarUrl);
-        }
-
-        return $userMenu;
+        return parent::configureUserMenu($user)
+            ->setName($userInfo->username)
+            ->setAvatarUrl($userInfo->getAvatarUrl());
     }
 }

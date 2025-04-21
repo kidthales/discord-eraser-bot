@@ -74,19 +74,19 @@ final class OAuth2Authenticator extends BaseOAuth2Authenticator
         return new SelfValidatingPassport(
             new UserBadge($accessToken->getToken(), function () use ($accessToken, $client, $request) {
                 try {
-                    /** @var DiscordResourceOwner $discordUser */
-                    $discordUser = $client->fetchUserFromToken($accessToken);
+                    /** @var DiscordResourceOwner $discordResourceOwner */
+                    $discordResourceOwner = $client->fetchUserFromToken($accessToken);
                 } catch (Throwable $e) {
-                    $this->logger->error('Encountered an error fetching user resource from access token', [
+                    $this->logger->error('Encountered an error fetching Discord resource owner from access token', [
                         'exception' => FlattenException::createFromThrowable($e)
                     ]);
                     return null;
                 }
 
-                $discordId = $discordUser->getId();
+                $discordId = $discordResourceOwner->getId();
 
                 if (!$discordId) {
-                    $this->logger->error('Encountered an error getting id from user resource');
+                    $this->logger->error('Encountered an error getting id from Discord resource owner');
                     return null;
                 }
 
@@ -100,7 +100,7 @@ final class OAuth2Authenticator extends BaseOAuth2Authenticator
                 }
 
                 $this->sessionState->setAuthorizedGuilds($authorizedGuilds);
-                $this->sessionState->setUserInfo($discordUser->toArray());
+                $this->sessionState->setUserInfo($discordResourceOwner);
 
                 try {
                     return $user ?? $this->createUser($discordId);

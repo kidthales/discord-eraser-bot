@@ -6,12 +6,17 @@ namespace App\Session;
 
 use App\Controller\Admin\DashboardController;
 use App\Dto\Discord\Api\PartialGuild;
+use App\Dto\Discord\UserInfo;
+use LogicException;
+use RuntimeException;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\RouterInterface;
+use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 use Throwable;
+use Wohali\OAuth2\Client\Provider\DiscordResourceOwner;
 
 final readonly class SessionState
 {
@@ -24,11 +29,13 @@ final readonly class SessionState
      * @param RequestStack $requestStack
      * @param RouterInterface $router
      * @param NormalizerInterface $normalizer
+     * @param DenormalizerInterface $denormalizer
      */
     public function __construct(
         private RequestStack $requestStack,
         private RouterInterface $router,
-        private NormalizerInterface $normalizer
+        private NormalizerInterface $normalizer,
+        private DenormalizerInterface $denormalizer
     )
     {
     }
@@ -38,7 +45,7 @@ final readonly class SessionState
      * @param array $routeParams
      * @return void
      */
-    public function setPostAuthenticationRedirect(string $routeName, array $routeParams): void
+    public function setPostAuthenticationRedirectResponse(string $routeName, array $routeParams): void
     {
         $session = $this->getSession();
         $session->set(self::POST_AUTHENTICATION_REDIRECT_ROUTE_NAME, $routeName);
@@ -65,61 +72,43 @@ final readonly class SessionState
     public function setAuthorizedGuilds(array $authorizedGuilds): void
     {
         try {
-            $normalizedAuthorizedGuilds = $this->normalizer->normalize($authorizedGuilds);
+            $this->getSession()->set(self::AUTHORIZED_GUILDS, $this->normalizer->normalize($authorizedGuilds));
         } catch (Throwable $e) {
-            // TODO: logging...
-            $normalizedAuthorizedGuilds = [];
+            throw new RuntimeException(
+                message: 'Error normalizing authorized guilds into session storage',
+                previous: $e
+            );
         }
-
-        $this->getSession()->set(self::AUTHORIZED_GUILDS, $normalizedAuthorizedGuilds);
     }
 
     /**
-     * @param array{
-     *      id: ?string,
-     *      username: ?string,
-     *      discriminator: ?string,
-     *      avatar: ?string,
-     *      verified: ?bool
-     *  } $userInfo
+     * @param DiscordResourceOwner $discordResourceOwner
      * @return void
      */
-    public function setUserInfo(array $userInfo): void
+    public function setUserInfo(DiscordResourceOwner $discordResourceOwner): void
     {
-        $this->getSession()->set(self::USER_INFO, $userInfo);
+        $this->getSession()->set(self::USER_INFO, $discordResourceOwner->toArray());
     }
 
     /**
-     * @return array{
-     *     id: ?string,
-     *     username: ?string,
-     *     discriminator: ?string,
-     *     avatar: ?string,
-     *     verified: ?bool
-     * }
+     * @return UserInfo
      */
-    public function getUserInfo(): array
+    public function getUserInfo(): UserInfo
     {
-        return $this->getSession()->get(self::USER_INFO, []);
-    }
+        $rawUserInfo = $this->getSession()->get(self::USER_INFO);
 
-    /**
-     * @return string|null
-     */
-    public function getUsername(): ?string
-    {
-        return $this->getUserInfo()['username'] ?? null;
-    }
+        if ($rawUserInfo === null) {
+            throw new LogicException('User info not set in session storage');
+        }
 
-    /**
-     * @return string|null
-     */
-    public function getAvatarUrl(): ?string
-    {
-        $userInfo = $this->getUserInfo();
-        return isset($userInfo['id']) && isset($userInfo['avatar'])
-            ? ('https://cdn.discordapp.com/avatars/' . $userInfo['id'] . '/' . $userInfo['avatar'] . '.png')
-            : null;
+        try {
+            return $this->denormalizer->denormalize($rawUserInfo, UserInfo::class);
+        } catch (Throwable $e) {
+            throw new RuntimeException(
+                message: 'Error denormalizing user info from session storage',
+                previous: $e
+            );
+        }
     }
 
     /**

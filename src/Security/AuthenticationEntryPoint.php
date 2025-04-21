@@ -31,7 +31,7 @@ final readonly class AuthenticationEntryPoint implements AuthenticationEntryPoin
      */
     public function start(Request $request, ?AuthenticationException $authException = null): Response
     {
-        $this->sessionState->setPostAuthenticationRedirect(
+        $this->sessionState->setPostAuthenticationRedirectResponse(
             $request->attributes->get('_route', DashboardController::ROUTE_NAME),
             $request->attributes->get('_route_params', [])
         );
