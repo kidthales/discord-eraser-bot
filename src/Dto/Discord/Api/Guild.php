@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace App\Dto\Discord\Api;
 
-use App\Enum\Discord\DefaultMessageNotificationLevel;
-use App\Enum\Discord\ExplicitContentFilterLevel;
-use App\Enum\Discord\GuildNsfwLevel;
-use App\Enum\Discord\MfaLevel;
-use App\Enum\Discord\PremiumTier;
-use App\Enum\Discord\VerificationLevel;
+use App\Enum\Discord\Api\DefaultMessageNotificationLevel;
+use App\Enum\Discord\Api\ExplicitContentFilterLevel;
+use App\Enum\Discord\Api\GuildNsfwLevel;
+use App\Enum\Discord\Api\MfaLevel;
+use App\Enum\Discord\Api\PremiumTier;
+use App\Enum\Discord\Api\VerificationLevel;
 
 /**
  * @see https://discord.com/developers/docs/resources/guild#guild-object-guild-structure

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Enum\Discord;
+namespace App\Enum\Discord\Api;
 
 /**
  * @see https://discord.com/developers/docs/resources/guild#guild-object-verification-level

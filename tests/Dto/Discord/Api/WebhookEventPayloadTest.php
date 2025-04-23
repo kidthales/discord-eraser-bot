@@ -6,7 +6,7 @@ namespace App\Tests\Dto\Discord\Api;
 
 use App\Dto\Discord\Api\ApplicationAuthorizedWebhookEventBody;
 use App\Dto\Discord\Api\WebhookEventPayload;
-use App\Enum\Discord\WebhookType;
+use App\Enum\Discord\Api\WebhookType;
 use App\Tests\SubjectSerializable;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 

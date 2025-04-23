@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Enum\Discord;
+namespace App\Enum\Discord\Api;
 
 /**
  * @see https://discord.com/developers/docs/topics/permissions#permissions-bitwise-permission-flags

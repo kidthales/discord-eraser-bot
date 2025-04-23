@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Dto\Discord\Api;
 
-use App\Enum\Discord\StickerFormatType;
-use App\Enum\Discord\StickerType;
+use App\Enum\Discord\Api\StickerFormatType;
+use App\Enum\Discord\Api\StickerType;
 
 /**
  * @see https://discord.com/developers/docs/resources/sticker#sticker-object-sticker-structure

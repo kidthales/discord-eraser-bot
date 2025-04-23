@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Tests\Dto\Discord\Api;
 
 use App\Dto\Discord\Api\User;
-use App\Enum\Discord\PremiumType;
+use App\Enum\Discord\Api\PremiumType;
 use App\Tests\SubjectSerializable;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 

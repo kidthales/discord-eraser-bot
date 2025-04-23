@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace App\Security\Discord\Authenticator;
 
 use App\Controller\DiscordController;
-use App\Enum\Discord\InteractionType;
-use App\Enum\Discord\WebhookEventBodyType;
-use App\Enum\Discord\WebhookType;
+use App\Enum\Discord\Api\InteractionType;
+use App\Enum\Discord\Api\WebhookEventBodyType;
+use App\Enum\Discord\Api\WebhookType;
 use App\Security\Discord\RequestValidator;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\ErrorHandler\Exception\FlattenException;

@@ -7,7 +7,7 @@ namespace App\Security\Discord\Authenticator;
 use App\Controller\DiscordController;
 use App\Dto\Discord\Api\PartialGuild;
 use App\Entity\User;
-use App\Enum\Discord\BitwisePermissionFlag;
+use App\Enum\Discord\Api\BitwisePermissionFlag;
 use App\HttpClient\DiscordApi;
 use App\Repository\GuildRepository;
 use App\Session\SessionContext;

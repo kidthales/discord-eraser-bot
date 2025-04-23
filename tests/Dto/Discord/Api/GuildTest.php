@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace App\Tests\Dto\Discord\Api;
 
 use App\Dto\Discord\Api\Guild;
-use App\Enum\Discord\DefaultMessageNotificationLevel;
-use App\Enum\Discord\ExplicitContentFilterLevel;
-use App\Enum\Discord\GuildNsfwLevel;
-use App\Enum\Discord\MfaLevel;
-use App\Enum\Discord\PremiumTier;
-use App\Enum\Discord\VerificationLevel;
+use App\Enum\Discord\Api\DefaultMessageNotificationLevel;
+use App\Enum\Discord\Api\ExplicitContentFilterLevel;
+use App\Enum\Discord\Api\GuildNsfwLevel;
+use App\Enum\Discord\Api\MfaLevel;
+use App\Enum\Discord\Api\PremiumTier;
+use App\Enum\Discord\Api\VerificationLevel;
 use App\Tests\SubjectSerializable;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 

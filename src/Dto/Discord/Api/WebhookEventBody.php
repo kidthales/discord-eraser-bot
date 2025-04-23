@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Dto\Discord\Api;
 
-use App\Enum\Discord\WebhookEventBodyType;
+use App\Enum\Discord\Api\WebhookEventBodyType;
 use Symfony\Component\Serializer\Attribute\DiscriminatorMap;
 
 #[DiscriminatorMap(typeProperty: 'type', mapping: [

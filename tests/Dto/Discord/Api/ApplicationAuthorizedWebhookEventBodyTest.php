@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Tests\Dto\Discord\Api;
 
 use App\Dto\Discord\Api\ApplicationAuthorizedWebhookEventBody;
-use App\Enum\Discord\WebhookEventBodyType;
+use App\Enum\Discord\Api\WebhookEventBodyType;
 use App\Tests\SubjectSerializable;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 

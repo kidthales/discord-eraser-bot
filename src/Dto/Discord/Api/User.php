@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Dto\Discord\Api;
 
-use App\Enum\Discord\PremiumType;
+use App\Enum\Discord\Api\PremiumType;
 
 /**
  * @see https://discord.com/developers/docs/resources/user#user-object-user-structure

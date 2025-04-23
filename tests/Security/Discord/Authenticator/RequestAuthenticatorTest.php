@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace App\Tests\Security\Discord\Authenticator;
 
 use App\Controller\DiscordController;
-use App\Enum\Discord\WebhookEventBodyType;
-use App\Enum\Discord\WebhookType;
+use App\Enum\Discord\Api\WebhookEventBodyType;
+use App\Enum\Discord\Api\WebhookType;
 use App\Security\Discord\Authenticator\RequestAuthenticator;
 use App\Security\Discord\RequestValidator;
 use App\Tests\EntityManageable;

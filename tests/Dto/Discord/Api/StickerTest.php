@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace App\Tests\Dto\Discord\Api;
 
 use App\Dto\Discord\Api\Sticker;
-use App\Enum\Discord\StickerFormatType;
-use App\Enum\Discord\StickerType;
+use App\Enum\Discord\Api\StickerFormatType;
+use App\Enum\Discord\Api\StickerType;
 use App\Tests\SubjectSerializable;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 

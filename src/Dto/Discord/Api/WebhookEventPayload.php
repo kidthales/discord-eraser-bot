@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Dto\Discord\Api;
 
-use App\Enum\Discord\WebhookType;
+use App\Enum\Discord\Api\WebhookType;
 
 /**
  * @see https://discord.com/developers/docs/events/webhook-events#payload-structure
