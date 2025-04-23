@@ -10,7 +10,7 @@ use App\Entity\User;
 use App\Enum\Discord\BitwisePermissionFlag;
 use App\HttpClient\DiscordApi;
 use App\Repository\GuildRepository;
-use App\Session\SessionState;
+use App\Session\SessionContext;
 use KnpU\OAuth2ClientBundle\Client\ClientRegistry;
 use KnpU\OAuth2ClientBundle\Security\Authenticator\OAuth2Authenticator as BaseOAuth2Authenticator;
 use Psr\Log\LoggerInterface;
@@ -36,7 +36,7 @@ final class OAuth2Authenticator extends BaseOAuth2Authenticator
     /**
      * @param ClientRegistry $registry
      * @param LoggerInterface $logger
-     * @param SessionState $sessionState
+     * @param SessionContext $sessionContext
      * @param Security $security
      * @param DiscordApi $discordApi
      * @param GuildRepository $guildRepository
@@ -44,7 +44,7 @@ final class OAuth2Authenticator extends BaseOAuth2Authenticator
     public function __construct(
         private readonly ClientRegistry  $registry,
         private readonly LoggerInterface $logger,
-        private readonly SessionState    $sessionState,
+        private readonly SessionContext  $sessionContext,
         private readonly Security        $security,
         private readonly DiscordApi      $discordApi,
         private readonly GuildRepository $guildRepository
@@ -99,8 +99,8 @@ final class OAuth2Authenticator extends BaseOAuth2Authenticator
                     return null;
                 }
 
-                $this->sessionState->setAuthorizedGuilds($authorizedGuilds);
-                $this->sessionState->setUserInfo($discordResourceOwner);
+                $this->sessionContext->setAuthorizedGuilds($authorizedGuilds);
+                $this->sessionContext->setUserInfo($discordResourceOwner);
 
                 try {
                     return $user ?? $this->createUser($discordId);
@@ -129,7 +129,7 @@ final class OAuth2Authenticator extends BaseOAuth2Authenticator
      */
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
     {
-        return $this->sessionState->getPostAuthenticationRedirectResponse();
+        return $this->sessionContext->getPostAuthenticationRedirectResponse();
     }
 
     /**

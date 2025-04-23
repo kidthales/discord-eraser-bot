@@ -18,7 +18,7 @@ use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 use Throwable;
 use Wohali\OAuth2\Client\Provider\DiscordResourceOwner;
 
-final readonly class SessionState
+final readonly class SessionContext
 {
     private const string AUTHORIZED_GUILDS = 'authorized_guilds';
     private const string POST_AUTHENTICATION_REDIRECT_ROUTE_NAME = 'post_authentication_redirect_route_name';
@@ -76,6 +76,24 @@ final readonly class SessionState
         } catch (Throwable $e) {
             throw new RuntimeException(
                 message: 'Error normalizing authorized guilds into session storage',
+                previous: $e
+            );
+        }
+    }
+
+    /**
+     * @return array<string, PartialGuild>
+     */
+    public function getAuthorizedGuilds(): array
+    {
+        try {
+            return $this->denormalizer->denormalize(
+                $this->getSession()->get(self::AUTHORIZED_GUILDS),
+                PartialGuild::class . '[]'
+            );
+        } catch (Throwable $e) {
+            throw new RuntimeException(
+                message: 'Error denormalizing authorized guilds from session storage',
                 previous: $e
             );
         }

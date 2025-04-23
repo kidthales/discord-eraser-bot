@@ -6,7 +6,7 @@ namespace App\Security;
 
 use App\Controller\Admin\DashboardController;
 use App\Controller\DiscordController;
-use App\Session\SessionState;
+use App\Session\SessionContext;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,9 +18,9 @@ final readonly class AuthenticationEntryPoint implements AuthenticationEntryPoin
 {
     /**
      * @param UrlGeneratorInterface $urlGenerator
-     * @param SessionState $sessionState
+     * @param SessionContext $sessionContext
      */
-    public function __construct(private UrlGeneratorInterface $urlGenerator, private SessionState $sessionState)
+    public function __construct(private UrlGeneratorInterface $urlGenerator, private SessionContext $sessionContext)
     {
     }
 
@@ -31,7 +31,7 @@ final readonly class AuthenticationEntryPoint implements AuthenticationEntryPoin
      */
     public function start(Request $request, ?AuthenticationException $authException = null): Response
     {
-        $this->sessionState->setPostAuthenticationRedirectResponse(
+        $this->sessionContext->setPostAuthenticationRedirectResponse(
             $request->attributes->get('_route', DashboardController::ROUTE_NAME),
             $request->attributes->get('_route_params', [])
         );
