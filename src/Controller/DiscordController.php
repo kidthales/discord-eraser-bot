@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Dto\Discord\WebhookEventPayload;
+use App\Dto\Discord\Api\WebhookEventPayload;
 use App\Entity\Guild;
 use App\Entity\User;
-use App\Enum\Discord\WebhookEventBodyType;
-use App\Enum\Discord\WebhookType;
+use App\Enum\Discord\Api\WebhookEventBodyType;
+use App\Enum\Discord\Api\WebhookType;
 use App\Repository\GuildRepository;
 use App\Security\Discord\Authenticator\OAuth2Authenticator;
 use KnpU\OAuth2ClientBundle\Client\ClientRegistry;

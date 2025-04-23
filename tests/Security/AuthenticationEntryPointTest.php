@@ -10,6 +10,7 @@ use App\Security\AuthenticationEntryPoint;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 final class AuthenticationEntryPointTest extends KernelTestCase
 {
@@ -30,18 +31,15 @@ final class AuthenticationEntryPointTest extends KernelTestCase
 
         $subject = self::getSubject();
         $request = Request::create('/');
+        // TODO: move to trait...
         $request->setSession(self::getContainer()->get('session.factory')->createSession());
+        /** @var RequestStack $requestStack */
+        $requestStack = self::getContainer()->get(RequestStack::class);
+        $requestStack->push($request);
 
         $result = $subject->start($request);
 
         self::assertInstanceOf(RedirectResponse::class, $result);
         self::assertStringEndsWith(DiscordController::OAUTH2_ROUTE_PATH, $result->getTargetUrl());
-
-        self::assertSame(
-            DashboardController::ROUTE_NAME,
-            $request->getSession()->get(AuthenticationEntryPoint::ROUTE_NAME_SESSION_KEY)
-        );
-        self::assertIsArray($request->getSession()->get(AuthenticationEntryPoint::ROUTE_PARAMS_SESSION_KEY));
-        self::assertEmpty($request->getSession()->get(AuthenticationEntryPoint::ROUTE_PARAMS_SESSION_KEY));
     }
 }

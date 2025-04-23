@@ -5,14 +5,14 @@ declare(strict_types=1);
 namespace App\Tests\Controller;
 
 use App\Controller\DiscordController;
-use App\Dto\Discord\ApplicationAuthorizedWebhookEventBody;
-use App\Dto\Discord\ApplicationAuthorizedWebhookEventData;
-use App\Dto\Discord\Guild as DiscordGuild;
-use App\Dto\Discord\User;
-use App\Dto\Discord\WebhookEventPayload;
+use App\Dto\Discord\Api\ApplicationAuthorizedWebhookEventBody;
+use App\Dto\Discord\Api\ApplicationAuthorizedWebhookEventData;
+use App\Dto\Discord\Api\Guild as DiscordGuild;
+use App\Dto\Discord\Api\User;
+use App\Dto\Discord\Api\WebhookEventPayload;
 use App\Entity\Guild as EntityGuild;
-use App\Enum\Discord\WebhookEventBodyType;
-use App\Enum\Discord\WebhookType;
+use App\Enum\Discord\Api\WebhookEventBodyType;
+use App\Enum\Discord\Api\WebhookType;
 use App\Repository\GuildRepository;
 use App\Security\Discord\Authenticator\RequestAuthenticator;
 use App\Tests\Entity\UserTest;
@@ -20,10 +20,8 @@ use App\Tests\EntityManageable;
 use Doctrine\ORM\Exception\ORMException;
 use Doctrine\ORM\OptimisticLockException;
 use KnpU\OAuth2ClientBundle\Client\ClientRegistry;
-use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Bundle\SecurityBundle\Security;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
@@ -31,7 +29,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 use Symfony\Component\Security\Core\User\UserProviderInterface;
-use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 final class DiscordControllerTest extends KernelTestCase
 {
