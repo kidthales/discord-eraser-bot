@@ -171,6 +171,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-Admin-DashboardController.html"
         },                {
+            "fqsen": "\\App\\Controller\\Admin\\DashboardController\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Controller-Admin-DashboardController.html#method___construct"
+        },                {
             "fqsen": "\\App\\Controller\\Admin\\DashboardController\u003A\u003Aindex\u0028\u0029",
             "name": "index",
             "summary": "",
@@ -186,6 +191,21 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-Admin-DashboardController.html#method_configureMenuItems"
         },                {
+            "fqsen": "\\App\\Controller\\Admin\\DashboardController\u003A\u003AconfigureUserMenu\u0028\u0029",
+            "name": "configureUserMenu",
+            "summary": "",
+            "url": "classes/App-Controller-Admin-DashboardController.html#method_configureUserMenu"
+        },                {
+            "fqsen": "\\App\\Controller\\Admin\\DashboardController\u003A\u003AgetCurrentAuthorizedGuild\u0028\u0029",
+            "name": "getCurrentAuthorizedGuild",
+            "summary": "",
+            "url": "classes/App-Controller-Admin-DashboardController.html#method_getCurrentAuthorizedGuild"
+        },                {
+            "fqsen": "\\App\\Controller\\Admin\\DashboardController\u003A\u003AgetRequest\u0028\u0029",
+            "name": "getRequest",
+            "summary": "",
+            "url": "classes/App-Controller-Admin-DashboardController.html#method_getRequest"
+        },                {
             "fqsen": "\\App\\Controller\\Admin\\DashboardController\u003A\u003AROUTE_PATH",
             "name": "ROUTE_PATH",
             "summary": "",
@@ -195,6 +215,21 @@ Search.appendIndex(
             "name": "ROUTE_NAME",
             "summary": "",
             "url": "classes/App-Controller-Admin-DashboardController.html#constant_ROUTE_NAME"
+        },                {
+            "fqsen": "\\App\\Controller\\Admin\\DashboardController\u003A\u003A\u0024requestStack",
+            "name": "requestStack",
+            "summary": "",
+            "url": "classes/App-Controller-Admin-DashboardController.html#property_requestStack"
+        },                {
+            "fqsen": "\\App\\Controller\\Admin\\DashboardController\u003A\u003A\u0024sessionContext",
+            "name": "sessionContext",
+            "summary": "",
+            "url": "classes/App-Controller-Admin-DashboardController.html#property_sessionContext"
+        },                {
+            "fqsen": "\\App\\Controller\\Admin\\DashboardController\u003A\u003A\u0024logger",
+            "name": "logger",
+            "summary": "",
+            "url": "classes/App-Controller-Admin-DashboardController.html#property_logger"
         },                {
             "fqsen": "\\App\\Controller\\DiscordController",
             "name": "DiscordController",
@@ -336,805 +371,845 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-DependencyInjection-Parameters.html#constant_DISCORD_PUBLIC_KEY"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\ApplicationAuthorizedWebhookEventBody",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\ApplicationAuthorizedWebhookEventBody",
             "name": "ApplicationAuthorizedWebhookEventBody",
             "summary": "",
-            "url": "classes/App-Dto-Discord-ApplicationAuthorizedWebhookEventBody.html"
+            "url": "classes/App-Dto-Discord-Api-ApplicationAuthorizedWebhookEventBody.html"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\ApplicationAuthorizedWebhookEventBody\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\ApplicationAuthorizedWebhookEventBody\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
-            "url": "classes/App-Dto-Discord-ApplicationAuthorizedWebhookEventBody.html#method___construct"
+            "url": "classes/App-Dto-Discord-Api-ApplicationAuthorizedWebhookEventBody.html#method___construct"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\ApplicationAuthorizedWebhookEventBody\u003A\u003A\u0024data",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\ApplicationAuthorizedWebhookEventBody\u003A\u003A\u0024data",
             "name": "data",
             "summary": "",
-            "url": "classes/App-Dto-Discord-ApplicationAuthorizedWebhookEventBody.html#property_data"
+            "url": "classes/App-Dto-Discord-Api-ApplicationAuthorizedWebhookEventBody.html#property_data"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\ApplicationAuthorizedWebhookEventData",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\ApplicationAuthorizedWebhookEventData",
             "name": "ApplicationAuthorizedWebhookEventData",
             "summary": "",
-            "url": "classes/App-Dto-Discord-ApplicationAuthorizedWebhookEventData.html"
+            "url": "classes/App-Dto-Discord-Api-ApplicationAuthorizedWebhookEventData.html"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\ApplicationAuthorizedWebhookEventData\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\ApplicationAuthorizedWebhookEventData\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
-            "url": "classes/App-Dto-Discord-ApplicationAuthorizedWebhookEventData.html#method___construct"
+            "url": "classes/App-Dto-Discord-Api-ApplicationAuthorizedWebhookEventData.html#method___construct"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\ApplicationAuthorizedWebhookEventData\u003A\u003A\u0024user",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\ApplicationAuthorizedWebhookEventData\u003A\u003A\u0024user",
             "name": "user",
             "summary": "",
-            "url": "classes/App-Dto-Discord-ApplicationAuthorizedWebhookEventData.html#property_user"
+            "url": "classes/App-Dto-Discord-Api-ApplicationAuthorizedWebhookEventData.html#property_user"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\ApplicationAuthorizedWebhookEventData\u003A\u003A\u0024scopes",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\ApplicationAuthorizedWebhookEventData\u003A\u003A\u0024scopes",
             "name": "scopes",
             "summary": "",
-            "url": "classes/App-Dto-Discord-ApplicationAuthorizedWebhookEventData.html#property_scopes"
+            "url": "classes/App-Dto-Discord-Api-ApplicationAuthorizedWebhookEventData.html#property_scopes"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\ApplicationAuthorizedWebhookEventData\u003A\u003A\u0024integration_type",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\ApplicationAuthorizedWebhookEventData\u003A\u003A\u0024integration_type",
             "name": "integration_type",
             "summary": "",
-            "url": "classes/App-Dto-Discord-ApplicationAuthorizedWebhookEventData.html#property_integration_type"
+            "url": "classes/App-Dto-Discord-Api-ApplicationAuthorizedWebhookEventData.html#property_integration_type"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\ApplicationAuthorizedWebhookEventData\u003A\u003A\u0024guild",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\ApplicationAuthorizedWebhookEventData\u003A\u003A\u0024guild",
             "name": "guild",
             "summary": "",
-            "url": "classes/App-Dto-Discord-ApplicationAuthorizedWebhookEventData.html#property_guild"
+            "url": "classes/App-Dto-Discord-Api-ApplicationAuthorizedWebhookEventData.html#property_guild"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\AvatarDecorationData",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\AvatarDecorationData",
             "name": "AvatarDecorationData",
             "summary": "",
-            "url": "classes/App-Dto-Discord-AvatarDecorationData.html"
+            "url": "classes/App-Dto-Discord-Api-AvatarDecorationData.html"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\AvatarDecorationData\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\AvatarDecorationData\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
-            "url": "classes/App-Dto-Discord-AvatarDecorationData.html#method___construct"
+            "url": "classes/App-Dto-Discord-Api-AvatarDecorationData.html#method___construct"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\AvatarDecorationData\u003A\u003A\u0024asset",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\AvatarDecorationData\u003A\u003A\u0024asset",
             "name": "asset",
             "summary": "",
-            "url": "classes/App-Dto-Discord-AvatarDecorationData.html#property_asset"
+            "url": "classes/App-Dto-Discord-Api-AvatarDecorationData.html#property_asset"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\AvatarDecorationData\u003A\u003A\u0024sku_id",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\AvatarDecorationData\u003A\u003A\u0024sku_id",
             "name": "sku_id",
             "summary": "",
-            "url": "classes/App-Dto-Discord-AvatarDecorationData.html#property_sku_id"
+            "url": "classes/App-Dto-Discord-Api-AvatarDecorationData.html#property_sku_id"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Emoji",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Emoji",
             "name": "Emoji",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Emoji.html"
+            "url": "classes/App-Dto-Discord-Api-Emoji.html"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Emoji\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Emoji\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Emoji.html#method___construct"
+            "url": "classes/App-Dto-Discord-Api-Emoji.html#method___construct"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Emoji\u003A\u003A\u0024id",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Emoji\u003A\u003A\u0024id",
             "name": "id",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Emoji.html#property_id"
+            "url": "classes/App-Dto-Discord-Api-Emoji.html#property_id"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Emoji\u003A\u003A\u0024name",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Emoji\u003A\u003A\u0024name",
             "name": "name",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Emoji.html#property_name"
+            "url": "classes/App-Dto-Discord-Api-Emoji.html#property_name"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Emoji\u003A\u003A\u0024roles",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Emoji\u003A\u003A\u0024roles",
             "name": "roles",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Emoji.html#property_roles"
+            "url": "classes/App-Dto-Discord-Api-Emoji.html#property_roles"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Emoji\u003A\u003A\u0024user",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Emoji\u003A\u003A\u0024user",
             "name": "user",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Emoji.html#property_user"
+            "url": "classes/App-Dto-Discord-Api-Emoji.html#property_user"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Emoji\u003A\u003A\u0024require_colons",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Emoji\u003A\u003A\u0024require_colons",
             "name": "require_colons",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Emoji.html#property_require_colons"
+            "url": "classes/App-Dto-Discord-Api-Emoji.html#property_require_colons"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Emoji\u003A\u003A\u0024managed",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Emoji\u003A\u003A\u0024managed",
             "name": "managed",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Emoji.html#property_managed"
+            "url": "classes/App-Dto-Discord-Api-Emoji.html#property_managed"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Emoji\u003A\u003A\u0024animated",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Emoji\u003A\u003A\u0024animated",
             "name": "animated",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Emoji.html#property_animated"
+            "url": "classes/App-Dto-Discord-Api-Emoji.html#property_animated"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Emoji\u003A\u003A\u0024available",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Emoji\u003A\u003A\u0024available",
             "name": "available",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Emoji.html#property_available"
+            "url": "classes/App-Dto-Discord-Api-Emoji.html#property_available"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild",
             "name": "Guild",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html"
+            "url": "classes/App-Dto-Discord-Api-Guild.html"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#method___construct"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#method___construct"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024region",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024region",
             "name": "region",
             "summary": "Voice\u0020region\u0020id\u0020for\u0020the\u0020guild\u0020\u0028deprecated\u0029.",
-            "url": "classes/App-Dto-Discord-Guild.html#property_region"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_region"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024id",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024id",
             "name": "id",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_id"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_id"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024name",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024name",
             "name": "name",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_name"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_name"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024icon",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024icon",
             "name": "icon",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_icon"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_icon"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024splash",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024splash",
             "name": "splash",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_splash"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_splash"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024discovery_splash",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024discovery_splash",
             "name": "discovery_splash",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_discovery_splash"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_discovery_splash"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024owner_id",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024owner_id",
             "name": "owner_id",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_owner_id"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_owner_id"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024afk_channel_id",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024afk_channel_id",
             "name": "afk_channel_id",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_afk_channel_id"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_afk_channel_id"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024afk_timeout",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024afk_timeout",
             "name": "afk_timeout",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_afk_timeout"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_afk_timeout"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024verification_level",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024verification_level",
             "name": "verification_level",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_verification_level"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_verification_level"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024default_message_notifications",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024default_message_notifications",
             "name": "default_message_notifications",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_default_message_notifications"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_default_message_notifications"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024explicit_content_filter",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024explicit_content_filter",
             "name": "explicit_content_filter",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_explicit_content_filter"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_explicit_content_filter"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024roles",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024roles",
             "name": "roles",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_roles"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_roles"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024emojis",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024emojis",
             "name": "emojis",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_emojis"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_emojis"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024features",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024features",
             "name": "features",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_features"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_features"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024mfa_level",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024mfa_level",
             "name": "mfa_level",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_mfa_level"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_mfa_level"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024application_id",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024application_id",
             "name": "application_id",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_application_id"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_application_id"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024system_channel_id",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024system_channel_id",
             "name": "system_channel_id",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_system_channel_id"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_system_channel_id"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024system_channel_flags",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024system_channel_flags",
             "name": "system_channel_flags",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_system_channel_flags"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_system_channel_flags"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024rules_channel_id",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024rules_channel_id",
             "name": "rules_channel_id",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_rules_channel_id"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_rules_channel_id"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024vanity_url_code",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024vanity_url_code",
             "name": "vanity_url_code",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_vanity_url_code"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_vanity_url_code"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024description",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024description",
             "name": "description",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_description"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_description"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024banner",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024banner",
             "name": "banner",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_banner"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_banner"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024premium_tier",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024premium_tier",
             "name": "premium_tier",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_premium_tier"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_premium_tier"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024preferred_locale",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024preferred_locale",
             "name": "preferred_locale",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_preferred_locale"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_preferred_locale"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024public_updates_channel_id",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024public_updates_channel_id",
             "name": "public_updates_channel_id",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_public_updates_channel_id"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_public_updates_channel_id"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024nsfw_level",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024nsfw_level",
             "name": "nsfw_level",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_nsfw_level"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_nsfw_level"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024premium_progress_bar_enabled",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024premium_progress_bar_enabled",
             "name": "premium_progress_bar_enabled",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_premium_progress_bar_enabled"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_premium_progress_bar_enabled"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024safety_alerts_channel_id",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024safety_alerts_channel_id",
             "name": "safety_alerts_channel_id",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_safety_alerts_channel_id"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_safety_alerts_channel_id"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024icon_hash",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024icon_hash",
             "name": "icon_hash",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_icon_hash"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_icon_hash"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024owner",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024owner",
             "name": "owner",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_owner"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_owner"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024permissions",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024permissions",
             "name": "permissions",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_permissions"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_permissions"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024widget_enabled",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024widget_enabled",
             "name": "widget_enabled",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_widget_enabled"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_widget_enabled"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024widget_channel_id",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024widget_channel_id",
             "name": "widget_channel_id",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_widget_channel_id"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_widget_channel_id"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024max_presences",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024max_presences",
             "name": "max_presences",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_max_presences"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_max_presences"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024max_members",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024max_members",
             "name": "max_members",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_max_members"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_max_members"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024premium_subscription_count",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024premium_subscription_count",
             "name": "premium_subscription_count",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_premium_subscription_count"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_premium_subscription_count"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024max_video_channel_users",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024max_video_channel_users",
             "name": "max_video_channel_users",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_max_video_channel_users"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_max_video_channel_users"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024max_stage_video_channel_users",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024max_stage_video_channel_users",
             "name": "max_stage_video_channel_users",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_max_stage_video_channel_users"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_max_stage_video_channel_users"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024approximate_member_count",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024approximate_member_count",
             "name": "approximate_member_count",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_approximate_member_count"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_approximate_member_count"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024approximate_presence_count",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024approximate_presence_count",
             "name": "approximate_presence_count",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_approximate_presence_count"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_approximate_presence_count"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024welcome_screen",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024welcome_screen",
             "name": "welcome_screen",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_welcome_screen"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_welcome_screen"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Guild\u003A\u003A\u0024stickers",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Guild\u003A\u003A\u0024stickers",
             "name": "stickers",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Guild.html#property_stickers"
+            "url": "classes/App-Dto-Discord-Api-Guild.html#property_stickers"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\PartialGuild",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\PartialGuild",
             "name": "PartialGuild",
             "summary": "",
-            "url": "classes/App-Dto-Discord-PartialGuild.html"
+            "url": "classes/App-Dto-Discord-Api-PartialGuild.html"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\PartialGuild\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\PartialGuild\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
-            "url": "classes/App-Dto-Discord-PartialGuild.html#method___construct"
+            "url": "classes/App-Dto-Discord-Api-PartialGuild.html#method___construct"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\PartialGuild\u003A\u003A\u0024id",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\PartialGuild\u003A\u003A\u0024id",
             "name": "id",
             "summary": "",
-            "url": "classes/App-Dto-Discord-PartialGuild.html#property_id"
+            "url": "classes/App-Dto-Discord-Api-PartialGuild.html#property_id"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\PartialGuild\u003A\u003A\u0024name",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\PartialGuild\u003A\u003A\u0024name",
             "name": "name",
             "summary": "",
-            "url": "classes/App-Dto-Discord-PartialGuild.html#property_name"
+            "url": "classes/App-Dto-Discord-Api-PartialGuild.html#property_name"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\PartialGuild\u003A\u003A\u0024icon",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\PartialGuild\u003A\u003A\u0024icon",
             "name": "icon",
             "summary": "",
-            "url": "classes/App-Dto-Discord-PartialGuild.html#property_icon"
+            "url": "classes/App-Dto-Discord-Api-PartialGuild.html#property_icon"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\PartialGuild\u003A\u003A\u0024features",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\PartialGuild\u003A\u003A\u0024features",
             "name": "features",
             "summary": "",
-            "url": "classes/App-Dto-Discord-PartialGuild.html#property_features"
+            "url": "classes/App-Dto-Discord-Api-PartialGuild.html#property_features"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\PartialGuild\u003A\u003A\u0024banner",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\PartialGuild\u003A\u003A\u0024banner",
             "name": "banner",
             "summary": "",
-            "url": "classes/App-Dto-Discord-PartialGuild.html#property_banner"
+            "url": "classes/App-Dto-Discord-Api-PartialGuild.html#property_banner"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\PartialGuild\u003A\u003A\u0024owner",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\PartialGuild\u003A\u003A\u0024owner",
             "name": "owner",
             "summary": "",
-            "url": "classes/App-Dto-Discord-PartialGuild.html#property_owner"
+            "url": "classes/App-Dto-Discord-Api-PartialGuild.html#property_owner"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\PartialGuild\u003A\u003A\u0024permissions",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\PartialGuild\u003A\u003A\u0024permissions",
             "name": "permissions",
             "summary": "",
-            "url": "classes/App-Dto-Discord-PartialGuild.html#property_permissions"
+            "url": "classes/App-Dto-Discord-Api-PartialGuild.html#property_permissions"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\PartialGuild\u003A\u003A\u0024approximate_member_count",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\PartialGuild\u003A\u003A\u0024approximate_member_count",
             "name": "approximate_member_count",
             "summary": "",
-            "url": "classes/App-Dto-Discord-PartialGuild.html#property_approximate_member_count"
+            "url": "classes/App-Dto-Discord-Api-PartialGuild.html#property_approximate_member_count"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\PartialGuild\u003A\u003A\u0024approximate_presence_count",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\PartialGuild\u003A\u003A\u0024approximate_presence_count",
             "name": "approximate_presence_count",
             "summary": "",
-            "url": "classes/App-Dto-Discord-PartialGuild.html#property_approximate_presence_count"
+            "url": "classes/App-Dto-Discord-Api-PartialGuild.html#property_approximate_presence_count"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Role",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Role",
             "name": "Role",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Role.html"
+            "url": "classes/App-Dto-Discord-Api-Role.html"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Role\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Role\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Role.html#method___construct"
+            "url": "classes/App-Dto-Discord-Api-Role.html#method___construct"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Role\u003A\u003A\u0024id",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Role\u003A\u003A\u0024id",
             "name": "id",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Role.html#property_id"
+            "url": "classes/App-Dto-Discord-Api-Role.html#property_id"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Role\u003A\u003A\u0024name",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Role\u003A\u003A\u0024name",
             "name": "name",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Role.html#property_name"
+            "url": "classes/App-Dto-Discord-Api-Role.html#property_name"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Role\u003A\u003A\u0024color",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Role\u003A\u003A\u0024color",
             "name": "color",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Role.html#property_color"
+            "url": "classes/App-Dto-Discord-Api-Role.html#property_color"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Role\u003A\u003A\u0024hoist",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Role\u003A\u003A\u0024hoist",
             "name": "hoist",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Role.html#property_hoist"
+            "url": "classes/App-Dto-Discord-Api-Role.html#property_hoist"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Role\u003A\u003A\u0024position",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Role\u003A\u003A\u0024position",
             "name": "position",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Role.html#property_position"
+            "url": "classes/App-Dto-Discord-Api-Role.html#property_position"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Role\u003A\u003A\u0024permissions",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Role\u003A\u003A\u0024permissions",
             "name": "permissions",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Role.html#property_permissions"
+            "url": "classes/App-Dto-Discord-Api-Role.html#property_permissions"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Role\u003A\u003A\u0024managed",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Role\u003A\u003A\u0024managed",
             "name": "managed",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Role.html#property_managed"
+            "url": "classes/App-Dto-Discord-Api-Role.html#property_managed"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Role\u003A\u003A\u0024mentionable",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Role\u003A\u003A\u0024mentionable",
             "name": "mentionable",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Role.html#property_mentionable"
+            "url": "classes/App-Dto-Discord-Api-Role.html#property_mentionable"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Role\u003A\u003A\u0024flags",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Role\u003A\u003A\u0024flags",
             "name": "flags",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Role.html#property_flags"
+            "url": "classes/App-Dto-Discord-Api-Role.html#property_flags"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Role\u003A\u003A\u0024icon",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Role\u003A\u003A\u0024icon",
             "name": "icon",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Role.html#property_icon"
+            "url": "classes/App-Dto-Discord-Api-Role.html#property_icon"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Role\u003A\u003A\u0024unicode_emoji",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Role\u003A\u003A\u0024unicode_emoji",
             "name": "unicode_emoji",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Role.html#property_unicode_emoji"
+            "url": "classes/App-Dto-Discord-Api-Role.html#property_unicode_emoji"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Role\u003A\u003A\u0024tags",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Role\u003A\u003A\u0024tags",
             "name": "tags",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Role.html#property_tags"
+            "url": "classes/App-Dto-Discord-Api-Role.html#property_tags"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\RoleTags",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\RoleTags",
             "name": "RoleTags",
             "summary": "",
-            "url": "classes/App-Dto-Discord-RoleTags.html"
+            "url": "classes/App-Dto-Discord-Api-RoleTags.html"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\RoleTags\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\RoleTags\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
-            "url": "classes/App-Dto-Discord-RoleTags.html#method___construct"
+            "url": "classes/App-Dto-Discord-Api-RoleTags.html#method___construct"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\RoleTags\u003A\u003AgetBotId\u0028\u0029",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\RoleTags\u003A\u003AgetBotId\u0028\u0029",
             "name": "getBotId",
             "summary": "",
-            "url": "classes/App-Dto-Discord-RoleTags.html#method_getBotId"
+            "url": "classes/App-Dto-Discord-Api-RoleTags.html#method_getBotId"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\RoleTags\u003A\u003AgetIntegrationId\u0028\u0029",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\RoleTags\u003A\u003AgetIntegrationId\u0028\u0029",
             "name": "getIntegrationId",
             "summary": "",
-            "url": "classes/App-Dto-Discord-RoleTags.html#method_getIntegrationId"
+            "url": "classes/App-Dto-Discord-Api-RoleTags.html#method_getIntegrationId"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\RoleTags\u003A\u003AgetPremiumSubscriber\u0028\u0029",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\RoleTags\u003A\u003AgetPremiumSubscriber\u0028\u0029",
             "name": "getPremiumSubscriber",
             "summary": "",
-            "url": "classes/App-Dto-Discord-RoleTags.html#method_getPremiumSubscriber"
+            "url": "classes/App-Dto-Discord-Api-RoleTags.html#method_getPremiumSubscriber"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\RoleTags\u003A\u003AgetSubscriptionListingId\u0028\u0029",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\RoleTags\u003A\u003AgetSubscriptionListingId\u0028\u0029",
             "name": "getSubscriptionListingId",
             "summary": "",
-            "url": "classes/App-Dto-Discord-RoleTags.html#method_getSubscriptionListingId"
+            "url": "classes/App-Dto-Discord-Api-RoleTags.html#method_getSubscriptionListingId"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\RoleTags\u003A\u003AgetAvailableForPurchase\u0028\u0029",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\RoleTags\u003A\u003AgetAvailableForPurchase\u0028\u0029",
             "name": "getAvailableForPurchase",
             "summary": "",
-            "url": "classes/App-Dto-Discord-RoleTags.html#method_getAvailableForPurchase"
+            "url": "classes/App-Dto-Discord-Api-RoleTags.html#method_getAvailableForPurchase"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\RoleTags\u003A\u003AgetGuildConnections\u0028\u0029",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\RoleTags\u003A\u003AgetGuildConnections\u0028\u0029",
             "name": "getGuildConnections",
             "summary": "",
-            "url": "classes/App-Dto-Discord-RoleTags.html#method_getGuildConnections"
+            "url": "classes/App-Dto-Discord-Api-RoleTags.html#method_getGuildConnections"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\RoleTags\u003A\u003Adenormalize\u0028\u0029",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\RoleTags\u003A\u003Adenormalize\u0028\u0029",
             "name": "denormalize",
             "summary": "",
-            "url": "classes/App-Dto-Discord-RoleTags.html#method_denormalize"
+            "url": "classes/App-Dto-Discord-Api-RoleTags.html#method_denormalize"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\RoleTags\u003A\u003A\u0024bot_id",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\RoleTags\u003A\u003A\u0024bot_id",
             "name": "bot_id",
             "summary": "",
-            "url": "classes/App-Dto-Discord-RoleTags.html#property_bot_id"
+            "url": "classes/App-Dto-Discord-Api-RoleTags.html#property_bot_id"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\RoleTags\u003A\u003A\u0024integration_id",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\RoleTags\u003A\u003A\u0024integration_id",
             "name": "integration_id",
             "summary": "",
-            "url": "classes/App-Dto-Discord-RoleTags.html#property_integration_id"
+            "url": "classes/App-Dto-Discord-Api-RoleTags.html#property_integration_id"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\RoleTags\u003A\u003A\u0024premium_subscriber",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\RoleTags\u003A\u003A\u0024premium_subscriber",
             "name": "premium_subscriber",
             "summary": "",
-            "url": "classes/App-Dto-Discord-RoleTags.html#property_premium_subscriber"
+            "url": "classes/App-Dto-Discord-Api-RoleTags.html#property_premium_subscriber"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\RoleTags\u003A\u003A\u0024subscription_listing_id",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\RoleTags\u003A\u003A\u0024subscription_listing_id",
             "name": "subscription_listing_id",
             "summary": "",
-            "url": "classes/App-Dto-Discord-RoleTags.html#property_subscription_listing_id"
+            "url": "classes/App-Dto-Discord-Api-RoleTags.html#property_subscription_listing_id"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\RoleTags\u003A\u003A\u0024available_for_purchase",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\RoleTags\u003A\u003A\u0024available_for_purchase",
             "name": "available_for_purchase",
             "summary": "",
-            "url": "classes/App-Dto-Discord-RoleTags.html#property_available_for_purchase"
+            "url": "classes/App-Dto-Discord-Api-RoleTags.html#property_available_for_purchase"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\RoleTags\u003A\u003A\u0024guild_connections",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\RoleTags\u003A\u003A\u0024guild_connections",
             "name": "guild_connections",
             "summary": "",
-            "url": "classes/App-Dto-Discord-RoleTags.html#property_guild_connections"
+            "url": "classes/App-Dto-Discord-Api-RoleTags.html#property_guild_connections"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Sticker",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Sticker",
             "name": "Sticker",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Sticker.html"
+            "url": "classes/App-Dto-Discord-Api-Sticker.html"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Sticker\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Sticker\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Sticker.html#method___construct"
+            "url": "classes/App-Dto-Discord-Api-Sticker.html#method___construct"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Sticker\u003A\u003A\u0024id",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Sticker\u003A\u003A\u0024id",
             "name": "id",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Sticker.html#property_id"
+            "url": "classes/App-Dto-Discord-Api-Sticker.html#property_id"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Sticker\u003A\u003A\u0024name",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Sticker\u003A\u003A\u0024name",
             "name": "name",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Sticker.html#property_name"
+            "url": "classes/App-Dto-Discord-Api-Sticker.html#property_name"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Sticker\u003A\u003A\u0024description",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Sticker\u003A\u003A\u0024description",
             "name": "description",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Sticker.html#property_description"
+            "url": "classes/App-Dto-Discord-Api-Sticker.html#property_description"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Sticker\u003A\u003A\u0024tags",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Sticker\u003A\u003A\u0024tags",
             "name": "tags",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Sticker.html#property_tags"
+            "url": "classes/App-Dto-Discord-Api-Sticker.html#property_tags"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Sticker\u003A\u003A\u0024type",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Sticker\u003A\u003A\u0024type",
             "name": "type",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Sticker.html#property_type"
+            "url": "classes/App-Dto-Discord-Api-Sticker.html#property_type"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Sticker\u003A\u003A\u0024format_type",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Sticker\u003A\u003A\u0024format_type",
             "name": "format_type",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Sticker.html#property_format_type"
+            "url": "classes/App-Dto-Discord-Api-Sticker.html#property_format_type"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Sticker\u003A\u003A\u0024pack_id",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Sticker\u003A\u003A\u0024pack_id",
             "name": "pack_id",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Sticker.html#property_pack_id"
+            "url": "classes/App-Dto-Discord-Api-Sticker.html#property_pack_id"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Sticker\u003A\u003A\u0024available",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Sticker\u003A\u003A\u0024available",
             "name": "available",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Sticker.html#property_available"
+            "url": "classes/App-Dto-Discord-Api-Sticker.html#property_available"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Sticker\u003A\u003A\u0024guild_id",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Sticker\u003A\u003A\u0024guild_id",
             "name": "guild_id",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Sticker.html#property_guild_id"
+            "url": "classes/App-Dto-Discord-Api-Sticker.html#property_guild_id"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Sticker\u003A\u003A\u0024user",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Sticker\u003A\u003A\u0024user",
             "name": "user",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Sticker.html#property_user"
+            "url": "classes/App-Dto-Discord-Api-Sticker.html#property_user"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\Sticker\u003A\u003A\u0024sort_value",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\Sticker\u003A\u003A\u0024sort_value",
             "name": "sort_value",
             "summary": "",
-            "url": "classes/App-Dto-Discord-Sticker.html#property_sort_value"
+            "url": "classes/App-Dto-Discord-Api-Sticker.html#property_sort_value"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\User",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\User",
             "name": "User",
             "summary": "",
-            "url": "classes/App-Dto-Discord-User.html"
+            "url": "classes/App-Dto-Discord-Api-User.html"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\User\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\User\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
-            "url": "classes/App-Dto-Discord-User.html#method___construct"
+            "url": "classes/App-Dto-Discord-Api-User.html#method___construct"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\User\u003A\u003A\u0024id",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\User\u003A\u003A\u0024id",
             "name": "id",
             "summary": "",
-            "url": "classes/App-Dto-Discord-User.html#property_id"
+            "url": "classes/App-Dto-Discord-Api-User.html#property_id"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\User\u003A\u003A\u0024username",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\User\u003A\u003A\u0024username",
             "name": "username",
             "summary": "",
-            "url": "classes/App-Dto-Discord-User.html#property_username"
+            "url": "classes/App-Dto-Discord-Api-User.html#property_username"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\User\u003A\u003A\u0024discriminator",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\User\u003A\u003A\u0024discriminator",
             "name": "discriminator",
             "summary": "",
-            "url": "classes/App-Dto-Discord-User.html#property_discriminator"
+            "url": "classes/App-Dto-Discord-Api-User.html#property_discriminator"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\User\u003A\u003A\u0024global_name",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\User\u003A\u003A\u0024global_name",
             "name": "global_name",
             "summary": "",
-            "url": "classes/App-Dto-Discord-User.html#property_global_name"
+            "url": "classes/App-Dto-Discord-Api-User.html#property_global_name"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\User\u003A\u003A\u0024avatar",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\User\u003A\u003A\u0024avatar",
             "name": "avatar",
             "summary": "",
-            "url": "classes/App-Dto-Discord-User.html#property_avatar"
+            "url": "classes/App-Dto-Discord-Api-User.html#property_avatar"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\User\u003A\u003A\u0024bot",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\User\u003A\u003A\u0024bot",
             "name": "bot",
             "summary": "",
-            "url": "classes/App-Dto-Discord-User.html#property_bot"
+            "url": "classes/App-Dto-Discord-Api-User.html#property_bot"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\User\u003A\u003A\u0024system",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\User\u003A\u003A\u0024system",
             "name": "system",
             "summary": "",
-            "url": "classes/App-Dto-Discord-User.html#property_system"
+            "url": "classes/App-Dto-Discord-Api-User.html#property_system"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\User\u003A\u003A\u0024mfa_enabled",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\User\u003A\u003A\u0024mfa_enabled",
             "name": "mfa_enabled",
             "summary": "",
-            "url": "classes/App-Dto-Discord-User.html#property_mfa_enabled"
+            "url": "classes/App-Dto-Discord-Api-User.html#property_mfa_enabled"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\User\u003A\u003A\u0024banner",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\User\u003A\u003A\u0024banner",
             "name": "banner",
             "summary": "",
-            "url": "classes/App-Dto-Discord-User.html#property_banner"
+            "url": "classes/App-Dto-Discord-Api-User.html#property_banner"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\User\u003A\u003A\u0024accent_color",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\User\u003A\u003A\u0024accent_color",
             "name": "accent_color",
             "summary": "",
-            "url": "classes/App-Dto-Discord-User.html#property_accent_color"
+            "url": "classes/App-Dto-Discord-Api-User.html#property_accent_color"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\User\u003A\u003A\u0024locale",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\User\u003A\u003A\u0024locale",
             "name": "locale",
             "summary": "",
-            "url": "classes/App-Dto-Discord-User.html#property_locale"
+            "url": "classes/App-Dto-Discord-Api-User.html#property_locale"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\User\u003A\u003A\u0024verified",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\User\u003A\u003A\u0024verified",
             "name": "verified",
             "summary": "",
-            "url": "classes/App-Dto-Discord-User.html#property_verified"
+            "url": "classes/App-Dto-Discord-Api-User.html#property_verified"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\User\u003A\u003A\u0024email",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\User\u003A\u003A\u0024email",
             "name": "email",
             "summary": "",
-            "url": "classes/App-Dto-Discord-User.html#property_email"
+            "url": "classes/App-Dto-Discord-Api-User.html#property_email"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\User\u003A\u003A\u0024flags",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\User\u003A\u003A\u0024flags",
             "name": "flags",
             "summary": "",
-            "url": "classes/App-Dto-Discord-User.html#property_flags"
+            "url": "classes/App-Dto-Discord-Api-User.html#property_flags"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\User\u003A\u003A\u0024premium_type",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\User\u003A\u003A\u0024premium_type",
             "name": "premium_type",
             "summary": "",
-            "url": "classes/App-Dto-Discord-User.html#property_premium_type"
+            "url": "classes/App-Dto-Discord-Api-User.html#property_premium_type"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\User\u003A\u003A\u0024public_flags",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\User\u003A\u003A\u0024public_flags",
             "name": "public_flags",
             "summary": "",
-            "url": "classes/App-Dto-Discord-User.html#property_public_flags"
+            "url": "classes/App-Dto-Discord-Api-User.html#property_public_flags"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\User\u003A\u003A\u0024avatar_decoration_data",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\User\u003A\u003A\u0024avatar_decoration_data",
             "name": "avatar_decoration_data",
             "summary": "",
-            "url": "classes/App-Dto-Discord-User.html#property_avatar_decoration_data"
+            "url": "classes/App-Dto-Discord-Api-User.html#property_avatar_decoration_data"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\WebhookEventBody",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\WebhookEventBody",
             "name": "WebhookEventBody",
             "summary": "",
-            "url": "classes/App-Dto-Discord-WebhookEventBody.html"
+            "url": "classes/App-Dto-Discord-Api-WebhookEventBody.html"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\WebhookEventBody\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\WebhookEventBody\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
-            "url": "classes/App-Dto-Discord-WebhookEventBody.html#method___construct"
+            "url": "classes/App-Dto-Discord-Api-WebhookEventBody.html#method___construct"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\WebhookEventBody\u003A\u003A\u0024type",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\WebhookEventBody\u003A\u003A\u0024type",
             "name": "type",
             "summary": "",
-            "url": "classes/App-Dto-Discord-WebhookEventBody.html#property_type"
+            "url": "classes/App-Dto-Discord-Api-WebhookEventBody.html#property_type"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\WebhookEventBody\u003A\u003A\u0024timestamp",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\WebhookEventBody\u003A\u003A\u0024timestamp",
             "name": "timestamp",
             "summary": "",
-            "url": "classes/App-Dto-Discord-WebhookEventBody.html#property_timestamp"
+            "url": "classes/App-Dto-Discord-Api-WebhookEventBody.html#property_timestamp"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\WebhookEventPayload",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\WebhookEventPayload",
             "name": "WebhookEventPayload",
             "summary": "",
-            "url": "classes/App-Dto-Discord-WebhookEventPayload.html"
+            "url": "classes/App-Dto-Discord-Api-WebhookEventPayload.html"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\WebhookEventPayload\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\WebhookEventPayload\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
-            "url": "classes/App-Dto-Discord-WebhookEventPayload.html#method___construct"
+            "url": "classes/App-Dto-Discord-Api-WebhookEventPayload.html#method___construct"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\WebhookEventPayload\u003A\u003A\u0024version",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\WebhookEventPayload\u003A\u003A\u0024version",
             "name": "version",
             "summary": "",
-            "url": "classes/App-Dto-Discord-WebhookEventPayload.html#property_version"
+            "url": "classes/App-Dto-Discord-Api-WebhookEventPayload.html#property_version"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\WebhookEventPayload\u003A\u003A\u0024application_id",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\WebhookEventPayload\u003A\u003A\u0024application_id",
             "name": "application_id",
             "summary": "",
-            "url": "classes/App-Dto-Discord-WebhookEventPayload.html#property_application_id"
+            "url": "classes/App-Dto-Discord-Api-WebhookEventPayload.html#property_application_id"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\WebhookEventPayload\u003A\u003A\u0024type",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\WebhookEventPayload\u003A\u003A\u0024type",
             "name": "type",
             "summary": "",
-            "url": "classes/App-Dto-Discord-WebhookEventPayload.html#property_type"
+            "url": "classes/App-Dto-Discord-Api-WebhookEventPayload.html#property_type"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\WebhookEventPayload\u003A\u003A\u0024event",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\WebhookEventPayload\u003A\u003A\u0024event",
             "name": "event",
             "summary": "",
-            "url": "classes/App-Dto-Discord-WebhookEventPayload.html#property_event"
+            "url": "classes/App-Dto-Discord-Api-WebhookEventPayload.html#property_event"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\WelcomeScreen",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\WelcomeScreen",
             "name": "WelcomeScreen",
             "summary": "",
-            "url": "classes/App-Dto-Discord-WelcomeScreen.html"
+            "url": "classes/App-Dto-Discord-Api-WelcomeScreen.html"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\WelcomeScreen\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\WelcomeScreen\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
-            "url": "classes/App-Dto-Discord-WelcomeScreen.html#method___construct"
+            "url": "classes/App-Dto-Discord-Api-WelcomeScreen.html#method___construct"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\WelcomeScreen\u003A\u003A\u0024description",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\WelcomeScreen\u003A\u003A\u0024description",
             "name": "description",
             "summary": "",
-            "url": "classes/App-Dto-Discord-WelcomeScreen.html#property_description"
+            "url": "classes/App-Dto-Discord-Api-WelcomeScreen.html#property_description"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\WelcomeScreen\u003A\u003A\u0024welcome_channels",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\WelcomeScreen\u003A\u003A\u0024welcome_channels",
             "name": "welcome_channels",
             "summary": "",
-            "url": "classes/App-Dto-Discord-WelcomeScreen.html#property_welcome_channels"
+            "url": "classes/App-Dto-Discord-Api-WelcomeScreen.html#property_welcome_channels"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\WelcomeScreenChannel",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\WelcomeScreenChannel",
             "name": "WelcomeScreenChannel",
             "summary": "",
-            "url": "classes/App-Dto-Discord-WelcomeScreenChannel.html"
+            "url": "classes/App-Dto-Discord-Api-WelcomeScreenChannel.html"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\WelcomeScreenChannel\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\WelcomeScreenChannel\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
-            "url": "classes/App-Dto-Discord-WelcomeScreenChannel.html#method___construct"
+            "url": "classes/App-Dto-Discord-Api-WelcomeScreenChannel.html#method___construct"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\WelcomeScreenChannel\u003A\u003A\u0024channel_id",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\WelcomeScreenChannel\u003A\u003A\u0024channel_id",
             "name": "channel_id",
             "summary": "",
-            "url": "classes/App-Dto-Discord-WelcomeScreenChannel.html#property_channel_id"
+            "url": "classes/App-Dto-Discord-Api-WelcomeScreenChannel.html#property_channel_id"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\WelcomeScreenChannel\u003A\u003A\u0024description",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\WelcomeScreenChannel\u003A\u003A\u0024description",
             "name": "description",
             "summary": "",
-            "url": "classes/App-Dto-Discord-WelcomeScreenChannel.html#property_description"
+            "url": "classes/App-Dto-Discord-Api-WelcomeScreenChannel.html#property_description"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\WelcomeScreenChannel\u003A\u003A\u0024emoji_id",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\WelcomeScreenChannel\u003A\u003A\u0024emoji_id",
             "name": "emoji_id",
             "summary": "",
-            "url": "classes/App-Dto-Discord-WelcomeScreenChannel.html#property_emoji_id"
+            "url": "classes/App-Dto-Discord-Api-WelcomeScreenChannel.html#property_emoji_id"
         },                {
-            "fqsen": "\\App\\Dto\\Discord\\WelcomeScreenChannel\u003A\u003A\u0024emoji_name",
+            "fqsen": "\\App\\Dto\\Discord\\Api\\WelcomeScreenChannel\u003A\u003A\u0024emoji_name",
             "name": "emoji_name",
             "summary": "",
-            "url": "classes/App-Dto-Discord-WelcomeScreenChannel.html#property_emoji_name"
+            "url": "classes/App-Dto-Discord-Api-WelcomeScreenChannel.html#property_emoji_name"
+        },                {
+            "fqsen": "\\App\\Dto\\Discord\\UserInfo",
+            "name": "UserInfo",
+            "summary": "Assumes\u0020that\u0020\u0027identify\u0027\u0020Discord\u0020OAuth2\u0020scope\u0020has\u0020been\u0020authorized.",
+            "url": "classes/App-Dto-Discord-UserInfo.html"
+        },                {
+            "fqsen": "\\App\\Dto\\Discord\\UserInfo\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Dto-Discord-UserInfo.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Dto\\Discord\\UserInfo\u003A\u003AgetAvatarUrl\u0028\u0029",
+            "name": "getAvatarUrl",
+            "summary": "",
+            "url": "classes/App-Dto-Discord-UserInfo.html#method_getAvatarUrl"
+        },                {
+            "fqsen": "\\App\\Dto\\Discord\\UserInfo\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "",
+            "url": "classes/App-Dto-Discord-UserInfo.html#property_id"
+        },                {
+            "fqsen": "\\App\\Dto\\Discord\\UserInfo\u003A\u003A\u0024username",
+            "name": "username",
+            "summary": "",
+            "url": "classes/App-Dto-Discord-UserInfo.html#property_username"
+        },                {
+            "fqsen": "\\App\\Dto\\Discord\\UserInfo\u003A\u003A\u0024discriminator",
+            "name": "discriminator",
+            "summary": "",
+            "url": "classes/App-Dto-Discord-UserInfo.html#property_discriminator"
+        },                {
+            "fqsen": "\\App\\Dto\\Discord\\UserInfo\u003A\u003A\u0024avatar",
+            "name": "avatar",
+            "summary": "",
+            "url": "classes/App-Dto-Discord-UserInfo.html#property_avatar"
+        },                {
+            "fqsen": "\\App\\Dto\\Discord\\UserInfo\u003A\u003A\u0024verified",
+            "name": "verified",
+            "summary": "",
+            "url": "classes/App-Dto-Discord-UserInfo.html#property_verified"
         },                {
             "fqsen": "\\App\\Entity\\Guild",
             "name": "Guild",
@@ -1266,305 +1341,300 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Entity-User.html#constant_IDENTIFIER_PROPERTY_NAME"
         },                {
-            "fqsen": "\\App\\Entity\\User\u003A\u003AAUTHORIZED_GUILDS_SESSION_KEY",
-            "name": "AUTHORIZED_GUILDS_SESSION_KEY",
-            "summary": "",
-            "url": "classes/App-Entity-User.html#constant_AUTHORIZED_GUILDS_SESSION_KEY"
-        },                {
             "fqsen": "\\App\\Entity\\User\u003A\u003A\u0024roles",
             "name": "roles",
             "summary": "",
             "url": "classes/App-Entity-User.html#property_roles"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\BitwisePermissionFlag",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\BitwisePermissionFlag",
             "name": "BitwisePermissionFlag",
             "summary": "",
-            "url": "classes/App-Enum-Discord-BitwisePermissionFlag.html"
+            "url": "classes/App-Enum-Discord-Api-BitwisePermissionFlag.html"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\BitwisePermissionFlag\u003A\u003AisGranted\u0028\u0029",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\BitwisePermissionFlag\u003A\u003AisGranted\u0028\u0029",
             "name": "isGranted",
             "summary": "",
-            "url": "classes/App-Enum-Discord-BitwisePermissionFlag.html#method_isGranted"
+            "url": "classes/App-Enum-Discord-Api-BitwisePermissionFlag.html#method_isGranted"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\BitwisePermissionFlag\u003A\u003AADMINISTRATOR",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\BitwisePermissionFlag\u003A\u003AADMINISTRATOR",
             "name": "ADMINISTRATOR",
             "summary": "Allows\u0020all\u0020permissions\u0020and\u0020bypasses\u0020channel\u0020permission\u0020overwrites.",
-            "url": "classes/App-Enum-Discord-BitwisePermissionFlag.html#enumcase_ADMINISTRATOR"
+            "url": "classes/App-Enum-Discord-Api-BitwisePermissionFlag.html#enumcase_ADMINISTRATOR"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\BitwisePermissionFlag\u003A\u003AMANAGE_GUILD",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\BitwisePermissionFlag\u003A\u003AMANAGE_GUILD",
             "name": "MANAGE_GUILD",
             "summary": "Allows\u0020management\u0020and\u0020editing\u0020of\u0020the\u0020guild.",
-            "url": "classes/App-Enum-Discord-BitwisePermissionFlag.html#enumcase_MANAGE_GUILD"
+            "url": "classes/App-Enum-Discord-Api-BitwisePermissionFlag.html#enumcase_MANAGE_GUILD"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\BitwisePermissionFlag\u003A\u003AMANAGE_MESSAGES",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\BitwisePermissionFlag\u003A\u003AMANAGE_MESSAGES",
             "name": "MANAGE_MESSAGES",
             "summary": "Allows\u0020for\u0020deletion\u0020of\u0020other\u0020users\u0020messages.\u0020\u0028T,V,S\u0029",
-            "url": "classes/App-Enum-Discord-BitwisePermissionFlag.html#enumcase_MANAGE_MESSAGES"
+            "url": "classes/App-Enum-Discord-Api-BitwisePermissionFlag.html#enumcase_MANAGE_MESSAGES"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\BitwisePermissionFlag\u003A\u003AMANAGE_THREADS",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\BitwisePermissionFlag\u003A\u003AMANAGE_THREADS",
             "name": "MANAGE_THREADS",
             "summary": "Allows\u0020for\u0020deleting\u0020and\u0020archiving\u0020threads,\u0020and\u0020viewing\u0020all\u0020private\u0020threads.\u0020\u0028T\u0029",
-            "url": "classes/App-Enum-Discord-BitwisePermissionFlag.html#enumcase_MANAGE_THREADS"
+            "url": "classes/App-Enum-Discord-Api-BitwisePermissionFlag.html#enumcase_MANAGE_THREADS"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\DefaultMessageNotificationLevel",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\DefaultMessageNotificationLevel",
             "name": "DefaultMessageNotificationLevel",
             "summary": "",
-            "url": "classes/App-Enum-Discord-DefaultMessageNotificationLevel.html"
+            "url": "classes/App-Enum-Discord-Api-DefaultMessageNotificationLevel.html"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\DefaultMessageNotificationLevel\u003A\u003AALL_MESSAGES",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\DefaultMessageNotificationLevel\u003A\u003AALL_MESSAGES",
             "name": "ALL_MESSAGES",
             "summary": "Members\u0020will\u0020receive\u0020notifications\u0020for\u0020all\u0020messages\u0020by\u0020default.",
-            "url": "classes/App-Enum-Discord-DefaultMessageNotificationLevel.html#enumcase_ALL_MESSAGES"
+            "url": "classes/App-Enum-Discord-Api-DefaultMessageNotificationLevel.html#enumcase_ALL_MESSAGES"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\DefaultMessageNotificationLevel\u003A\u003AONLY_MENTIONS",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\DefaultMessageNotificationLevel\u003A\u003AONLY_MENTIONS",
             "name": "ONLY_MENTIONS",
             "summary": "Members\u0020will\u0020receive\u0020notifications\u0020only\u0020for\u0020messages\u0020that\u0020\u0040mention\u0020them\u0020by\u0020default.",
-            "url": "classes/App-Enum-Discord-DefaultMessageNotificationLevel.html#enumcase_ONLY_MENTIONS"
+            "url": "classes/App-Enum-Discord-Api-DefaultMessageNotificationLevel.html#enumcase_ONLY_MENTIONS"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\ExplicitContentFilterLevel",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\ExplicitContentFilterLevel",
             "name": "ExplicitContentFilterLevel",
             "summary": "",
-            "url": "classes/App-Enum-Discord-ExplicitContentFilterLevel.html"
+            "url": "classes/App-Enum-Discord-Api-ExplicitContentFilterLevel.html"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\ExplicitContentFilterLevel\u003A\u003ADISABLED",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\ExplicitContentFilterLevel\u003A\u003ADISABLED",
             "name": "DISABLED",
             "summary": "Media\u0020content\u0020will\u0020not\u0020be\u0020scanned.",
-            "url": "classes/App-Enum-Discord-ExplicitContentFilterLevel.html#enumcase_DISABLED"
+            "url": "classes/App-Enum-Discord-Api-ExplicitContentFilterLevel.html#enumcase_DISABLED"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\ExplicitContentFilterLevel\u003A\u003AMEMBERS_WITHOUT_ROLES",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\ExplicitContentFilterLevel\u003A\u003AMEMBERS_WITHOUT_ROLES",
             "name": "MEMBERS_WITHOUT_ROLES",
             "summary": "Media\u0020content\u0020sent\u0020by\u0020members\u0020without\u0020roles\u0020will\u0020be\u0020scanned.",
-            "url": "classes/App-Enum-Discord-ExplicitContentFilterLevel.html#enumcase_MEMBERS_WITHOUT_ROLES"
+            "url": "classes/App-Enum-Discord-Api-ExplicitContentFilterLevel.html#enumcase_MEMBERS_WITHOUT_ROLES"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\ExplicitContentFilterLevel\u003A\u003AALL_MEMBERS",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\ExplicitContentFilterLevel\u003A\u003AALL_MEMBERS",
             "name": "ALL_MEMBERS",
             "summary": "Media\u0020content\u0020sent\u0020by\u0020all\u0020members\u0020will\u0020be\u0020scanned.",
-            "url": "classes/App-Enum-Discord-ExplicitContentFilterLevel.html#enumcase_ALL_MEMBERS"
+            "url": "classes/App-Enum-Discord-Api-ExplicitContentFilterLevel.html#enumcase_ALL_MEMBERS"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\GuildNsfwLevel",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\GuildNsfwLevel",
             "name": "GuildNsfwLevel",
             "summary": "",
-            "url": "classes/App-Enum-Discord-GuildNsfwLevel.html"
+            "url": "classes/App-Enum-Discord-Api-GuildNsfwLevel.html"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\GuildNsfwLevel\u003A\u003ADEFAULT",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\GuildNsfwLevel\u003A\u003ADEFAULT",
             "name": "DEFAULT",
             "summary": "",
-            "url": "classes/App-Enum-Discord-GuildNsfwLevel.html#enumcase_DEFAULT"
+            "url": "classes/App-Enum-Discord-Api-GuildNsfwLevel.html#enumcase_DEFAULT"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\GuildNsfwLevel\u003A\u003AEXPLICIT",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\GuildNsfwLevel\u003A\u003AEXPLICIT",
             "name": "EXPLICIT",
             "summary": "",
-            "url": "classes/App-Enum-Discord-GuildNsfwLevel.html#enumcase_EXPLICIT"
+            "url": "classes/App-Enum-Discord-Api-GuildNsfwLevel.html#enumcase_EXPLICIT"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\GuildNsfwLevel\u003A\u003ASAFE",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\GuildNsfwLevel\u003A\u003ASAFE",
             "name": "SAFE",
             "summary": "",
-            "url": "classes/App-Enum-Discord-GuildNsfwLevel.html#enumcase_SAFE"
+            "url": "classes/App-Enum-Discord-Api-GuildNsfwLevel.html#enumcase_SAFE"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\GuildNsfwLevel\u003A\u003AAGE_RESTRICTED",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\GuildNsfwLevel\u003A\u003AAGE_RESTRICTED",
             "name": "AGE_RESTRICTED",
             "summary": "",
-            "url": "classes/App-Enum-Discord-GuildNsfwLevel.html#enumcase_AGE_RESTRICTED"
+            "url": "classes/App-Enum-Discord-Api-GuildNsfwLevel.html#enumcase_AGE_RESTRICTED"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\InteractionType",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\InteractionType",
             "name": "InteractionType",
             "summary": "",
-            "url": "classes/App-Enum-Discord-InteractionType.html"
+            "url": "classes/App-Enum-Discord-Api-InteractionType.html"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\InteractionType\u003A\u003APING",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\InteractionType\u003A\u003APING",
             "name": "PING",
             "summary": "",
-            "url": "classes/App-Enum-Discord-InteractionType.html#enumcase_PING"
+            "url": "classes/App-Enum-Discord-Api-InteractionType.html#enumcase_PING"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\InteractionType\u003A\u003AAPPLICATION_COMMAND",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\InteractionType\u003A\u003AAPPLICATION_COMMAND",
             "name": "APPLICATION_COMMAND",
             "summary": "",
-            "url": "classes/App-Enum-Discord-InteractionType.html#enumcase_APPLICATION_COMMAND"
+            "url": "classes/App-Enum-Discord-Api-InteractionType.html#enumcase_APPLICATION_COMMAND"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\InteractionType\u003A\u003AMESSAGE_COMPONENT",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\InteractionType\u003A\u003AMESSAGE_COMPONENT",
             "name": "MESSAGE_COMPONENT",
             "summary": "",
-            "url": "classes/App-Enum-Discord-InteractionType.html#enumcase_MESSAGE_COMPONENT"
+            "url": "classes/App-Enum-Discord-Api-InteractionType.html#enumcase_MESSAGE_COMPONENT"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\InteractionType\u003A\u003AAPPLICATION_COMMAND_AUTOCOMPLETE",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\InteractionType\u003A\u003AAPPLICATION_COMMAND_AUTOCOMPLETE",
             "name": "APPLICATION_COMMAND_AUTOCOMPLETE",
             "summary": "",
-            "url": "classes/App-Enum-Discord-InteractionType.html#enumcase_APPLICATION_COMMAND_AUTOCOMPLETE"
+            "url": "classes/App-Enum-Discord-Api-InteractionType.html#enumcase_APPLICATION_COMMAND_AUTOCOMPLETE"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\InteractionType\u003A\u003AMODAL_SUBMIT",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\InteractionType\u003A\u003AMODAL_SUBMIT",
             "name": "MODAL_SUBMIT",
             "summary": "",
-            "url": "classes/App-Enum-Discord-InteractionType.html#enumcase_MODAL_SUBMIT"
+            "url": "classes/App-Enum-Discord-Api-InteractionType.html#enumcase_MODAL_SUBMIT"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\MfaLevel",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\MfaLevel",
             "name": "MfaLevel",
             "summary": "",
-            "url": "classes/App-Enum-Discord-MfaLevel.html"
+            "url": "classes/App-Enum-Discord-Api-MfaLevel.html"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\MfaLevel\u003A\u003ANONE",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\MfaLevel\u003A\u003ANONE",
             "name": "NONE",
             "summary": "Guild\u0020has\u0020no\u0020MFA\/2FA\u0020requirement\u0020for\u0020moderation\u0020actions.",
-            "url": "classes/App-Enum-Discord-MfaLevel.html#enumcase_NONE"
+            "url": "classes/App-Enum-Discord-Api-MfaLevel.html#enumcase_NONE"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\MfaLevel\u003A\u003AELEVATED",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\MfaLevel\u003A\u003AELEVATED",
             "name": "ELEVATED",
             "summary": "Guild\u0020has\u0020a\u00202FA\u0020requirement\u0020for\u0020moderation\u0020actions.",
-            "url": "classes/App-Enum-Discord-MfaLevel.html#enumcase_ELEVATED"
+            "url": "classes/App-Enum-Discord-Api-MfaLevel.html#enumcase_ELEVATED"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\PremiumTier",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\PremiumTier",
             "name": "PremiumTier",
             "summary": "",
-            "url": "classes/App-Enum-Discord-PremiumTier.html"
+            "url": "classes/App-Enum-Discord-Api-PremiumTier.html"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\PremiumTier\u003A\u003ANONE",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\PremiumTier\u003A\u003ANONE",
             "name": "NONE",
             "summary": "Guild\u0020has\u0020not\u0020unlocked\u0020any\u0020Server\u0020Boost\u0020perks.",
-            "url": "classes/App-Enum-Discord-PremiumTier.html#enumcase_NONE"
+            "url": "classes/App-Enum-Discord-Api-PremiumTier.html#enumcase_NONE"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\PremiumTier\u003A\u003ATIER_1",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\PremiumTier\u003A\u003ATIER_1",
             "name": "TIER_1",
             "summary": "Guild\u0020has\u0020unlocked\u0020Server\u0020Boost\u0020level\u00201\u0020perks.",
-            "url": "classes/App-Enum-Discord-PremiumTier.html#enumcase_TIER_1"
+            "url": "classes/App-Enum-Discord-Api-PremiumTier.html#enumcase_TIER_1"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\PremiumTier\u003A\u003ATIER_2",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\PremiumTier\u003A\u003ATIER_2",
             "name": "TIER_2",
             "summary": "Guild\u0020has\u0020unlocked\u0020Server\u0020Boost\u0020level\u00202\u0020perks",
-            "url": "classes/App-Enum-Discord-PremiumTier.html#enumcase_TIER_2"
+            "url": "classes/App-Enum-Discord-Api-PremiumTier.html#enumcase_TIER_2"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\PremiumTier\u003A\u003ATIER_3",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\PremiumTier\u003A\u003ATIER_3",
             "name": "TIER_3",
             "summary": "Guild\u0020has\u0020unlocked\u0020Server\u0020Boost\u0020level\u00203\u0020perks.",
-            "url": "classes/App-Enum-Discord-PremiumTier.html#enumcase_TIER_3"
+            "url": "classes/App-Enum-Discord-Api-PremiumTier.html#enumcase_TIER_3"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\PremiumType",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\PremiumType",
             "name": "PremiumType",
             "summary": "",
-            "url": "classes/App-Enum-Discord-PremiumType.html"
+            "url": "classes/App-Enum-Discord-Api-PremiumType.html"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\PremiumType\u003A\u003ANone",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\PremiumType\u003A\u003ANone",
             "name": "None",
             "summary": "",
-            "url": "classes/App-Enum-Discord-PremiumType.html#enumcase_None"
+            "url": "classes/App-Enum-Discord-Api-PremiumType.html#enumcase_None"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\PremiumType\u003A\u003ANitroClassic",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\PremiumType\u003A\u003ANitroClassic",
             "name": "NitroClassic",
             "summary": "",
-            "url": "classes/App-Enum-Discord-PremiumType.html#enumcase_NitroClassic"
+            "url": "classes/App-Enum-Discord-Api-PremiumType.html#enumcase_NitroClassic"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\PremiumType\u003A\u003ANitro",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\PremiumType\u003A\u003ANitro",
             "name": "Nitro",
             "summary": "",
-            "url": "classes/App-Enum-Discord-PremiumType.html#enumcase_Nitro"
+            "url": "classes/App-Enum-Discord-Api-PremiumType.html#enumcase_Nitro"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\PremiumType\u003A\u003ANitroBasic",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\PremiumType\u003A\u003ANitroBasic",
             "name": "NitroBasic",
             "summary": "",
-            "url": "classes/App-Enum-Discord-PremiumType.html#enumcase_NitroBasic"
+            "url": "classes/App-Enum-Discord-Api-PremiumType.html#enumcase_NitroBasic"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\StickerFormatType",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\StickerFormatType",
             "name": "StickerFormatType",
             "summary": "",
-            "url": "classes/App-Enum-Discord-StickerFormatType.html"
+            "url": "classes/App-Enum-Discord-Api-StickerFormatType.html"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\StickerFormatType\u003A\u003APNG",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\StickerFormatType\u003A\u003APNG",
             "name": "PNG",
             "summary": "",
-            "url": "classes/App-Enum-Discord-StickerFormatType.html#enumcase_PNG"
+            "url": "classes/App-Enum-Discord-Api-StickerFormatType.html#enumcase_PNG"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\StickerFormatType\u003A\u003AAPNG",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\StickerFormatType\u003A\u003AAPNG",
             "name": "APNG",
             "summary": "",
-            "url": "classes/App-Enum-Discord-StickerFormatType.html#enumcase_APNG"
+            "url": "classes/App-Enum-Discord-Api-StickerFormatType.html#enumcase_APNG"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\StickerFormatType\u003A\u003ALOTTIE",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\StickerFormatType\u003A\u003ALOTTIE",
             "name": "LOTTIE",
             "summary": "",
-            "url": "classes/App-Enum-Discord-StickerFormatType.html#enumcase_LOTTIE"
+            "url": "classes/App-Enum-Discord-Api-StickerFormatType.html#enumcase_LOTTIE"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\StickerFormatType\u003A\u003AGIF",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\StickerFormatType\u003A\u003AGIF",
             "name": "GIF",
             "summary": "",
-            "url": "classes/App-Enum-Discord-StickerFormatType.html#enumcase_GIF"
+            "url": "classes/App-Enum-Discord-Api-StickerFormatType.html#enumcase_GIF"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\StickerType",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\StickerType",
             "name": "StickerType",
             "summary": "",
-            "url": "classes/App-Enum-Discord-StickerType.html"
+            "url": "classes/App-Enum-Discord-Api-StickerType.html"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\StickerType\u003A\u003ASTANDARD",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\StickerType\u003A\u003ASTANDARD",
             "name": "STANDARD",
             "summary": "An\u0020official\u0020sticker\u0020in\u0020a\u0020pack.",
-            "url": "classes/App-Enum-Discord-StickerType.html#enumcase_STANDARD"
+            "url": "classes/App-Enum-Discord-Api-StickerType.html#enumcase_STANDARD"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\StickerType\u003A\u003AGUILD",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\StickerType\u003A\u003AGUILD",
             "name": "GUILD",
             "summary": "A\u0020sticker\u0020uploaded\u0020to\u0020a\u0020guild\u0020for\u0020the\u0020guild\u0027s\u0020members.",
-            "url": "classes/App-Enum-Discord-StickerType.html#enumcase_GUILD"
+            "url": "classes/App-Enum-Discord-Api-StickerType.html#enumcase_GUILD"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\VerificationLevel",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\VerificationLevel",
             "name": "VerificationLevel",
             "summary": "",
-            "url": "classes/App-Enum-Discord-VerificationLevel.html"
+            "url": "classes/App-Enum-Discord-Api-VerificationLevel.html"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\VerificationLevel\u003A\u003ANONE",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\VerificationLevel\u003A\u003ANONE",
             "name": "NONE",
             "summary": "Unrestricted.",
-            "url": "classes/App-Enum-Discord-VerificationLevel.html#enumcase_NONE"
+            "url": "classes/App-Enum-Discord-Api-VerificationLevel.html#enumcase_NONE"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\VerificationLevel\u003A\u003ALOW",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\VerificationLevel\u003A\u003ALOW",
             "name": "LOW",
             "summary": "Must\u0020have\u0020verified\u0020email\u0020on\u0020account.",
-            "url": "classes/App-Enum-Discord-VerificationLevel.html#enumcase_LOW"
+            "url": "classes/App-Enum-Discord-Api-VerificationLevel.html#enumcase_LOW"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\VerificationLevel\u003A\u003AMEDIUM",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\VerificationLevel\u003A\u003AMEDIUM",
             "name": "MEDIUM",
             "summary": "Must\u0020be\u0020registered\u0020on\u0020Discord\u0020for\u0020longer\u0020than\u00205\u0020minutes.",
-            "url": "classes/App-Enum-Discord-VerificationLevel.html#enumcase_MEDIUM"
+            "url": "classes/App-Enum-Discord-Api-VerificationLevel.html#enumcase_MEDIUM"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\VerificationLevel\u003A\u003AHIGH",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\VerificationLevel\u003A\u003AHIGH",
             "name": "HIGH",
             "summary": "Must\u0020be\u0020a\u0020member\u0020of\u0020the\u0020server\u0020for\u0020longer\u0020than\u002010\u0020minutes.",
-            "url": "classes/App-Enum-Discord-VerificationLevel.html#enumcase_HIGH"
+            "url": "classes/App-Enum-Discord-Api-VerificationLevel.html#enumcase_HIGH"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\VerificationLevel\u003A\u003AVERY_HIGH",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\VerificationLevel\u003A\u003AVERY_HIGH",
             "name": "VERY_HIGH",
             "summary": "Must\u0020have\u0020a\u0020verified\u0020phone\u0020number.",
-            "url": "classes/App-Enum-Discord-VerificationLevel.html#enumcase_VERY_HIGH"
+            "url": "classes/App-Enum-Discord-Api-VerificationLevel.html#enumcase_VERY_HIGH"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\WebhookEventBodyType",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\WebhookEventBodyType",
             "name": "WebhookEventBodyType",
             "summary": "",
-            "url": "classes/App-Enum-Discord-WebhookEventBodyType.html"
+            "url": "classes/App-Enum-Discord-Api-WebhookEventBodyType.html"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\WebhookEventBodyType\u003A\u003AApplicationAuthorized",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\WebhookEventBodyType\u003A\u003AApplicationAuthorized",
             "name": "ApplicationAuthorized",
             "summary": "Sent\u0020when\u0020an\u0020app\u0020was\u0020authorized\u0020by\u0020a\u0020user\u0020to\u0020a\u0020server\u0020or\u0020their\u0020account",
-            "url": "classes/App-Enum-Discord-WebhookEventBodyType.html#enumcase_ApplicationAuthorized"
+            "url": "classes/App-Enum-Discord-Api-WebhookEventBodyType.html#enumcase_ApplicationAuthorized"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\WebhookEventBodyType\u003A\u003AEntitlementCreate",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\WebhookEventBodyType\u003A\u003AEntitlementCreate",
             "name": "EntitlementCreate",
             "summary": "Entitlement\u0020was\u0020created.",
-            "url": "classes/App-Enum-Discord-WebhookEventBodyType.html#enumcase_EntitlementCreate"
+            "url": "classes/App-Enum-Discord-Api-WebhookEventBodyType.html#enumcase_EntitlementCreate"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\WebhookEventBodyType\u003A\u003AQuestUserEnrollment",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\WebhookEventBodyType\u003A\u003AQuestUserEnrollment",
             "name": "QuestUserEnrollment",
             "summary": "User\u0020was\u0020added\u0020to\u0020a\u0020Quest\u0020\u0028currently\u0020unavailable\u0029",
-            "url": "classes/App-Enum-Discord-WebhookEventBodyType.html#enumcase_QuestUserEnrollment"
+            "url": "classes/App-Enum-Discord-Api-WebhookEventBodyType.html#enumcase_QuestUserEnrollment"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\WebhookType",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\WebhookType",
             "name": "WebhookType",
             "summary": "",
-            "url": "classes/App-Enum-Discord-WebhookType.html"
+            "url": "classes/App-Enum-Discord-Api-WebhookType.html"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\WebhookType\u003A\u003APING",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\WebhookType\u003A\u003APING",
             "name": "PING",
             "summary": "PING\u0020event\u0020sent\u0020to\u0020verify\u0020your\u0020Webhook\u0020Event\u0020URL\u0020is\u0020active.",
-            "url": "classes/App-Enum-Discord-WebhookType.html#enumcase_PING"
+            "url": "classes/App-Enum-Discord-Api-WebhookType.html#enumcase_PING"
         },                {
-            "fqsen": "\\App\\Enum\\Discord\\WebhookType\u003A\u003AEvent",
+            "fqsen": "\\App\\Enum\\Discord\\Api\\WebhookType\u003A\u003AEvent",
             "name": "Event",
             "summary": "Webhook\u0020event\u0020\u0028details\u0020for\u0020event\u0020in\u0020event\u0020body\u0020object\u0029.",
-            "url": "classes/App-Enum-Discord-WebhookType.html#enumcase_Event"
+            "url": "classes/App-Enum-Discord-Api-WebhookType.html#enumcase_Event"
         },                {
             "fqsen": "\\App\\HttpClient\\DiscordApi",
             "name": "DiscordApi",
@@ -1681,20 +1751,15 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Security-AuthenticationEntryPoint.html#method_start"
         },                {
-            "fqsen": "\\App\\Security\\AuthenticationEntryPoint\u003A\u003AROUTE_NAME_SESSION_KEY",
-            "name": "ROUTE_NAME_SESSION_KEY",
-            "summary": "",
-            "url": "classes/App-Security-AuthenticationEntryPoint.html#constant_ROUTE_NAME_SESSION_KEY"
-        },                {
-            "fqsen": "\\App\\Security\\AuthenticationEntryPoint\u003A\u003AROUTE_PARAMS_SESSION_KEY",
-            "name": "ROUTE_PARAMS_SESSION_KEY",
-            "summary": "",
-            "url": "classes/App-Security-AuthenticationEntryPoint.html#constant_ROUTE_PARAMS_SESSION_KEY"
-        },                {
             "fqsen": "\\App\\Security\\AuthenticationEntryPoint\u003A\u003A\u0024urlGenerator",
             "name": "urlGenerator",
             "summary": "",
             "url": "classes/App-Security-AuthenticationEntryPoint.html#property_urlGenerator"
+        },                {
+            "fqsen": "\\App\\Security\\AuthenticationEntryPoint\u003A\u003A\u0024sessionContext",
+            "name": "sessionContext",
+            "summary": "",
+            "url": "classes/App-Security-AuthenticationEntryPoint.html#property_sessionContext"
         },                {
             "fqsen": "\\App\\Security\\Discord\\Authenticator\\OAuth2Authenticator",
             "name": "OAuth2Authenticator",
@@ -1746,20 +1811,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Security-Discord-Authenticator-OAuth2Authenticator.html#property_logger"
         },                {
-            "fqsen": "\\App\\Security\\Discord\\Authenticator\\OAuth2Authenticator\u003A\u003A\u0024userRepository",
-            "name": "userRepository",
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\OAuth2Authenticator\u003A\u003A\u0024sessionContext",
+            "name": "sessionContext",
             "summary": "",
-            "url": "classes/App-Security-Discord-Authenticator-OAuth2Authenticator.html#property_userRepository"
-        },                {
-            "fqsen": "\\App\\Security\\Discord\\Authenticator\\OAuth2Authenticator\u003A\u003A\u0024validator",
-            "name": "validator",
-            "summary": "",
-            "url": "classes/App-Security-Discord-Authenticator-OAuth2Authenticator.html#property_validator"
-        },                {
-            "fqsen": "\\App\\Security\\Discord\\Authenticator\\OAuth2Authenticator\u003A\u003A\u0024router",
-            "name": "router",
-            "summary": "",
-            "url": "classes/App-Security-Discord-Authenticator-OAuth2Authenticator.html#property_router"
+            "url": "classes/App-Security-Discord-Authenticator-OAuth2Authenticator.html#property_sessionContext"
         },                {
             "fqsen": "\\App\\Security\\Discord\\Authenticator\\OAuth2Authenticator\u003A\u003A\u0024security",
             "name": "security",
@@ -1831,20 +1886,20 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Security-Discord-Authenticator-RequestAuthenticator.html#property_logger"
         },                {
-            "fqsen": "\\App\\Security\\Discord\\Authenticator\\RequestAuthenticator\u003A\u003A\u0024userRepository",
-            "name": "userRepository",
-            "summary": "",
-            "url": "classes/App-Security-Discord-Authenticator-RequestAuthenticator.html#property_userRepository"
-        },                {
-            "fqsen": "\\App\\Security\\Discord\\Authenticator\\RequestAuthenticator\u003A\u003A\u0024validator",
-            "name": "validator",
-            "summary": "",
-            "url": "classes/App-Security-Discord-Authenticator-RequestAuthenticator.html#property_validator"
-        },                {
             "fqsen": "\\App\\Security\\Discord\\Authenticator\\UserFindableOrCreatable",
             "name": "UserFindableOrCreatable",
             "summary": "",
             "url": "classes/App-Security-Discord-Authenticator-UserFindableOrCreatable.html"
+        },                {
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\UserFindableOrCreatable\u003A\u003AsetUserRepository\u0028\u0029",
+            "name": "setUserRepository",
+            "summary": "",
+            "url": "classes/App-Security-Discord-Authenticator-UserFindableOrCreatable.html#method_setUserRepository"
+        },                {
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\UserFindableOrCreatable\u003A\u003AsetValidator\u0028\u0029",
+            "name": "setValidator",
+            "summary": "",
+            "url": "classes/App-Security-Discord-Authenticator-UserFindableOrCreatable.html#method_setValidator"
         },                {
             "fqsen": "\\App\\Security\\Discord\\Authenticator\\UserFindableOrCreatable\u003A\u003AfindOrCreateUser\u0028\u0029",
             "name": "findOrCreateUser",
@@ -1860,6 +1915,16 @@ Search.appendIndex(
             "name": "createUser",
             "summary": "",
             "url": "classes/App-Security-Discord-Authenticator-UserFindableOrCreatable.html#method_createUser"
+        },                {
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\UserFindableOrCreatable\u003A\u003A\u0024userRepository",
+            "name": "userRepository",
+            "summary": "",
+            "url": "classes/App-Security-Discord-Authenticator-UserFindableOrCreatable.html#property_userRepository"
+        },                {
+            "fqsen": "\\App\\Security\\Discord\\Authenticator\\UserFindableOrCreatable\u003A\u003A\u0024validator",
+            "name": "validator",
+            "summary": "",
+            "url": "classes/App-Security-Discord-Authenticator-UserFindableOrCreatable.html#property_validator"
         },                {
             "fqsen": "\\App\\Security\\Discord\\RequestValidator",
             "name": "RequestValidator",
@@ -1921,6 +1986,91 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Security-Providers.html#constant_USER"
         },                {
+            "fqsen": "\\App\\Session\\SessionContext",
+            "name": "SessionContext",
+            "summary": "",
+            "url": "classes/App-Session-SessionContext.html"
+        },                {
+            "fqsen": "\\App\\Session\\SessionContext\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Session-SessionContext.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Session\\SessionContext\u003A\u003AsetPostAuthenticationRedirectResponse\u0028\u0029",
+            "name": "setPostAuthenticationRedirectResponse",
+            "summary": "",
+            "url": "classes/App-Session-SessionContext.html#method_setPostAuthenticationRedirectResponse"
+        },                {
+            "fqsen": "\\App\\Session\\SessionContext\u003A\u003AgetPostAuthenticationRedirectResponse\u0028\u0029",
+            "name": "getPostAuthenticationRedirectResponse",
+            "summary": "",
+            "url": "classes/App-Session-SessionContext.html#method_getPostAuthenticationRedirectResponse"
+        },                {
+            "fqsen": "\\App\\Session\\SessionContext\u003A\u003AsetAuthorizedGuilds\u0028\u0029",
+            "name": "setAuthorizedGuilds",
+            "summary": "",
+            "url": "classes/App-Session-SessionContext.html#method_setAuthorizedGuilds"
+        },                {
+            "fqsen": "\\App\\Session\\SessionContext\u003A\u003AgetAuthorizedGuilds\u0028\u0029",
+            "name": "getAuthorizedGuilds",
+            "summary": "",
+            "url": "classes/App-Session-SessionContext.html#method_getAuthorizedGuilds"
+        },                {
+            "fqsen": "\\App\\Session\\SessionContext\u003A\u003AsetUserInfo\u0028\u0029",
+            "name": "setUserInfo",
+            "summary": "",
+            "url": "classes/App-Session-SessionContext.html#method_setUserInfo"
+        },                {
+            "fqsen": "\\App\\Session\\SessionContext\u003A\u003AgetUserInfo\u0028\u0029",
+            "name": "getUserInfo",
+            "summary": "",
+            "url": "classes/App-Session-SessionContext.html#method_getUserInfo"
+        },                {
+            "fqsen": "\\App\\Session\\SessionContext\u003A\u003AgetSession\u0028\u0029",
+            "name": "getSession",
+            "summary": "",
+            "url": "classes/App-Session-SessionContext.html#method_getSession"
+        },                {
+            "fqsen": "\\App\\Session\\SessionContext\u003A\u003AAUTHORIZED_GUILDS",
+            "name": "AUTHORIZED_GUILDS",
+            "summary": "",
+            "url": "classes/App-Session-SessionContext.html#constant_AUTHORIZED_GUILDS"
+        },                {
+            "fqsen": "\\App\\Session\\SessionContext\u003A\u003APOST_AUTHENTICATION_REDIRECT_ROUTE_NAME",
+            "name": "POST_AUTHENTICATION_REDIRECT_ROUTE_NAME",
+            "summary": "",
+            "url": "classes/App-Session-SessionContext.html#constant_POST_AUTHENTICATION_REDIRECT_ROUTE_NAME"
+        },                {
+            "fqsen": "\\App\\Session\\SessionContext\u003A\u003APOST_AUTHENTICATION_REDIRECT_ROUTE_PARAMS",
+            "name": "POST_AUTHENTICATION_REDIRECT_ROUTE_PARAMS",
+            "summary": "",
+            "url": "classes/App-Session-SessionContext.html#constant_POST_AUTHENTICATION_REDIRECT_ROUTE_PARAMS"
+        },                {
+            "fqsen": "\\App\\Session\\SessionContext\u003A\u003AUSER_INFO",
+            "name": "USER_INFO",
+            "summary": "",
+            "url": "classes/App-Session-SessionContext.html#constant_USER_INFO"
+        },                {
+            "fqsen": "\\App\\Session\\SessionContext\u003A\u003A\u0024requestStack",
+            "name": "requestStack",
+            "summary": "",
+            "url": "classes/App-Session-SessionContext.html#property_requestStack"
+        },                {
+            "fqsen": "\\App\\Session\\SessionContext\u003A\u003A\u0024router",
+            "name": "router",
+            "summary": "",
+            "url": "classes/App-Session-SessionContext.html#property_router"
+        },                {
+            "fqsen": "\\App\\Session\\SessionContext\u003A\u003A\u0024normalizer",
+            "name": "normalizer",
+            "summary": "",
+            "url": "classes/App-Session-SessionContext.html#property_normalizer"
+        },                {
+            "fqsen": "\\App\\Session\\SessionContext\u003A\u003A\u0024denormalizer",
+            "name": "denormalizer",
+            "summary": "",
+            "url": "classes/App-Session-SessionContext.html#property_denormalizer"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
@@ -1956,6 +2106,11 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/app-dependencyinjection.html"
         },                {
+            "fqsen": "\\App\\Dto\\Discord\\Api",
+            "name": "Api",
+            "summary": "",
+            "url": "namespaces/app-dto-discord-api.html"
+        },                {
             "fqsen": "\\App\\Dto\\Discord",
             "name": "Discord",
             "summary": "",
@@ -1975,6 +2130,11 @@ Search.appendIndex(
             "name": "Traits",
             "summary": "",
             "url": "namespaces/app-entity-traits.html"
+        },                {
+            "fqsen": "\\App\\Enum\\Discord\\Api",
+            "name": "Api",
+            "summary": "",
+            "url": "namespaces/app-enum-discord-api.html"
         },                {
             "fqsen": "\\App\\Enum\\Discord",
             "name": "Discord",
@@ -2020,5 +2180,10 @@ Search.appendIndex(
             "name": "Discord",
             "summary": "",
             "url": "namespaces/app-security-discord.html"
+        },                {
+            "fqsen": "\\App\\Session",
+            "name": "Session",
+            "summary": "",
+            "url": "namespaces/app-session.html"
         }            ]
 );

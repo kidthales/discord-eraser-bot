@@ -108,6 +108,10 @@
                 <a href="namespaces/app-security.html" class="">Security</a>
                 
             </li>
+                    <li>
+                <a href="namespaces/app-session.html" class="">Session</a>
+                
+            </li>
             </ul>
 
                         </section>
@@ -169,7 +173,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Security/AuthenticationEntryPoint.php"><a href="files/src-security-authenticationentrypoint.html"><abbr title="src/Security/AuthenticationEntryPoint.php">AuthenticationEntryPoint.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">17</span>
 
     </aside>
 
@@ -201,25 +205,6 @@
 
 
 
-<h4 id="toc-constants">
-    Constants
-    <a href="classes/App-Security-AuthenticationEntryPoint.html#toc-constants" class="headerlink"><i class="fas fa-link"></i></a>
-
-</h4>
-<dl class="phpdocumentor-table-of-contents">
-            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a class="" href="classes/App-Security-AuthenticationEntryPoint.html#constant_ROUTE_NAME_SESSION_KEY">ROUTE_NAME_SESSION_KEY</a>
-    <span>
-        &nbsp;= &#039;_authentication_entry_point_route_name&#039;                            </span>
-</dt>
-
-            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a class="" href="classes/App-Security-AuthenticationEntryPoint.html#constant_ROUTE_PARAMS_SESSION_KEY">ROUTE_PARAMS_SESSION_KEY</a>
-    <span>
-        &nbsp;= &#039;_authentication_entry_point_route_params&#039;                            </span>
-</dt>
-
-    </dl>
 
 
 <h4 id="toc-properties">
@@ -228,6 +213,12 @@
 
 </h4>
 <dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a class="" href="classes/App-Security-AuthenticationEntryPoint.html#property_sessionContext">$sessionContext</a>
+    <span>
+                        &nbsp;: <a href="classes/App-Session-SessionContext.html"><abbr title="\App\Session\SessionContext">SessionContext</abbr></a>            </span>
+</dt>
+
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a class="" href="classes/App-Security-AuthenticationEntryPoint.html#property_urlGenerator">$urlGenerator</a>
     <span>
@@ -259,75 +250,6 @@
 
 
         
-    <section class="phpdocumentor-constants">
-        <h3 class="phpdocumentor-elements__header" id="constants">
-            Constants
-            <a href="classes/App-Security-AuthenticationEntryPoint.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
-
-        </h3>
-                    <article class="phpdocumentor-element -constant -public ">
-    <h4 class="phpdocumentor-element__name" id="constant_ROUTE_NAME_SESSION_KEY">
-        ROUTE_NAME_SESSION_KEY
-        <a href="classes/App-Security-AuthenticationEntryPoint.html#constant_ROUTE_NAME_SESSION_KEY" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Security/AuthenticationEntryPoint.php"><a href="files/src-security-authenticationentrypoint.html"><abbr title="src/Security/AuthenticationEntryPoint.php">AuthenticationEntryPoint.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">18</span>
-
-    </aside>
-
-    
-    
-    <code class="phpdocumentor-signature phpdocumentor-code ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">ROUTE_NAME_SESSION_KEY</span>
-    = <span class="phpdocumentor-signature__default-value">&#039;_authentication_entry_point_route_name&#039;</span>
-</code>
-
-
-    
-    
-    
-
-    
-
-</article>
-                    <article class="phpdocumentor-element -constant -public ">
-    <h4 class="phpdocumentor-element__name" id="constant_ROUTE_PARAMS_SESSION_KEY">
-        ROUTE_PARAMS_SESSION_KEY
-        <a href="classes/App-Security-AuthenticationEntryPoint.html#constant_ROUTE_PARAMS_SESSION_KEY" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Security/AuthenticationEntryPoint.php"><a href="files/src-security-authenticationentrypoint.html"><abbr title="src/Security/AuthenticationEntryPoint.php">AuthenticationEntryPoint.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">19</span>
-
-    </aside>
-
-    
-    
-    <code class="phpdocumentor-signature phpdocumentor-code ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">ROUTE_PARAMS_SESSION_KEY</span>
-    = <span class="phpdocumentor-signature__default-value">&#039;_authentication_entry_point_route_params&#039;</span>
-</code>
-
-
-    
-    
-    
-
-    
-
-</article>
-            </section>
 
         
     <section class="phpdocumentor-properties">
@@ -336,6 +258,42 @@
             <a href="classes/App-Security-AuthenticationEntryPoint.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h3>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_sessionContext">
+        $sessionContext
+        <a href="classes/App-Security-AuthenticationEntryPoint.html#property_sessionContext" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Security/AuthenticationEntryPoint.php"><a href="files/src-security-authenticationentrypoint.html"><abbr title="src/Security/AuthenticationEntryPoint.php">AuthenticationEntryPoint.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">23</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/App-Session-SessionContext.html"><abbr title="\App\Session\SessionContext">SessionContext</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$sessionContext</span>
+    </code>
+
+    
+    
+    
+
+    
+
+</article>
                     <article
         class="
             phpdocumentor-element
@@ -353,7 +311,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Security/AuthenticationEntryPoint.php"><a href="files/src-security-authenticationentrypoint.html"><abbr title="src/Security/AuthenticationEntryPoint.php">AuthenticationEntryPoint.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">24</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 
     </aside>
 
@@ -394,14 +352,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Security/AuthenticationEntryPoint.php"><a href="files/src-security-authenticationentrypoint.html"><abbr title="src/Security/AuthenticationEntryPoint.php">AuthenticationEntryPoint.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">24</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\Routing\Generator\UrlGeneratorInterface">UrlGeneratorInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$urlGenerator</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\Routing\Generator\UrlGeneratorInterface">UrlGeneratorInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$urlGenerator</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Session-SessionContext.html"><abbr title="\App\Session\SessionContext">SessionContext</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$sessionContext</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -412,6 +370,13 @@
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$urlGenerator</span>
                 : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\Routing\Generator\UrlGeneratorInterface">UrlGeneratorInterface</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$sessionContext</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Session-SessionContext.html"><abbr title="\App\Session\SessionContext">SessionContext</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -438,7 +403,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Security/AuthenticationEntryPoint.php"><a href="files/src-security-authenticationentrypoint.html"><abbr title="src/Security/AuthenticationEntryPoint.php">AuthenticationEntryPoint.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">33</span>
+    <span class="phpdocumentor-element-found-in__line">32</span>
 
     </aside>
 
@@ -584,22 +549,15 @@
             <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
-                                        <li><a href="classes/App-Security-AuthenticationEntryPoint.html#toc-constants">Constants</a></li>
                                                             <li><a href="classes/App-Security-AuthenticationEntryPoint.html#toc-properties">Properties</a></li>
                                                             <li><a href="classes/App-Security-AuthenticationEntryPoint.html#toc-methods">Methods</a></li>
                                     </ul>
             </li>
-                            <li class="phpdocumentor-on-this-page-section__title">Constants</li>
-                <li>
-                    <ul class="phpdocumentor-list -clean">
-                                                    <li class=""><a href="classes/App-Security-AuthenticationEntryPoint.html#constant_ROUTE_NAME_SESSION_KEY">ROUTE_NAME_SESSION_KEY</a></li>
-                                                    <li class=""><a href="classes/App-Security-AuthenticationEntryPoint.html#constant_ROUTE_PARAMS_SESSION_KEY">ROUTE_PARAMS_SESSION_KEY</a></li>
-                                            </ul>
-                </li>
             
                             <li class="phpdocumentor-on-this-page-section__title">Properties</li>
                 <li>
                     <ul class="phpdocumentor-list -clean">
+                                                    <li class=""><a href="classes/App-Security-AuthenticationEntryPoint.html#property_sessionContext">$sessionContext</a></li>
                                                     <li class=""><a href="classes/App-Security-AuthenticationEntryPoint.html#property_urlGenerator">$urlGenerator</a></li>
                                             </ul>
                 </li>
