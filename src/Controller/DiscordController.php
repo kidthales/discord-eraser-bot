@@ -164,7 +164,7 @@ final class DiscordController extends AbstractController
             }
         } else {
             $this->logger->critical(
-                'Encountered a validator error while install guild "{discordId}"',
+                'Encountered a validator error while installing guild "{discordId}"',
                 [
                     'discordId' => $discordId,
                     'errors' => (array)$errors,

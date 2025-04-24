@@ -113,7 +113,7 @@ final class GuildTest extends KernelTestCase
      */
     public static function provider_deserialization(): array
     {
-        $subjectTemplate = '{"id":"test-id","name":%s,"icon":%s,"splash":%s,"discovery_splash":%s,"owner_id":%s,"afk_channel_id":%s,"afk_timeout":%s,"verification_level":%s,"default_message_notifications":%s,"explicit_content_filter":%s,"roles":%s,"emojis":%s,"features":[%s],"mfa_level":%s,"application_id":%s,"system_channel_id":%s,"system_channel_flags":%s,"rules_channel_id":%s,"vanity_url_code":%s,"description":%s,"banner":%s,"premium_tier":%s,"preferred_locale":%s,"public_updates_channel_id":%s,"nsfw_level":%s,"premium_progress_bar_enabled":%s,"safety_alerts_channel_id":%s%s}';
+        $subjectTemplate = '{"id":"test-id","name":"test-name","icon":%s,"splash":%s,"discovery_splash":%s,"owner_id":%s,"afk_channel_id":%s,"afk_timeout":%s,"verification_level":%s,"default_message_notifications":%s,"explicit_content_filter":%s,"roles":%s,"emojis":%s,"features":[%s],"mfa_level":%s,"application_id":%s,"system_channel_id":%s,"system_channel_flags":%s,"rules_channel_id":%s,"vanity_url_code":%s,"description":%s,"banner":%s,"premium_tier":%s,"preferred_locale":%s,"public_updates_channel_id":%s,"nsfw_level":%s,"premium_progress_bar_enabled":%s,"safety_alerts_channel_id":%s%s}';
 
         $roleTemplates = [];
         $rolesExpected = [];
@@ -145,7 +145,6 @@ final class GuildTest extends KernelTestCase
             $data[] = [
                 sprintf(
                     $subjectTemplate,
-                    '"test-name"',
                     '"test-icon"',
                     '"test-splash"',
                     '"test-discovery-splash"',
@@ -224,7 +223,6 @@ final class GuildTest extends KernelTestCase
                     'null',
                     'null',
                     'null',
-                    'null',
                     '',
                     'null',
                     'null',
@@ -244,7 +242,7 @@ final class GuildTest extends KernelTestCase
                 ),
                 new Guild(
                     id: 'test-id',
-                    name: null,
+                    name: 'test-name',
                     icon: null,
                     splash: null,
                     discovery_splash: null,

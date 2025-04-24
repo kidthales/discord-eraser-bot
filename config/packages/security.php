@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Controller\Admin\DashboardController;
 use App\Controller\HomeController;
 use App\Entity\User;
 use App\Security\AuthenticationEntryPoint;
@@ -54,6 +55,6 @@ return static function (SecurityConfig $security): void {
 
     $security
         ->accessControl()
-        ->path('^/_')
+        ->path('^' . DashboardController::ROUTE_PATH)
         ->roles(User::ROLE_USER);
 };

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App;
 
 use Symfony\Component\Scheduler\Attribute\AsSchedule;
@@ -10,7 +12,8 @@ use Symfony\Contracts\Cache\CacheInterface;
 #[AsSchedule]
 final readonly class Schedule implements ScheduleProviderInterface
 {
-    public function __construct(private CacheInterface $cache) {
+    public function __construct(private CacheInterface $cache)
+    {
     }
 
     public function getSchedule(): SymfonySchedule

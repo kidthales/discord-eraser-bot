@@ -1,1 +1,30 @@
 {% extends '@!EasyAdmin/layout.html.twig' %}
+
+{% block content_title %}App Dashboard{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <section>
+            <hgroup>
+                <h2>Guilds</h2>
+                <p class="text-muted">You have at least the <code>MANAGE_GUILD</code> permission for following guilds that have installed the app</p>
+            </hgroup>
+            <div class="row row-cols-1 row-cols-md-2">
+                {% for guild in authorizedGuilds %}
+                    <div class="card">
+                        <div class="card-header">
+                            <img src="{{ guild.iconUrl }}" alt="{{ guild.name }} icon" width="48" height="48">
+                            <strong>{{ guild.name }}</strong>
+                            <span class="badge bg-primary text-light">ID: {{ guild.id }}</span>
+                            <span class="badge bg-info text-dark">Members: {{ guild.memberCount }}</span>
+                            <span class="badge bg-info text-dark">Presence: {{ guild.presenceCount }}</span>
+                        </div>
+                        <div class="card-body">
+                            <a href="{{ guild.dashboardLink }}" class="btn btn-primary">Dashboard</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+{% endblock %}

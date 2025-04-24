@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Session;
 
 use App\Controller\Admin\DashboardController;
-use App\Dto\Discord\Api\PartialGuild;
+use App\Dto\Discord\AuthorizedGuild;
 use App\Dto\Discord\UserInfo;
 use LogicException;
 use RuntimeException;
@@ -66,7 +66,7 @@ final readonly class SessionContext
     }
 
     /**
-     * @param array<string, PartialGuild> $authorizedGuilds
+     * @param array<string, AuthorizedGuild> $authorizedGuilds
      * @return void
      */
     public function setAuthorizedGuilds(array $authorizedGuilds): void
@@ -82,14 +82,14 @@ final readonly class SessionContext
     }
 
     /**
-     * @return array<string, PartialGuild>
+     * @return array<string, AuthorizedGuild>
      */
     public function getAuthorizedGuilds(): array
     {
         try {
             return $this->denormalizer->denormalize(
                 $this->getSession()->get(self::AUTHORIZED_GUILDS),
-                PartialGuild::class . '[]'
+                AuthorizedGuild::class . '[]'
             );
         } catch (Throwable $e) {
             throw new RuntimeException(

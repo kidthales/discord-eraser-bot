@@ -303,7 +303,7 @@ final class DiscordControllerTest extends KernelTestCase
                 0,
                 new DiscordGuild(
                     id: 'failit',
-                    name: null,
+                    name: 'test-name',
                     icon: null,
                     splash: null,
                     discovery_splash: null,
@@ -383,7 +383,7 @@ final class DiscordControllerTest extends KernelTestCase
                 0,
                 new DiscordGuild(
                     id: '175928847299117063',
-                    name: null,
+                    name: 'test-name',
                     icon: null,
                     splash: null,
                     discovery_splash: null,

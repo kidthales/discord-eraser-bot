@@ -6,6 +6,7 @@ namespace App\Security\Discord\Authenticator;
 
 use App\Controller\DiscordController;
 use App\Dto\Discord\Api\PartialGuild;
+use App\Dto\Discord\AuthorizedGuild;
 use App\Entity\User;
 use App\Enum\Discord\Api\BitwisePermissionFlag;
 use App\HttpClient\DiscordApi;
@@ -145,13 +146,13 @@ final class OAuth2Authenticator extends BaseOAuth2Authenticator
 
     /**
      * @param string $token
-     * @return array<string, PartialGuild>
+     * @return array<string, AuthorizedGuild>
      */
     private function resolveAuthorizedGuilds(string $token): array
     {
         /** @var array<string, PartialGuild> $candidateAuthorizedGuilds */
         $candidateAuthorizedGuilds = [];
-        foreach ($this->discordApi->withBearerToken($token)->getCurrentUserGuilds() as $partialGuild) {
+        foreach ($this->discordApi->withBearerToken($token)->getCurrentUserGuilds(withCounts: true) as $partialGuild) {
             if (
                 BitwisePermissionFlag::isGranted(BitwisePermissionFlag::ADMINISTRATOR, $partialGuild->permissions) ||
                 BitwisePermissionFlag::isGranted(BitwisePermissionFlag::MANAGE_GUILD, $partialGuild->permissions)
@@ -160,12 +161,12 @@ final class OAuth2Authenticator extends BaseOAuth2Authenticator
             }
         }
 
-        /** @var array<string, PartialGuild> $authorizedGuilds */
+        /** @var array<string, AuthorizedGuild> $authorizedGuilds */
         $authorizedGuilds = [];
         $availableGuilds = $this->guildRepository->findInstalledByDiscordIds(array_keys($candidateAuthorizedGuilds));
         foreach ($availableGuilds as $availableGuild) {
             $discordId = $availableGuild->getDiscordId();
-            $authorizedGuilds[$discordId] = $candidateAuthorizedGuilds[$discordId];
+            $authorizedGuilds[$discordId] = AuthorizedGuild::fromPartialGuild($candidateAuthorizedGuilds[$discordId]);
         }
 
         return $authorizedGuilds;

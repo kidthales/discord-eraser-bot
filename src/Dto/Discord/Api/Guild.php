@@ -25,7 +25,7 @@ final readonly class Guild
 
     /**
      * @param string $id Guild id.
-     * @param string|null $name Guild name (2-100 characters, excluding trailing and leading whitespace).
+     * @param string $name Guild name (2-100 characters, excluding trailing and leading whitespace).
      * @param string|null $icon Icon hash.
      * @param string|null $splash Splash hash.
      * @param string|null $discovery_splash Discovery splash hash; only present for guilds with the "DISCOVERABLE"
@@ -82,7 +82,7 @@ final readonly class Guild
      */
     public function __construct(
         public string                           $id,
-        public ?string                          $name,
+        public string                           $name,
         public ?string                          $icon,
         public ?string                          $splash,
         public ?string                          $discovery_splash,

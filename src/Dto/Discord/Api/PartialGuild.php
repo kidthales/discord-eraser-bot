@@ -11,12 +11,12 @@ final readonly class PartialGuild
 {
     /**
      * @param string $id Guild id.
-     * @param string|null $name Guild name (2-100 characters, excluding trailing and leading whitespace).
+     * @param string $name Guild name (2-100 characters, excluding trailing and leading whitespace).
      * @param string|null $icon Icon hash.
      * @param string[] $features Enabled guild features.
      * @param string|null $banner Banner hash.
-     * @param bool|null $owner True if the user is the owner of the guild.
-     * @param string|null $permissions Total permissions for the user in the guild (excludes overwrites and implicit
+     * @param bool $owner True if the user is the owner of the guild.
+     * @param string $permissions Total permissions for the user in the guild (excludes overwrites and implicit
      * permissions).
      * @param int|null $approximate_member_count Approximate number of members in this guild, returned from the
      * GET /guilds/<id> and /users/@me/guilds endpoints when with_counts is true.
@@ -25,12 +25,12 @@ final readonly class PartialGuild
      */
     public function __construct(
         public string  $id,
-        public ?string $name,
+        public string  $name,
         public ?string $icon,
         public array   $features,
         public ?string $banner,
-        public ?bool   $owner = null,
-        public ?string $permissions = null,
+        public bool    $owner,
+        public string  $permissions,
         public ?int    $approximate_member_count = null,
         public ?int    $approximate_presence_count = null
     )

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Controller\Admin;
 
 use App\Dto\Discord\Api\PartialGuild;
+use App\Dto\Discord\AuthorizedGuild;
 use App\Session\SessionContext;
 use EasyCorp\Bundle\EasyAdminBundle\Attribute\AdminDashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -23,6 +24,8 @@ final class DashboardController extends AbstractDashboardController
 {
     public const string ROUTE_PATH = '/_';
     public const string ROUTE_NAME = 'admin';
+
+    private const string DASHBOARD_TITLE = 'App Dashboard';
 
     /**
      * @param RequestStack $requestStack
@@ -45,13 +48,30 @@ final class DashboardController extends AbstractDashboardController
         $request = $this->getRequest();
         $authorizedGuild = $this->getCurrentAuthorizedGuild();
 
-        $this->logger->debug('authorized guild id: ' . $authorizedGuild?->id);
-
         if ($authorizedGuild === null && $request->attributes->get('_route') !== self::ROUTE_NAME) {
             return $this->redirectToRoute(self::ROUTE_NAME);
         }
 
-        return $this->render('admin/dashboard.html.twig');
+        if ($authorizedGuild === null) {
+            $context = [
+                'authorizedGuilds' => []
+            ];
+
+            foreach ($this->sessionContext->getAuthorizedGuilds() as $authorizedGuild) {
+                $context['authorizedGuilds'][] = [
+                    'id' => $authorizedGuild->id,
+                    'name' => $authorizedGuild->name,
+                    'iconUrl' => $authorizedGuild->getIconUrl(),
+                    'dashboardLink' => $this->generateUrl(self::ROUTE_NAME, ['authorized_guild' => $authorizedGuild->id]),
+                    'memberCount' => $authorizedGuild->approximateMemberCount ?? 'n/a',
+                    'presenceCount' => $authorizedGuild->approximatePresenceCount ?? 'n/a'
+                ];
+            }
+
+            return $this->render('admin/dashboard.html.twig', $context);
+        }
+
+        return $this->render('admin/guild-dashboard.html.twig', ['guild' => ['name' => $authorizedGuild->name]]);
     }
 
     /**
@@ -68,15 +88,20 @@ final class DashboardController extends AbstractDashboardController
      */
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToDashboard('App Dashboard', 'fa fa-home');
+        yield MenuItem::linkToDashboard(self::DASHBOARD_TITLE, 'fa fa-home');
 
-        yield MenuItem::section('Authorized Guilds');
+        yield MenuItem::section('Guilds');
         foreach ($this->sessionContext->getAuthorizedGuilds() as $authorizedGuild) {
-            yield MenuItem::linkToUrl(
-                $authorizedGuild->name ?? $authorizedGuild->id,
+            yield MenuItem::subMenu(
+                $authorizedGuild->name,
                 'fa fa-server',
-                $this->generateUrl(self::ROUTE_NAME, ['authorized_guild' => $authorizedGuild->id])
-            );
+            )->setSubItems([
+                MenuItem::linkToUrl(
+                    'Dashboard',
+                    'fa fa-table-columns',
+                    $this->generateUrl(self::ROUTE_NAME, ['authorized_guild' => $authorizedGuild->id])
+                )
+            ]);
         }
     }
 
@@ -94,10 +119,10 @@ final class DashboardController extends AbstractDashboardController
     }
 
     /**
-     * @return PartialGuild|null
+     * @return AuthorizedGuild|null
      * @throws AccessDeniedHttpException
      */
-    private function getCurrentAuthorizedGuild(): ?PartialGuild
+    private function getCurrentAuthorizedGuild(): ?AuthorizedGuild
     {
         $id = $this->getRequest()->query->get('authorized_guild');
 
