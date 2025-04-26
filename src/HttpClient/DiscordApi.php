@@ -3,6 +3,7 @@
 namespace App\HttpClient;
 
 use App\DependencyInjection\Parameters;
+use App\Dto\Discord\Api\Channel;
 use App\Dto\Discord\Api\PartialGuild;
 use RuntimeException;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
@@ -80,12 +81,38 @@ final readonly class DiscordApi
             $params['with_counts'] = $withCounts;
         }
 
+        return $this->serializer->deserialize(
+            $this->request('GET', 'users/@me/guilds', ['query' => $params]),
+            PartialGuild::class . '[]',
+            'json'
+        );
+    }
+
+    /**
+     * @param string $guildId
+     * @return array
+     */
+    public function getGuildChannels(string $guildId): array
+    {
+        return $this->serializer->deserialize(
+            $this->request('GET', sprintf('guilds/%s/channels', $guildId)),
+            Channel::class . '[]',
+            'json'
+        );
+    }
+
+    /**
+     * @param string $method
+     * @param string $url
+     * @param array $options
+     * @return string
+     */
+    public function request(string $method, string $url, array $options = []): string
+    {
         try {
-            $content = $this->discordApiClient->request('GET', 'users/@me/guilds', ['query' => $params])->getContent();
+            return $this->discordApiClient->request($method, $url, $options)->getContent();
         } catch (Throwable $e) {
             throw new RuntimeException(message: 'Encountered an error while performing request', previous: $e);
         }
-
-        return $this->serializer->deserialize($content, PartialGuild::class . '[]', 'json');
     }
 }
