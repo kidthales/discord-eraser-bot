@@ -35,6 +35,7 @@
         "symfony/scheduler": "7.2.*",
         "symfony/security-bundle": "7.2.*",
         "symfony/serializer": "7.2.*",
+        "symfony/uid": "7.2.*",
         "symfony/validator": "7.2.*",
         "symfony/yaml": "7.2.*",
         "wohali/oauth2-discord-new": "^1.2.1"
