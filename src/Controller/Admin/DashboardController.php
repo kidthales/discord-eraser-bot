@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Controller\Admin;
 
-use App\Dto\Discord\Api\PartialGuild;
 use App\Dto\Discord\AuthorizedGuild;
 use App\Session\SessionContext;
 use EasyCorp\Bundle\EasyAdminBundle\Attribute\AdminDashboard;
@@ -62,7 +61,9 @@ final class DashboardController extends AbstractDashboardController
                     'id' => $authorizedGuild->id,
                     'name' => $authorizedGuild->name,
                     'iconUrl' => $authorizedGuild->getIconUrl(),
-                    'dashboardLink' => $this->generateUrl(self::ROUTE_NAME, ['authorized_guild' => $authorizedGuild->id]),
+                    'dashboardLink' => $this->generateUrl(self::ROUTE_NAME, [
+                        'authorized_guild' => $authorizedGuild->id
+                    ]),
                     'memberCount' => $authorizedGuild->approximateMemberCount ?? 'n/a',
                     'presenceCount' => $authorizedGuild->approximatePresenceCount ?? 'n/a'
                 ];

@@ -15,7 +15,6 @@ use App\Session\SessionContext;
 use KnpU\OAuth2ClientBundle\Client\ClientRegistry;
 use KnpU\OAuth2ClientBundle\Security\Authenticator\OAuth2Authenticator as BaseOAuth2Authenticator;
 use Psr\Log\LoggerInterface;
-use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Component\ErrorHandler\Exception\FlattenException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -38,7 +37,6 @@ final class OAuth2Authenticator extends BaseOAuth2Authenticator
      * @param ClientRegistry $registry
      * @param LoggerInterface $logger
      * @param SessionContext $sessionContext
-     * @param Security $security
      * @param DiscordApi $discordApi
      * @param GuildRepository $guildRepository
      */
@@ -46,7 +44,6 @@ final class OAuth2Authenticator extends BaseOAuth2Authenticator
         private readonly ClientRegistry  $registry,
         private readonly LoggerInterface $logger,
         private readonly SessionContext  $sessionContext,
-        private readonly Security        $security,
         private readonly DiscordApi      $discordApi,
         private readonly GuildRepository $guildRepository
     )
@@ -92,9 +89,9 @@ final class OAuth2Authenticator extends BaseOAuth2Authenticator
                 }
 
                 $user = $this->findUser($discordId);
-                $isSuperAdmin = $user !== null && $this->security->isGranted(User::ROLE_SUPER_ADMIN);
+                $isSuperAdmin = $user !== null && in_array(User::ROLE_SUPER_ADMIN, $user->getRoles());
 
-                $authorizedGuilds = $this->resolveAuthorizedGuilds($accessToken->getToken());
+                $authorizedGuilds = $this->resolveAuthorizedGuilds($accessToken->getToken(), $isSuperAdmin);
 
                 if (empty($authorizedGuilds) && !$isSuperAdmin) {
                     return null;
@@ -146,14 +143,18 @@ final class OAuth2Authenticator extends BaseOAuth2Authenticator
 
     /**
      * @param string $token
+     * @param bool $isSuperAdmin
      * @return array<string, AuthorizedGuild>
      */
-    private function resolveAuthorizedGuilds(string $token): array
+    private function resolveAuthorizedGuilds(string $token, bool $isSuperAdmin): array
     {
+        $api = $isSuperAdmin ? $this->discordApi : $this->discordApi->withBearerToken($token);
+
         /** @var array<string, PartialGuild> $candidateAuthorizedGuilds */
         $candidateAuthorizedGuilds = [];
-        foreach ($this->discordApi->withBearerToken($token)->getCurrentUserGuilds(withCounts: true) as $partialGuild) {
+        foreach ($api->getCurrentUserGuilds(withCounts: true) as $partialGuild) {
             if (
+                $isSuperAdmin ||
                 BitwisePermissionFlag::isGranted(BitwisePermissionFlag::ADMINISTRATOR, $partialGuild->permissions) ||
                 BitwisePermissionFlag::isGranted(BitwisePermissionFlag::MANAGE_GUILD, $partialGuild->permissions)
             ) {
