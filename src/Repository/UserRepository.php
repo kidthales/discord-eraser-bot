@@ -40,8 +40,8 @@ final class UserRepository extends ServiceEntityRepository
     public function findOneByDiscordId(int|string $discordId): ?User
     {
         return $this->createQueryBuilder('u')
-            ->andWhere('u.discordId = :val')
-            ->setParameter('val', $discordId)
+            ->andWhere('u.discordId = :discordId')
+            ->setParameter('discordId', $discordId)
             ->getQuery()
             ->getOneOrNullResult();
     }

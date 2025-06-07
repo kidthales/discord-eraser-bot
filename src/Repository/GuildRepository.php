@@ -32,8 +32,8 @@ class GuildRepository extends ServiceEntityRepository
     public function findOneByDiscordId(int|string $discordId): ?Guild
     {
         return $this->createQueryBuilder('g')
-            ->andWhere('g.discordId = :val')
-            ->setParameter('val', $discordId)
+            ->andWhere('g.discordId = :discordId')
+            ->setParameter('discordId', $discordId)
             ->getQuery()
             ->getOneOrNullResult();
     }
@@ -46,8 +46,8 @@ class GuildRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder('g')
             ->andWhere('g.installed = 1')
-            ->andWhere('g.discordId IN (:val)')
-            ->setParameter('val', $discordIds, ArrayParameterType::STRING)
+            ->andWhere('g.discordId IN (:discordIds)')
+            ->setParameter('discordIds', $discordIds, ArrayParameterType::STRING)
             ->getQuery()
             ->getResult();
     }

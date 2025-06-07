@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Entity\Traits\Timestampable;
+use App\Enum\TaskStatus;
 use App\Repository\TaskRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
@@ -44,6 +45,29 @@ class Task
     private int|string|null $discordChannelId = null;
 
     /**
+     * @var int|null
+     */
+    #[ORM\Column(name: 'message_ttl', type: Types::INTEGER)]
+    #[Assert\NotNull]
+    #[Assert\Range(min: 1, max: 525960)]
+    private ?int $messageTtl = null;
+
+    /**
+     * @var int|string|null
+     */
+    #[ORM\Column(name: 'next_discord_message_id', type: Types::BIGINT, nullable: true)]
+    // Discord snowflakes are 17-19 digits. https://discord.com/developers/docs/reference#snowflakes
+    #[Assert\Regex(pattern: '/^[1-9]\d{16,18}$/', message: 'This value is not a Discord Snowflake.', normalizer: 'strval')] // TODO: 20 digits max in 2090...
+    private int|string|null $nextDiscordMessageId = null;
+
+    /**
+     * @var TaskStatus|null
+     */
+    #[ORM\Column(type: Types::STRING, enumType: TaskStatus::class)]
+    #[Assert\NotNull]
+    private ?TaskStatus $status = null;
+
+    /**
      * @return Uuid|null
      */
     public function getId(): ?Uuid
@@ -83,5 +107,56 @@ class Task
     public function setDiscordChannelId(int|string $discordChannelId): void
     {
         $this->discordChannelId = $discordChannelId;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getMessageTtl(): ?int
+    {
+        return $this->messageTtl;
+    }
+
+    /**
+     * @param int $messageTtl
+     * @return void
+     */
+    public function setMessageTtl(int $messageTtl): void
+    {
+        $this->messageTtl = $messageTtl;
+    }
+
+    /**
+     * @return int|string|null
+     */
+    public function getNextDiscordMessageId(): int|string|null
+    {
+        return $this->nextDiscordMessageId;
+    }
+
+    /**
+     * @param int|string|null $nextDiscordMessageId
+     * @return void
+     */
+    public function setNextDiscordMessageId(int|string|null $nextDiscordMessageId): void
+    {
+        $this->nextDiscordMessageId = $nextDiscordMessageId;
+    }
+
+    /**
+     * @return TaskStatus|null
+     */
+    public function getStatus(): ?TaskStatus
+    {
+        return $this->status;
+    }
+
+    /**
+     * @param TaskStatus $status
+     * @return void
+     */
+    public function setStatus(TaskStatus $status): void
+    {
+        $this->status = $status;
     }
 }
