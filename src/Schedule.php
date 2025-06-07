@@ -5,14 +5,23 @@ declare(strict_types=1);
 namespace App;
 
 use App\Entity\Task;
+use App\Enum\TaskRecurrenceType;
+use App\Enum\TaskStatus;
 use App\Repository\TaskRepository;
+use App\Scheduler\Message\DoTask;
+use App\Scheduler\Message\ScheduleTasks;
 use DateTimeImmutable;
 use Symfony\Component\Scheduler\Attribute\AsSchedule;
+use Symfony\Component\Scheduler\Event\FailureEvent;
+use Symfony\Component\Scheduler\Event\PostRunEvent;
+use Symfony\Component\Scheduler\Event\PreRunEvent;
 use Symfony\Component\Scheduler\RecurringMessage;
 use Symfony\Component\Scheduler\Schedule as SymfonySchedule;
 use Symfony\Component\Scheduler\ScheduleProviderInterface;
 use Symfony\Component\Scheduler\Trigger\CallbackTrigger;
+use Symfony\Component\Scheduler\Trigger\CronExpressionTrigger;
 use Symfony\Component\Scheduler\Trigger\JitterTrigger;
+use Symfony\Component\Scheduler\Trigger\PeriodicalTrigger;
 use Symfony\Contracts\Cache\CacheInterface;
 
 #[AsSchedule]
@@ -30,33 +39,52 @@ final class Schedule implements ScheduleProviderInterface
             ->stateful($this->cache) // ensure missed tasks are executed
             ->processOnlyLastMissedRun(true) // ensure only last missed task is run
             ->with(
-                ...array_map(function (Task $task) {
-                    $firstTrigger = true;
-                    return RecurringMessage::trigger(
-                        new JitterTrigger(
-                            new CallbackTrigger(
-                                function (DateTimeImmutable $run) use ($task, &$firstTrigger): ?DateTimeImmutable {
-                                    $this->taskRepository->refresh($task);
+                RecurringMessage::cron('* * * * *', new ScheduleTasks()),
+                ...array_map(
+                    $this->makeRecurringTask(...),
+                    $this->taskRepository->findByStatus(TaskStatus::Scheduled)
+                )
+            )
+            ->before(function (PreRunEvent $event) {
+                // TODO
+                $message = $event->getMessage();
+            })
+            ->after(function (PostRunEvent $event) {
+                // TODO
+            })
+            ->onFailure(function (FailureEvent $event) {
+                // TODO
+            });
+    }
 
-                                    $messageId = $task->getNextDiscordMessageId();
+    /**
+     * @param Task $task
+     * @return RecurringMessage
+     */
+    private function makeRecurringTask(Task $task): RecurringMessage
+    {
+        switch ($task->getRecurrenceType()) {
+            case TaskRecurrenceType::Cron:
+                $trigger = CronExpressionTrigger::fromSpec($task->getRecurrenceValue());
+                break;
+            case TaskRecurrenceType::Every:
+                $trigger = new PeriodicalTrigger($task->getRecurrenceValue());
+                break;
+            case TaskRecurrenceType::Once:
+            default:
+                $triggered = false;
+                $trigger = new CallbackTrigger(function (DateTimeImmutable $run) use ($task, &$triggered): ?DateTimeImmutable {
+                    if ($triggered) {
+                        return null;
+                    }
 
-                                    if ($messageId === null) {
-                                        if ($firstTrigger) {
-                                            $firstTrigger = false;
-                                            return $run;
-                                        }
+                    $triggered = true;
 
-                                        return $run->modify(sprintf('+%s minutes', $task->getMessageTtl()));
-                                    }
+                    return $run->setTimestamp((int) $task->getRecurrenceValue());
+                });
+                break;
+        }
 
-                                    // TODO: calculate next run time from message snowflake...
-                                    return $run;
-                                }
-                            )
-                        ),
-                        new \ArrayObject() // TODO
-                    );
-                }, $this->taskRepository->findScheduled())
-            );
+        return RecurringMessage::trigger(new JitterTrigger($trigger), new DoTask($task->getId()));
     }
 }

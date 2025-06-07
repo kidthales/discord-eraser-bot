@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Entity;
 
 use App\Entity\Traits\Timestampable;
+use App\Enum\TaskRecurrenceType;
 use App\Enum\TaskStatus;
 use App\Repository\TaskRepository;
 use Doctrine\DBAL\Types\Types;
@@ -14,7 +17,6 @@ use Symfony\Component\Validator\Constraints as Assert;
 #[ORM\Entity(repositoryClass: TaskRepository::class)]
 #[ORM\Table(name: '`task`')]
 #[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_TASK_ID', fields: ['id'])]
-#[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_TASK_DISCORD_CHANNEL_ID', fields: ['discordChannelId'])]
 class Task
 {
     use Timestampable;
@@ -45,20 +47,26 @@ class Task
     private int|string|null $discordChannelId = null;
 
     /**
-     * @var int|null
+     * @var TaskRecurrenceType|null
      */
-    #[ORM\Column(name: 'message_ttl', type: Types::INTEGER)]
+    #[ORM\Column(name: 'recurrence_type', type: Types::STRING, enumType: TaskRecurrenceType::class)]
     #[Assert\NotNull]
-    #[Assert\Range(min: 1, max: 525960)]
-    private ?int $messageTtl = null;
+    private ?TaskRecurrenceType $recurrenceType = null;
 
     /**
-     * @var int|string|null
+     * @var string|null
      */
-    #[ORM\Column(name: 'next_discord_message_id', type: Types::BIGINT, nullable: true)]
-    // Discord snowflakes are 17-19 digits. https://discord.com/developers/docs/reference#snowflakes
-    #[Assert\Regex(pattern: '/^[1-9]\d{16,18}$/', message: 'This value is not a Discord Snowflake.', normalizer: 'strval')] // TODO: 20 digits max in 2090...
-    private int|string|null $nextDiscordMessageId = null;
+    #[ORM\Column(name: 'recurrence_value', type: Types::STRING)]
+    #[Assert\NotBlank]
+    private ?string $recurrenceValue = null;
+
+    /**
+     * @var int|null
+     */
+    #[ORM\Column(name: 'message_age', type: Types::INTEGER)]
+    #[Assert\NotNull]
+    #[Assert\Range(min: 0, max: 525960)]
+    private ?int $messageAge = null;
 
     /**
      * @var TaskStatus|null
@@ -110,37 +118,54 @@ class Task
     }
 
     /**
+     * @return TaskRecurrenceType|null
+     */
+    public function getRecurrenceType(): ?TaskRecurrenceType
+    {
+        return $this->recurrenceType;
+    }
+
+    /**
+     * @param TaskRecurrenceType $recurrenceType
+     * @return void
+     */
+    public function setRecurrenceType(TaskRecurrenceType $recurrenceType): void
+    {
+        $this->recurrenceType = $recurrenceType;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getRecurrenceValue(): ?string
+    {
+        return $this->recurrenceValue;
+    }
+
+    /**
+     * @param string $recurrenceValue
+     * @return void
+     */
+    public function setRecurrenceValue(string $recurrenceValue): void
+    {
+        $this->recurrenceValue = $recurrenceValue;
+    }
+
+    /**
      * @return int|null
      */
-    public function getMessageTtl(): ?int
+    public function getMessageAge(): ?int
     {
-        return $this->messageTtl;
+        return $this->messageAge;
     }
 
     /**
-     * @param int $messageTtl
+     * @param int $messageAge
      * @return void
      */
-    public function setMessageTtl(int $messageTtl): void
+    public function setMessageAge(int $messageAge): void
     {
-        $this->messageTtl = $messageTtl;
-    }
-
-    /**
-     * @return int|string|null
-     */
-    public function getNextDiscordMessageId(): int|string|null
-    {
-        return $this->nextDiscordMessageId;
-    }
-
-    /**
-     * @param int|string|null $nextDiscordMessageId
-     * @return void
-     */
-    public function setNextDiscordMessageId(int|string|null $nextDiscordMessageId): void
-    {
-        $this->nextDiscordMessageId = $nextDiscordMessageId;
+        $this->messageAge = $messageAge;
     }
 
     /**

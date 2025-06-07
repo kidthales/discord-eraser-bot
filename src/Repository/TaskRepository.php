@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Repository;
 
 use App\Entity\Task;
@@ -46,13 +48,14 @@ class TaskRepository extends ServiceEntityRepository
     }
 
     /**
+     * @param TaskStatus $status
      * @return Task[]
      */
-    public function findScheduled(): array
+    public function findByStatus(TaskStatus $status): array
     {
         return $this->createQueryBuilder('t')
             ->andWhere('t.status = :status')
-            ->setParameter('status', TaskStatus::Scheduled)
+            ->setParameter('status', $status)
             ->getQuery()
             ->getResult();
     }
