@@ -6,6 +6,7 @@ namespace App\Repository;
 
 use App\Entity\Task;
 use App\Enum\TaskStatus;
+use App\Repository\Traits\Alterable;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\DBAL\LockMode;
 use Doctrine\ORM\Exception\ORMException;
@@ -16,6 +17,8 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class TaskRepository extends ServiceEntityRepository
 {
+    use Alterable;
+
     /**
      * @param ManagerRegistry $registry
      */
